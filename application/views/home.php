@@ -294,8 +294,8 @@ $this->load->view('layout/header');
             </div>
         </div>
     </div>
-</div>
 
+</div>
 
 
 
@@ -304,243 +304,87 @@ $this->load->view('layout/header');
 <!-- Content -->
 <div id="content" class="home-shop"> 
 
-    <!-- About Sec -->
-    <section class="acces-ser margin-top-30 " >
-        <div class="container"> 
-
-            <!-- Heading -->
-            <div class="heading-block margin-bottom-30">
-                <h3>We Are Tailoring Artist</h3>
-                <hr>
-            </div>
-            <div class="intro-small1 col-md-8 center-auto">
-                <p> The Prestigious, Bespoke tailoring in Hong Kong</p>
-            </div>
-            <div class="row"> 
 
 
-                <!-- Bags -->
-                <div class="col-sm-4">
-                    <article> 
-                        <p>
-                        <h3> LUXURY FABRICS </h3>
-                        Browse our range of premium Italian fabrics
-                        </p>
-                        <div class="goldline "></div>
-
-                        <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/fabrics.jpg" alt="" >
-                        <div class="position-center-center">
-                            <h6></h6>
-                        </div>
-                        <a href="#" class="btn by">Shop NOW</a> 
-                    </article>
-                </div>
-
-                <div class="col-sm-4">
-                    <article> 
-                        <p>
-                        <h3> IMPECCABLE FIT </h3>
-                        Find the perfect fit off-the-rack
-                        </p>
-                        <div class="goldline "></div>
-                        <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/shirts.jpg" alt="" >
-                        <div class="position-center-center">
-                            <h6></h6>
-                        </div>
-                        <a href="#" class="btn by">Shop NOW</a> 
-                    </article>
-                </div>
-
-
-                <div class="col-sm-4">
-                    <article> 
-                        <p>
-                        <h3>PERFECT STYLE </h3>
-                        Find the perfect fit off-the-rack
-                        </p>
-                        <div class="goldline "></div>
-                        <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/perfectsuit.jpg" alt="" >
-                        <div class="position-center-center">
-                            <h6></h6>
-                        </div>
-                        <a href="#" class="btn by">Shop NOW</a> 
-                    </article>
-                </div>
-
-
-
-
-
-
-            </div>
-        </div>
-    </section>
-
-
-    <div class="intro-small1 col-md-8 center-auto">
-        <div class="goldline3 " ></div>
-    </div>
-
-    <div style="clear: both"></div>
-    <!-- About US -->
-
-
-    <section class="lookin-pro">
-        <div class="container"> 
-
-            <!-- Heading -->
-            <div class="heading-block white margin-bottom-20">
-                <h4>- We are Professionals - </h4>
-                <h5 style="font-size: 35px;color:white;">We are tailoring artists</h5>
-
-            </div>
-            <div class="intro-small col-md-11 center-auto margin-bottom-0">
-                <p>
-                    We always listen to the expressed and unexpressed wish of our guests. We have over 6000 fabric choices to attire different style and need. We tailor-made every lining color and detail for each unique and personalized character.
-                </p>
-            </div>
-            <div class="text-center"> <a href="#." class="btn">TRY US</a> </div>
-        </div>
-    </section>
 
 
 
     <!-- Portfolio -->
-    <section class="portfolio port-wrap pad-t-b-130 padding-bottom-0">
+    <section class="our-main-ser port-wrap pad-t-b-60 padding-bottom-0">
         <div class="container">
 
             <!-- Heading -->
-            <div class="heading-block margin-bottom-30">
-                <h3>We are Professionals</h3>
-                <hr>
-            </div>
-            <div class="intro-small col-md-8 center-auto">
-                <p>
-                    We are makers of fine personalized luxury custom made formal wear to fit men and women with impeccable looks for all seasons.          </p>
-            </div>
-        </div>
-
-     
-
-        <!-- Item Start -->
-        <div class="items no-space col-4 popup-gallery"> 
-
-
-            <!-- ITEM -->
-            <div class="cbp-item portfolio-item web mob-app photo ui">
-                <article>
-                    <div class="portfolio-image"> <img alt="" src="images/img2-1.jpg">
-                        <div class="portfolio-overlay"></div>
-                        <div class="position-bottom"> <a href="images/img2-1.jpg" class="img-pop icon" title=""><i class="icon-magnifier"></i></a>
-                            <h4><a href="single_project_1.html">Brand Tab Design</a></h4>
-                            <p>Design & Fun</p>
-                        </div>
-                    </div>
-                </article>
+            <div class="heading-block  margin-bottom-20">
+                <div class="heading-block margin-bottom-30">
+                    <h3>We Are Tailoring Artist</h3>
+                    <hr>
+                </div>
+                <div class="intro-small col-md-8 center-auto">
+                    <p>
+                        We are makers of fine personalized luxury custom made formal wear to fit men and women with impeccable looks for all seasons.          </p>
+                </div>
             </div>
 
-            <!-- Item -->
-            <div class="cbp-item portfolio-item brand web mob-app">
-                <article>
-                    <div class="portfolio-image"> <img alt="" src="images/img2-2.jpg">
-                        <div class="portfolio-overlay"></div>
-                        <div class="position-bottom"> <a href="images/img2-2.jpg" class="img-pop icon" title=""><i class="icon-magnifier"></i></a>
-                            <h4><a href="single_project_2.html">Creative Design Layout</a></h4>
-                            <p>Photoshop</p>
-                        </div>
-                    </div>
-                </article>
+
+
+
+
+
+            <!-- OUR SERVICES LIST -->
+            <div class="nolist-style">
+                <ul class="row">
+
+                    <!-- OUR SERVICES LIST -->
+                    <li class="col-sm-3"> <i class="flaticon-coat animate fadeInUp" data-wow-delay="0.4s"></i>
+                        <h6>Create Own Style</h6>
+                        <p>Our fabrics are sourced from only a handful of mills across the world. Choose any fabric and create own style.</p>
+                    </li>
+
+                    <!-- Unlimited Features -->
+                    <li class="col-sm-3"> <i class="fa fa-list-alt animate fadeInUp" data-wow-delay="0.6s"></i>
+                        <h6>Get Size</h6>
+                        <p>Let Size and calculate your measurement. We start working on your shirts, suits or jacket once an order is received.</p>
+                    </li>
+
+                    <!-- Ultra Responsive -->
+                    <li class="col-sm-3"> <i class="fa fa-cut animate fadeInUp" data-wow-delay="0.4s"></i>
+                        <h6>Cut to Create</h6>
+                        <p>Our experienced shanghainese tailor cut and make your new dress. We use only the finest raw materials when putting together in your dress.</p>
+                    </li>
+
+                    <!-- Discuss Idea -->
+                    <li class="col-sm-3"> <i class="fa fa-truck animate fadeInUp" data-wow-delay="0.6s"></i>
+                        <h6>Delivery</h6>
+                        <p>We can ship orders to anywhere in the world. Delivery with guaranteed best fit.</p>
+                    </li>
+
+
+                </ul>
             </div>
 
-            <!-- Item -->
-            <div class="cbp-item portfolio-item web photo ui">
-                <article>
-                    <div class="portfolio-image"> <img alt="" src="images/img2-3.jpg">
-                        <div class="portfolio-overlay"></div>
-                        <div class="position-bottom"> <a href="images/img2-3.jpg" class="img-pop icon" title=""><i class="icon-magnifier"></i></a>
-                            <h4><a href="single_project_3.html">Back to School</a></h4>
-                            <p>Fashion & Style</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Item -->
-            <div class="cbp-item portfolio-item mob-app photo ui">
-                <article>
-                    <div class="portfolio-image"> <img alt="" src="images/img2-4.jpg">
-                        <div class="portfolio-overlay"></div>
-                        <div class="position-bottom"> <a href="images/img2-4.jpg" class="img-pop icon" title=""><i class="icon-magnifier"></i></a>
-                            <h4><a href="single_project_4.html">Creative Design Layout</a></h4>
-                            <p>Photography</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Item -->
-            <div class="cbp-item portfolio-item mob-app photo">
-                <article>
-                    <div class="portfolio-image"> <img alt="" src="images/img2-5.jpg">
-                        <div class="portfolio-overlay"></div>
-                        <div class="position-bottom"> <a href="images/img2-5.jpg" class="img-pop icon" title=""><i class="icon-magnifier"></i></a>
-                            <h4><a href="single_project_1.html">Creative Unique Ideas</a></h4>
-                            <p>Interior</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Item -->
-            <div class="cbp-item portfolio-item mob-app photo ui">
-                <article>
-                    <div class="portfolio-image"> <img alt="" src="images/img2-6.jpg">
-                        <div class="portfolio-overlay"></div>
-                        <div class="position-bottom"> <a href="images/img2-6.jpg" class="img-pop icon" title=""><i class="icon-magnifier"></i></a>
-                            <h4><a href="single_project_1.html">Creative Design Layout</a></h4>
-                            <p>Photography</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Item -->
-            <div class="cbp-item portfolio-item mob-app photo ui">
-                <article>
-                    <div class="portfolio-image"> <img alt="" src="images/img2-7.jpg">
-                        <div class="portfolio-overlay"></div>
-                        <div class="position-bottom"> <a href="images/img2-4.jpg" class="img-pop icon" title=""><i class="icon-magnifier"></i></a>
-                            <h4><a href="single_project_2.html">Creative Design Layout</a></h4>
-                            <p>Photography</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Item -->
-            <div class="cbp-item portfolio-item mob-app photo">
-                <article>
-                    <div class="portfolio-image"> <img alt="" src="images/img2-8.jpg">
-                        <div class="portfolio-overlay"></div>
-                        <div class="position-bottom"> <a href="images/img2-5.jpg" class="img-pop icon" title=""><i class="icon-magnifier"></i></a>
-                            <h4><a href="single_project_3.html">Creative Unique Ideas</a></h4>
-                            <p>Interior</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-
-        <!-- PORTFOLIO INTRO SECTION -->
-        <div class="port-intro">
-            <div class="container">
-
-                <!-- LOAD MORE -->
-                <div class="text-center"> <a href="portfolio_1-4-col.html" class="btn btn-inverse">LOAD MORE</a> </div>
-            </div>
-        </div>
     </section>
 
+    <div class="items no-space col-4 popup-gallery"> 
+
+        <?php
+        $stylebook = ['1.jpg', '2.jpg', '3.jpg', '4.jpg'];
+        foreach ($stylebook as $key => $value) {
+            ?>
+
+
+            <div class="cbp-item portfolio-item web mob-app photo ui">
+                <article>
+                    <div class="portfolio-image"> <img alt="" src="<?php echo base_url(); ?>assets/images/style/<?php echo $value; ?>">
+
+                    </div>
+                </article>
+            </div>
+
+            <?php
+        }
+        ?>
+
+    </div>
 
 
 
@@ -555,41 +399,42 @@ $this->load->view('layout/header');
 
 
 
-
-
-
-    <section class="new-main padding-top-30 ">
-        <div class="container"> 
+  <!-- OUR SERVICES -->
+    <section class="" style="    padding: 0;margin-top: 30px;
+             background: none;">
+        <div class="container margin-bottom-00"> 
 
             <!-- Heading -->
-            <div class="heading-block">
-                <h3>Our Latest News</h3>
+            <div class="heading-block " style="    margin-bottom: 10px;">
+                <h3>our Best Brands</h3>
+                <hr>
+            </div>
+            <div class="intro-small col-md-9 center-auto margin-bottom-0">
+                <p>
+                    We will offer you with world-famous brands and 6000 kinds of different fabrics.                </p>
+            </div>
+            <?php
+            $brandarray = ['loropiana.jpg', 'reda.jpg', 'zegna.jpg', 'hollandsherry.jpg', 'thomasmason.jpg', 'vbc.jpg'];
+            ?>
+            <div class="slide-5 text-center">
+                <?php
+                foreach ($brandarray as $key => $value) {
+                    ?>
+                    <div><img class="brand_image_bottom"  src="<?php echo base_url(); ?>assets/brand/<?php echo $value; ?>" alt="" ></div>
+
+                    <?php
+                }
+                ?>
 
             </div>
 
-            <!-- News Post -->
-            <div class="news-post">
-                <div class="row">
-                    <div class="col-md-4">
-                        <article> <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/blogimage1.jpg" alt=""> <span>By Admin</span> <span><?php echo date("d M, Y"); ?></span> <a href="#." class="news-tittle">J Winter Fashion Show 6th Feb 2018 atop Costa neoRomantica cruise</a>
-                            <p>Royal Tailor was invited to collaborate with the iconic J Winter Fashion Show atop Costa neoRomantica cruise ship produced by supermodel Jessica Minh Anh</p>
-                            <a href="#." class="red-more">Read More</a> </article>
-                    </div>
-                    <div class="col-md-4">
-                        <article> <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/blogimage1.jpg" alt=""> <span>By Admin</span> <span><?php echo date("d M, Y"); ?></span> <a href="#." class="news-tittle">J Winter Fashion Show 6th Feb 2018 atop Costa neoRomantica cruise</a>
-                            <p>Royal Tailor was invited to collaborate with the iconic J Winter Fashion Show atop Costa neoRomantica cruise ship produced by supermodel Jessica Minh Anh</p>
-                            <a href="#." class="red-more">Read More</a> </article>
-                    </div>
-                    <div class="col-md-4">
-                        <article> <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/blogimage1.jpg" alt=""> <span>By Admin</span> <span><?php echo date("d M, Y"); ?></span> <a href="#." class="news-tittle">J Winter Fashion Show 6th Feb 2018 atop Costa neoRomantica cruise</a>
-                            <p>Royal Tailor was invited to collaborate with the iconic J Winter Fashion Show atop Costa neoRomantica cruise ship produced by supermodel Jessica Minh Anh</p>
-                            <a href="#." class="red-more">Read More</a> </article>
-                    </div>
-                </div>
-            </div>
+
+            <div class="goldline2 " style="margin-bottom: 30px;"></div>
+            <div style="clear: both"></div>
         </div>
-    </section>
 
+
+    </section>
 
 
     <!-- Testimonial -->
@@ -651,43 +496,7 @@ $this->load->view('layout/header');
 
 
     <div style="clear: both"></div>
-    <!-- OUR SERVICES -->
-    <section class="" style="    padding: 0;margin-top: 30px;
-             background: none;">
-        <div class="container margin-bottom-00"> 
-
-            <!-- Heading -->
-            <div class="heading-block " style="    margin-bottom: 10px;">
-                <h3>our Best Brands</h3>
-                <hr>
-            </div>
-            <div class="intro-small col-md-9 center-auto margin-bottom-0">
-                <p>
-                    We will offer you with world-famous brands and 6000 kinds of different fabrics.                </p>
-            </div>
-            <?php
-            $brandarray = ['loropiana.jpg', 'reda.jpg', 'zegna.jpg', 'hollandsherry.jpg', 'thomasmason.jpg', 'vbc.jpg'];
-            ?>
-            <div class="slide-5 text-center">
-                <?php
-                foreach ($brandarray as $key => $value) {
-                    ?>
-                    <div><img class="brand_image_bottom"  src="<?php echo base_url(); ?>assets/brand/<?php echo $value; ?>" alt="" ></div>
-
-                    <?php
-                }
-                ?>
-
-            </div>
-
-
-            <div class="goldline2 " style="margin-bottom: 30px;"></div>
-            <div style="clear: both"></div>
-        </div>
-
-
-    </section>
-
+  
 
 
 

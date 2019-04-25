@@ -41,7 +41,7 @@
 
         <!--angular js-->
         <script src="<?php echo base_url(); ?>assets/theme/angular/angular.min.js"></script>
-       
+
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/css/customstyle.css">
         <link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
 
@@ -68,16 +68,16 @@
         <script>
 
 
-                var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
+            var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
                 //$interpolateProvider.startSymbol('{$');
                 //$interpolateProvider.endSymbol('$}');
                 $httpProvider.defaults.headers.common = {};
-                        $httpProvider.defaults.headers.post = {};
-                });
-                        var baseurl = "<?php echo site_url(); ?>";
-                        var imageurlg = "<?php echo imageserver; ?>";
-                        var globlecurrency = "<?php echo globle_currency; ?>";
-                        var avaiblecredits = 0;</script>
+                $httpProvider.defaults.headers.post = {};
+            });
+            var baseurl = "<?php echo site_url(); ?>";
+            var imageurlg = "<?php echo imageserver; ?>";
+            var globlecurrency = "<?php echo globle_currency; ?>";
+            var avaiblecredits = 0;</script>
 
         <style>
             .ownmenu .dropdown.megamenu .dropdown-menu li:last-child{
@@ -115,35 +115,35 @@
                                 <ul class="nav">
                                     <li class="dropdown"> <a  href="#" class="dropdown-toggle " data-toggle="dropdown">Home</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="<?php echo site_url("Shop/aboutus"); ?>">About Us</a></li>
+                                            <li><a href="#">About Us</a></li>
                                             <li><a href="">FAQ'S</a></li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"> <a  href="<?php echo site_url('Product/ProductList/1/0') ?>" class="dropdown-toggle " data-toggle="dropdown">Shop Now</a>
+                                    <li class="dropdown"> <a  href="#" class="dropdown-toggle " data-toggle="dropdown">Shop Now</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="<?php echo site_url('Product/ProductList/1/0') ?>">Shirts</a></li>
-                                            <li><a href="<?php echo site_url('Product/ProductList/2/0') ?>">Suits</a></li>
-                                            <li><a href="<?php echo site_url('Product/ProductList/4/0') ?>">Jackets</a></li>
-                                            <li><a href="<?php echo site_url('Product/ProductList/3/0') ?>">Pants</a></li>
-                                            <li><a href="<?php echo site_url('Product/ProductList/5/0') ?>">Tuxedo Suits</a></li>
-                                            <li><a href="<?php echo site_url('Product/ProductList/6/0') ?>">Tuxedo Jackets</a></li>
-                                            <li><a href="<?php echo site_url('Product/ProductList/7/0') ?>">Tuxedo Pants</a></li>
+                                            <li><a href="#">Shirts</a></li>
+                                            <li><a href="#">Suits</a></li>
+                                            <li><a href="#">Jackets</a></li>
+                                            <li><a href="#">Pants</a></li>
+                                            <li><a href="#">Tuxedo Suits</a></li>
+                                            <li><a href="#">Tuxedo Jackets</a></li>
+                                            <li><a href="#">Tuxedo Pants</a></li>
                                         </ul>
                                     </li>
-                        
+
                                     <li > 
-                                        <a href="<?php echo site_url("/"); ?>">Look Book</a>
+                                        <a href="#">Look Book</a>
                                     </li>
                                     <li > 
-                                        <a href="<?php echo site_url("/"); ?>">Offers</a>
+                                        <a href="#">Offers</a>
                                     </li>
                                     <li > 
-                                        <a href="<?php echo site_url("Shop/blog"); ?>">Our Blog</a>
+                                        <a href="#">Our Blog</a>
                                     </li>
                                     <li > 
-                                        <a href="<?php echo site_url("Shop/contactus"); ?>">Contact Us</a>
+                                        <a href="#">Contact Us</a>
                                     </li>
-                                    
+
 
 
                                     <!--                                     Mega Menu Nav 
@@ -185,7 +185,7 @@
                                         <?php
                                     } else {
                                         ?>
-                                            <li> <a href="<?php echo site_url("Account/login"); ?>" >Sign In / Sign Up </a>
+                                        <li> <a href="#" >Sign In / Sign Up </a>
                                         </li>
 
                                         <?php
@@ -203,22 +203,22 @@
 
                                             <!--prodcut cart list-->
                                             <div class="scroll_items"  ng-if="globleCartDatac.total_quantity">
-                                            <li ng-repeat="product in globleCartDatac.products" class="animated flipInX">
-                                                <div class="media-left">
-                                                    <div class="cart-img"> 
-                                                        <a href="#"> 
-                                                            <img class="media-object img-responsive" src="{{product.file_name}}" alt="..."> 
-                                                        </a> 
+                                                <li ng-repeat="product in globleCartDatac.products" class="animated flipInX">
+                                                    <div class="media-left">
+                                                        <div class="cart-img"> 
+                                                            <a href="#"> 
+                                                                <img class="media-object img-responsive" src="{{product.file_name}}" alt="..."> 
+                                                            </a> 
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h6 class="media-heading" style="font-size: 12px;">{{product.title}} - {{product.item_name}}</h6>
-                                                    <span class="price">{{product.quantity}}    X    {{product.price|currency:" "}}</span> 
-                                                </div>
-                                                <a href="#" class="remov" ng-click="removeCart(product.product_id)">
-                                                    <i class="fa fa-times"></i>
-                                                </a> 
-                                            </li>
+                                                    <div class="media-body">
+                                                        <h6 class="media-heading" style="font-size: 12px;">{{product.title}} - {{product.item_name}}</h6>
+                                                        <span class="price">{{product.quantity}}    X    {{product.price|currency:" "}}</span> 
+                                                    </div>
+                                                    <a href="#" class="remov" ng-click="removeCart(product.product_id)">
+                                                        <i class="fa fa-times"></i>
+                                                    </a> 
+                                                </li>
                                             </div>
                                             <!--end of product cart list-->
                                             <li class="margin-0 padding-0 price-cart-drop" style="background: #fff!important;">
