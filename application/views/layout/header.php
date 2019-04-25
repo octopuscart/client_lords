@@ -96,11 +96,11 @@
 
             <!-- Header -->
             <header class="header ">
-                <div class="sticky ">
+                <div class="sticky " style="    background: #000;">
                     <div class="container">
                         <div class="logo">
                             <a href="<?php echo site_url("/"); ?>" style="font-size: 31px;">
-                                <img src="<?php echo base_url() . 'assets/images/logo73_2.png'; ?>" class="logomain">                          
+                                <img src="<?php echo base_url() . 'assets/images/logo.png'; ?>" class="logomain">                          
                             </a> 
                         </div>
 
