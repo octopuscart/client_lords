@@ -18,6 +18,8 @@ switch ($baselink) {
         $baselinkmain = $configuration['site_url'];
 }
 
+define('SITE_URL', $configuration['site_url']);
+
 define('imageserver', $baselinkmain . "assets_main/productimages/");
 define('imageserverslider', $baselinkmain . "assets_main/sliderimages/");
 define('imageservermain', $baselinkmain . "assets_main/");

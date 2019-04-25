@@ -23,219 +23,13 @@ $this->load->view('layout/header');
             <ul>
 
 
-                <!-- Slider 1 -->
-                <li data-transition="random" data-slotamount="7">
-                    <!--<img src="<?php echo base_url(); ?>assets/theme/images/mountainscene.jpg" data-bgposition="center top" alt="" />--> 
-
-                    <!-- Layer -->
-                    <div class="tp-caption sft font-montserrat tp-resizeme rs-parallaxlevel-4 oleofont" 
-                         data-x="center" 
-                         data-hoffset="0" 
-                         data-y="center" 
-                         data-voffset="-150" 
-                         data-speed="700" 
-                         data-start="1000" 
-                         data-easing="easeOutBack"
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on"
-                         style="color: #252839; font-size: 36px; font-weight:900; text-transform: uppercase;"> </div>
-
-                    <!-- Layer -->
-                    <div class="tp-caption customin font-playfair tp-resizeme rs-parallaxlevel-4" 
-                         data-x="center" data-hoffset="0" 
-                         data-y="center" data-voffset="150" 
-                         data-speed="720" 
-                         data-start="1200" 
-                         data-easing="easeOutBack"
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on" 
-                         style="color: #252839; text-transform: uppercase; font-weight:900; font-size: 130px;">
-                        <img src="<?php echo base_url(); ?>assets/theme/images/mountainscene.jpg" >
-                             <!--<img src="<?php echo base_url(); ?>assets/images/logo732.png" style="height: 200px;"/>-->
-                    </div>
-
-                    <!-- Layer -->
-                    <div class="tp-caption customin font-playfair tp-resizeme rs-parallaxlevel-6" 
-                         data-x="center" data-hoffset="0" 
-                         data-y="center" data-voffset="200" 
-                         data-speed="720" 
-                         data-start="1200" 
-                         data-easing="easeOutBack"
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on" 
-                         style="color: #252839; text-transform: uppercase; font-weight:900; font-size: 130px;">
-                        <img src="<?php echo base_url(); ?>assets/theme/images/slides/shopbg_6.png" >
-                    </div>
-
-                    <!-- Layer -->
-                    <div class="tp-caption customin font-playfair tp-resizeme rs-parallaxlevel-7" 
-                         data-x="center" data-hoffset="0" 
-                         data-y="center" data-voffset="150" 
-                         data-speed="720" 
-                         data-start="1200" 
-                         data-easing="easeOutBack"
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on" 
-                         style="color: #252839; text-transform: uppercase; font-weight:900; font-size: 130px;">
-                        <img src="<?php echo base_url(); ?>assets/theme/images/mountainpng-1.png" style="height:500px">
-                             <!--<img src="<?php echo base_url(); ?>assets/images/logo732.png" style="height: 200px;"/>-->
-                    </div>
-
-                    <!-- Layer -->
-                    <div class="tp-caption customin font-playfair tp-resizeme rs-parallaxlevel-5" 
-                         data-x="center" data-hoffset="0" 
-                         data-y="center" data-voffset="50" 
-                         data-speed="720" 
-                         data-start="1200" 
-                         data-easing="easeOutBack"
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on" 
-                         style="color: #252839; text-transform: uppercase; font-weight:900; font-size: 130px;">
-                        <img src="<?php echo base_url(); ?>assets/theme/images/cloud2.png" >
-                             <!--<img src="<?php echo base_url(); ?>assets/images/logo732.png" style="height: 200px;"/>-->
-                    </div>
-                    <!-- Layer -->
-                    <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4" 
-                         data-x="center" data-hoffset="0" 
-                         data-y="center" data-voffset="150"
-                         data-speed="700" 
-                         data-start="2000" 
-                         data-easing="easeOutBack"
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on"> <a href="#." class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn btn-1">Discover</a> </div>
-                </li>
-
-
-                <!-- Slider 1 -->
-                <li data-transition="random" data-slotamount="7">
-                    <img src="<?php echo base_url(); ?>assets/theme/images/slides/shop_b1.jpg" data-bgposition="center top" alt="" /> 
-
-                    <!-- Layer -->
-                    <div class="tp-caption sft font-montserrat tp-resizeme rs-parallaxlevel-4 oleofont" 
-                         data-x="center" 
-                         data-hoffset="-50" 
-                         data-y="center" 
-                         data-voffset="-290" 
-                         data-speed="700" 
-                         data-start="1000" 
-                         data-easing="easeOutBack"
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on"
-                         style="color: #252839; font-size: 36px; font-weight:900; text-transform: uppercase;">
-                        <img src="<?php echo base_url(); ?>assets/theme/images/slides/shop_b4.png" style="width:500px">
-                    </div>
-
-                    <!-- Layer -->
-                    <div class="tp-caption customin font-playfair tp-resizeme rs-parallaxlevel-4" 
-                         data-x="center" data-hoffset="0" 
-                         data-y="center" data-voffset="150" 
-                         data-speed="720" 
-                         data-start="1200" 
-                         data-easing="easeOutBack"
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on" 
-                         style="color: #252839; text-transform: uppercase; font-weight:900; font-size: 130px;">
-
-                        <img src="<?php echo base_url(); ?>assets/images/logo732.png" style="height: 200px;"/>
-                    </div>
-                    <!-- Layer -->
-                    <div class="tp-caption customin font-playfair tp-resizeme rs-parallaxlevel-5" 
-                         data-x="center" data-hoffset="-200" 
-                         data-y="center" data-voffset="50" 
-                         data-speed="720" 
-                         data-start="1200" 
-                         data-easing="easeOutBack"
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on" 
-                         style="color: #252839; text-transform: uppercase; font-weight:900; font-size: 130px;">
-                        <img src="<?php echo base_url(); ?>assets/theme/images/slides/shop_b3.png" >
-                    </div>
-
-                    <!-- Layer -->
-                    <div class="tp-caption customin font-playfair tp-resizeme rs-parallaxlevel-7" 
-                         data-x="center" data-hoffset="0" 
-                         data-y="center" data-voffset="100" 
-                         data-speed="720" 
-                         data-start="1200" 
-                         data-easing="easeOutBack"
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on" 
-                         style="color: #252839; text-transform: uppercase; font-weight:900; font-size: 130px;">
-                        <img src="<?php echo base_url(); ?>assets/theme/images/slides/shop_b2.png" >
-                    </div>
-
-
-                    <!-- Layer -->
-                    <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4" 
-                         data-x="center" data-hoffset="0" 
-                         data-y="center" data-voffset="150"
-                         data-speed="700" 
-                         data-start="2000" 
-                         data-easing="easeOutBack"
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on"> </div>
-                </li>
+       
 
 
 
                 <!-- Slider 2 -->
                 <li data-transition="random" data-slotamount="7"> 
-                    <img src="<?php echo base_url(); ?>assets/theme/images/shop-slider-bg-22.jpg" data-bgposition="center center" alt="" />
+                    <img src="<?php echo base_url(); ?>assets/theme/images/slides/slider1.jpg" data-bgposition="center center" alt="" />
                     <div class="overlay"></div>
 
                     <!-- Layer -->
@@ -270,12 +64,12 @@ $this->load->view('layout/header');
                          data-captionhidden="on"> <a href="#." class="btn btn-1">CUSTOMIZE NOW</a> </div>
                 </li>
 
-             
+
 
 
                 <!-- Slider 4 -->
                 <li data-transition="random" data-slotamount="7"> 
-                    <img src="<?php echo base_url(); ?>assets/theme/images/slides/slider5.jpg" >                    <!-- Layer -->
+                    <img src="<?php echo base_url(); ?>assets/theme/images/slides/slider2.jpg" >                    <!-- Layer -->
                     <div class="tp-caption font-montserrat customin tp-resizeme rs-parallaxlevel-4" 
                          data-x="center" 
                          data-hoffset="0" 
@@ -333,7 +127,7 @@ $this->load->view('layout/header');
 
                 <!-- Slider 4 -->
                 <li data-transition="random" data-slotamount="7"> 
-                    <img src="<?php echo base_url(); ?>assets/theme/images/slides/slider6.jpg" >                    <!-- Layer -->
+                    <img src="<?php echo base_url(); ?>assets/theme/images/slides/slider3.jpg" >                    <!-- Layer -->
                     <div class="tp-caption font-montserrat customin tp-resizeme rs-parallaxlevel-4" 
                          data-x="center" 
                          data-hoffset="0" 
@@ -390,7 +184,7 @@ $this->load->view('layout/header');
 
                 <!-- Slider 3 -->
                 <li data-transition="random" data-slotamount="7"> 
-                    <img src="<?php echo base_url(); ?>assets/theme/images/slides/slider8.jpg" >                       <!-- Layer -->
+                    <img src="<?php echo base_url(); ?>assets/theme/images/slides/slider4.jpg" >                       <!-- Layer -->
                     <div class="tp-caption font-montserrat customin tp-resizeme rs-parallaxlevel-4" 
                          data-x="center" 
                          data-hoffset="0" 
@@ -446,122 +240,7 @@ $this->load->view('layout/header');
                 </li>
 
 
-                <!-- Slider 4 -->
-                <li data-transition="random" data-slotamount="7"> 
-                    <img src="<?php echo base_url(); ?>assets/theme/images/slides/slider9.jpg" >                    <!-- Layer -->
-                    <div class="tp-caption font-montserrat customin tp-resizeme rs-parallaxlevel-4" 
-                         data-x="center" 
-                         data-hoffset="0" 
-                         data-y="center" 
-                         data-voffset="-100"
-                         data-speed="700" 
-                         data-start="1000" 
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-easing="Back.easeOut" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on"
-                         style="color: #fff; font-size: 60px; text-transform: uppercase; font-weight: 900; letter-spacing:3px;"> FEEL ROYAL LIFE STYLE </div>
-
-                    <!-- Layer -->
-                    <div class="tp-caption sfb tp-resizeme  font-playfair text-center rs-parallaxlevel-4" 
-                         data-x="center" 
-                         data-hoffset="0" 
-                         data-y="center" 
-                         data-voffset="-20"
-                         data-speed="700" 
-                         data-start="1700" 
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-easing="Back.easeOut" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on"
-                         style="color: #fff; font-size: 18px; line-height:36px; font-weight: 500; letter-spacing:0px;">We Have Worlds Best Italian Fabrics.<br></div>
-
-                    <!-- Layer -->
-                    <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4" 
-                         data-x="center" 
-                         data-hoffset="0" 
-                         data-y="center"
-                         data-voffset="100"
-                         data-speed="700" 
-                         data-start="2400"
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-easing="Back.easeOut" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on"
-                         style="z-index: 10;"> <a href="#." class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn btn-1">Discover</a> </div>
-                </li>
-
-
-                <!-- Slider 3 -->
-                <li data-transition="random" data-slotamount="7"> 
-                    <img src="<?php echo base_url(); ?>assets/theme/images/shop-slider-bg-11.jpg" >                       <!-- Layer -->
-                    <div class="tp-caption font-montserrat customin tp-resizeme rs-parallaxlevel-4" 
-                         data-x="center" 
-                         data-hoffset="0" 
-                         data-y="center" 
-                         data-voffset="-100"
-                         data-speed="700" 
-                         data-start="1000" 
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-easing="Back.easeOut" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on"
-                         style="color: #fff; font-size: 60px; text-transform: uppercase; font-weight: 900; letter-spacing:3px;"> NEW ARRIVAL </div>
-
-                    <!-- Layer -->
-                    <div class="tp-caption sfb tp-resizeme  font-playfair text-center rs-parallaxlevel-4" 
-                         data-x="center" 
-                         data-hoffset="0" 
-                         data-y="center" 
-                         data-voffset="-20"
-                         data-speed="700" 
-                         data-start="1700" 
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-easing="Back.easeOut" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on"
-                         style="color: #fff; font-size: 18px; line-height:36px; font-weight: 500; letter-spacing:0px;">We Have Worlds Best Italian Fabrics.<br></div>
-
-                    <!-- Layer -->
-                    <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4" 
-                         data-x="center" 
-                         data-hoffset="0" 
-                         data-y="center"
-                         data-voffset="100"
-                         data-speed="700" 
-                         data-start="2400"
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
-                         data-easing="Back.easeOut" 
-                         data-splitin="none" 
-                         data-splitout="none" 
-                         data-elementdelay="0.1" 
-                         data-endelementdelay="0.1" 
-                         data-endspeed="300" 
-                         data-captionhidden="on"
-                         style="z-index: 10;"> <a href="#." class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn btn-1">Discover</a> </div>
-                </li>
-
-
+           
 
             </ul>
         </div>
@@ -576,22 +255,22 @@ $this->load->view('layout/header');
 <!-- About US -->
 <section class="light-gray-bg pad-t-b-30" style="background: url(<?php echo base_url(); ?>assets/images/spacial/middle3.jpg)">
 
-    
-  
-        <div class="container">
-            <center>
+
+
+    <div class="container">
+        <center>
 
             <img src="<?php echo base_url(); ?>assets/images/spacial/middle.png" class="spacial_text">      
-            </center>
+        </center>
 
-            
-        </div> 
+
+    </div> 
 
     <div class="goldline2 " style="margin-bottom: 30px;"></div>
-    
-    
-   
-    
+
+
+
+
     <div class="container"> 
 
         <!-- Heading -->
@@ -613,20 +292,20 @@ $this->load->view('layout/header');
                     <?php
                     $testdev = 1;
                     foreach ($product_home_slider_bottom['home_bottom'] as $key => $value) {
-                        if($testdev==1){
-                        ?>
-                        <!-- Item -->
-                        <div class="item">
-                            <article class="shop-artical"> 
-                                <div class="imagblock">
-                                    <img class="img-responsive" src="http://bespoketailorsadmin.costcointernational.com/assets_main/productimages/<?php echo $value['file_name']; ?>" alt="" >
-                                </div>
-                                <div class="item-hover"> <a href="#." class="btn">add to cart</a>  </div>
-                            </article>
-                            <div class="info"> <a href="#.">Winkle Free Cotton </a> <span class="price">US$ 1010.00</span> </div>
-                        </div>
-                        <?php
-                    }
+                        if ($testdev == 1) {
+                            ?>
+                            <!-- Item -->
+                            <div class="item">
+                                <article class="shop-artical"> 
+                                    <div class="imagblock">
+                                        <img class="img-responsive" src="http://bespoketailorsadmin.costcointernational.com/assets_main/productimages/<?php echo $value['file_name']; ?>" alt="" >
+                                    </div>
+                                    <div class="item-hover"> <a href="#." class="btn">add to cart</a>  </div>
+                                </article>
+                                <div class="info"> <a href="#.">Winkle Free Cotton </a> <span class="price">US$ 1010.00</span> </div>
+                            </div>
+                            <?php
+                        }
                     }
                     ?>
 
@@ -747,7 +426,7 @@ $this->load->view('layout/header');
 
 
 
-    <section class="new-main padding-top-30">
+    <section class="new-main padding-top-30 ">
         <div class="container"> 
 
             <!-- Heading -->
@@ -781,10 +460,69 @@ $this->load->view('layout/header');
 
 
 
-    <div class="goldline3 " ></div>
+    <!-- Testimonial -->
+    <section class="testimonial bg-info" data-stellar-background-ratio="0.5" style="padding: 30px 0px">
+        <div class="container"> 
+
+            <!-- Heading -->
+            <div class="heading-block white">
+                <h3>What Our Customers Say</h3>
+                <hr>
+            </div>
+
+            <!-- Slider -->
+            <div class="slider-sec">
+                <div id="testi-slide"> 
+
+                    <?php
+                    $client_testimoni = [
+                        array(
+                            "testimoni" => "I bought several affordable custom-made suits from Jason and have been very happy with the results. I find myself so much more comfortable and confident in a suit that is made just for me and fits me perfectly. Jason offers a very large choice of fabrics, cuts, linings, colors, buttons, and other features that make a suit totally unique",
+                            "name" => "Olivier Taupin",
+                            "lable" => "Seattle, USA",
+                        ),
+                        
+                        array(
+                            "testimoni" => "Jason has overcome my skepticism regarding a remotely-located tailor. His customer service and attention to detail has been impeccable, as has been the quality and fit of the custom clothing crafted for me. I appreciate the personalized, face-to-face service he provides, as well as his family's patience for a demanding global travel schedule that enables such service.",
+                            "name" => "Matt Greene",
+                            "lable" => "Colorado Springs, USA",
+                        ),
+                        
+                        array(
+                            'testimoni'=>"I have just received my new suit from Jason at Lord's Custom Tailors in Hong Kong. Here's the best bit, I live in Brisbane, Australia, I met Jason in Singapore where he measured me for my tailored suit, helped me choose the best fabrics and design and also choose a great shirt to be made to go with the suit. Then I sat back and just a few weeks later the suit and shirt arrived by courier and I love it! They fit perfectly, look great and I am very happy with the service. Jason travels to Australia regularly to meet clients and take orders for suits and shirts. If you are looking for a quality tailor that gives great service and delivers a quality product, Jason from Lord's Custom tailors is the guy for you.",
+                            "name" => "Lindsay Adams",
+                            "lable" => "Brisbane, Australia",
+                        )
+                    ];
+                    foreach ($client_testimoni as $key => $value) {
+                        ?>
+                        <!-- Slide -->
+                        <div class="item">
+                            <div class="tesi-text">
+                                <div class="avatar">
+                                    <img src="<?php echo base_url(); ?>assets/theme/images/comments-avatar-2.jpg" alt="" > 
+                                </div>
+                                <p><?php echo $value['testimoni']; ?></p>
+                                <h6>- <?php echo $value['name']; ?> -</h6>
+                                <span><?php echo $value['lable']; ?></span>
+                            </div>
+                        </div>
+
+                        <?php
+                    }
+                    ?>
+                    <div style="clear: both"></div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <div style="clear: both"></div>
     <!-- OUR SERVICES -->
-    <section class="client-sec" style="    padding: 0;margin-top: 30px;
+    <section class="" style="    padding: 0;margin-top: 30px;
              background: none;">
         <div class="container margin-bottom-00"> 
 
@@ -797,13 +535,21 @@ $this->load->view('layout/header');
                 <p>
                     We will offer you with world-famous brands and 6000 kinds of different fabrics.                </p>
             </div>
-            <ul class="nolist-style">
-                <li style="padding: 25px;"><img src="<?php echo base_url(); ?>assets/brand/1.jpg"  alt="" ><div class="goldline " style="margin-bottom: 30px;"></div></li>
-                <li style="padding: 25px;"><img src="<?php echo base_url(); ?>assets/brand/2.jpg"  alt="" ><div class="goldline " style="margin-bottom: 30px;"></div></li>
-                <li style="padding: 25px;"><img src="<?php echo base_url(); ?>assets/brand/3.jpg"  alt="" ><div class="goldline " style="margin-bottom: 30px;"></div></li>
-                <li style="padding: 25px;"><img src="<?php echo base_url(); ?>assets/brand/4.jpg"  alt="" ><div class="goldline " style="margin-bottom: 30px;"></div></li>
-                <li style="padding: 25px;"><img src="<?php echo base_url(); ?>assets/brand/5.jpg"  alt="" ><div class="goldline " style="margin-bottom: 30px;"></div></li>
-            </ul>
+            <?php
+            $brandarray = ['loropiana.jpg', 'reda.jpg', 'zegna.jpg', 'hollandsherry.jpg', 'thomasmason.jpg', 'vbc.jpg'];
+            ?>
+            <div class="slide-5 text-center">
+                <?php
+                foreach ($brandarray as $key => $value) {
+                    ?>
+                    <div><img class="brand_image_bottom"  src="<?php echo base_url(); ?>assets/brand/<?php echo $value; ?>" alt="" ></div>
+
+                    <?php
+                }
+                ?>
+
+            </div>
+
 
             <div class="goldline2 " style="margin-bottom: 30px;"></div>
             <div style="clear: both"></div>
@@ -813,45 +559,7 @@ $this->load->view('layout/header');
     </section>
 
 
-    <!-- Testimonial -->
-    <section class="testimonial white-bg light-gry" data-stellar-background-ratio="0.5" style="padding: 30px 0px">
-        <div class="container"> 
 
-            <!-- Heading -->
-            <div class="heading-block">
-                <h3>What Our Customers Say</h3>
-                <hr>
-            </div>
-
-            <!-- Slider -->
-            <div class="slider-sec">
-                <div id="testi-slide"> 
-
-                    <!-- Slide -->
-                    <div class="item">
-                        <div class="tesi-text">
-                            <div class="avatar"> <img src="<?php echo base_url(); ?>assets/theme/images/comments-avatar-2.jpg" alt="" > </div>
-                            <p>Make it impossible in my life.
-                                Just one day to ready the nice suit to my father. 
-                                Complete the perfect black suit party.
-                                Many Thanks.</p>
-                            <h6>-  Catherine To -</h6>
-                            <span>Google Review</span> </div>
-                    </div>
-                    <div class="item">
-                        <div class="tesi-text">
-                            <div class="avatar"> <img src="<?php echo base_url(); ?>assets/theme/images/comments-avatar-2.jpg" alt="" > </div>
-                            <p>專業意見及優質的服務,令我選擇到心儀顏色的西裝
-
-
-                                Highly recommend! </p>
-                            <h6>- EDDY LAU -</h6>
-                            <span>Google Review</span> </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
 </div>

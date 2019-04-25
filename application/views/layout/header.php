@@ -262,6 +262,5 @@
                         </nav>
                     </div>
                 </div>
-                <div class="goldline padding-bottom-30"></div>
             </header>
             <!-- End Header --> 
