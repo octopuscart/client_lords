@@ -283,7 +283,6 @@ $this->load->view('layout/header');
                                     <li>Can Produce In 1 Day<i class="fa fa-check"></i></li>
                                     <li>Ready Stock Luxury Fabrics<i class="fa fa-check"></i></li>
                                     <li>Customised Service At Your Doorstep <i class="fa fa-check"></i></li>
-                                    <li>1 TB Storage <i class="fa fa-check"></i></li>
                                 </ul>
                                 <a href="#." class="btn btn-inverse">Buy Now</a> </article>
                         </div>
