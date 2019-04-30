@@ -34,7 +34,6 @@
                     <li ><a href="#">Jackets</a></li>
                     <li ><a href="#">Pants</a></li>
                     <li ><a href="#">Tuxedo Suits</a></li>
-                    <li ><a href="#">Overcoats</a></li>
 
                 </ul>
             </div>
