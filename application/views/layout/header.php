@@ -126,8 +126,7 @@
                                             <li><a href="#">Jackets</a></li>
                                             <li><a href="#">Pants</a></li>
                                             <li><a href="#">Tuxedo Suits</a></li>
-                                            <li><a href="#">Tuxedo Jackets</a></li>
-                                            <li><a href="#">Tuxedo Pants</a></li>
+                                       
                                         </ul>
                                     </li>
 
