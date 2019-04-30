@@ -10,7 +10,7 @@
                 <h4>Contact Information!</h4>
                 <p>
                     <b><i class="fa fa-location-arrow"></i></b>
-                    2/Fl, Unit D, Far East Mansion,<br/> 5-6 Middle Road,<br/>
+                    2/F, Unit D, Far East Mansion,<br/> 5-6 Middle Road,<br/>
                     Tsim Sha Tsui, Kowloon, Hong Kong
                 </p>
                 <p><b><i class="fa fa-phone"></i></b> +(852) 2723 9716</p>
