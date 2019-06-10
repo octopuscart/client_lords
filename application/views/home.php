@@ -551,21 +551,28 @@ $this->load->view('layout/header');
 
         background-position: -266px -119px !important;
     }
+
+
+@media (max-width: 767px){
+    .appointment_modal_text {
+        font-size: 23px;
+    }
+}
 </style>
 
 
 <div class="modal fade" id="appointmentmodel" tabindex="-1" role="dialog" style="z-index: 20000000">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content" >
 
             <div class="modal-body" style="padding: 0px;">
                 <img src="<?php echo base_url(); ?>assets/images/country/usa.jpg" alt="" style="width: 100%">
                 <h2 class="fw_light color_black appointment_modal_text" >United States Tour 2019
-                <br/><p style="    color: white;
-    font-size: 16px;
-">(14 June - 22 June 2019)</p>
+                    <br/><p style="    color: white;
+                            font-size: 16px;
+                            ">(14 June - 22 June 2019)</p>
                 </h2>
-                
+
             </div>
             <div class="modal-footer" style="    position: absolute;
                  bottom: 2px;
