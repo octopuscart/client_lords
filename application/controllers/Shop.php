@@ -220,7 +220,7 @@ class Shop extends CI_Controller {
     public function stylingTips() {
         $query = $this->db->get('style_tips');
         $data['stylebook'] = $query->result_array();
-        $this->load->view('Pages/stylebook', $data);
+        $this->load->view('pages/stylebook', $data);
     }
 
     public function stylingTipsTag() {
@@ -232,7 +232,7 @@ class Shop extends CI_Controller {
 
         $data['stylebook'] = $tagblock;
 
-        $this->load->view('Pages/stylebook', $data);
+        $this->load->view('pages/stylebook', $data);
     }
 
     function styleTipsDetails($style_index, $title) {
@@ -302,7 +302,7 @@ class Shop extends CI_Controller {
 
 
 
-        $this->load->view('Pages/stylebookdeails', $data);
+        $this->load->view('pages/stylebookdeails', $data);
     }
 
 }
