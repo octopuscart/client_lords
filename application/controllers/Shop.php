@@ -268,7 +268,7 @@ class Shop extends CI_Controller {
 
 //$seotitle_o = $this->config->item("seo_title");
 
-        $seotitle1 = "Hong Kong Bespoke Tailors | " . $styleobj->title;
+        $seotitle1 = "Lord's Custom Tailors | " . $styleobj->title;
         $seodescription = $styleobj->description;
 
         $this->config->set_item('seo_title', $seotitle1);
