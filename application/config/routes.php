@@ -52,3 +52,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Shop';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['contact-us'] = 'Shop/contactus';
+$route['booking'] = 'Shop/appointment';
+$route['subscribe'] = 'Shop/subscribe';
+$route['lookbook'] = 'Shop/lookbook';
+$route['faqs'] = 'Shop/faqs';
+
+$route['aboutus'] = 'Shop/aboutus';
+
+$route['testimonials'] = 'Shop/aboutus';
+$route['appointment'] = 'Shop/aboutus';
+$route['priceGuide'] = 'Shop/aboutus';
+$route['privacyPolicy'] = 'Shop/aboutus';
+
+$route['appointment'] = 'Shop/appointment';
+$route['stylingTips'] = 'Shop/stylingTips';
+$route['stylingTipsTag'] = 'Shop/stylingTipsTag';
+$route['styleTips/(:any)/(:any)'] = 'Shop/styleTipsDetails/$1/$2';

@@ -1672,6 +1672,30 @@ header .user-basket .cart-num {
 	background-size: cover;
 	-webkit-background-size: cover;
 }
+
+.main-half-layout2 {
+	background: url(../images/6.jpg) center center no-repeat;
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	background-position: center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+}
+
+
+.main-half-layout3 {
+	background: url(../images/9.jpg) center center no-repeat;
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	background-position: center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+}
+
 .main-half-layout-container {
 	position: relative;
 	padding: 80px 0;

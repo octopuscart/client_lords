@@ -5,7 +5,7 @@ $this->load->view('layout/header');
 
 <!-- MAP -->
 <section class="map-block">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14767.634173564973!2d114.15643!3d22.281454!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x84c22a9b94a9a5ff!2sRoyal+Tailor!5e0!3m2!1sen!2sin!4v1539007340506" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe><div class="goldline2 " style="margin-bottom: 30px;"></div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.5276103373485!2d114.17070935014365!3d22.295877348618493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400f23d5251c9%3A0x66613282f30db84a!2z5bCW5rKZ5ZKA5Lit6ZaT6YGTNS026Jmf6YGg5p2x5aSn5buI!5e0!3m2!1szh-TW!2shk!4v1472542043770" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe><div class="goldline2 " style="margin-bottom: 30px;"></div>
     <div style="clear: both"></div>
 </section>
 <div style="clear: both"></div>
@@ -23,12 +23,14 @@ $this->load->view('layout/header');
                         <h3 class="text-transform-none letter-space-0">Our Location</h3>
                     </div>
                     <ul class="studio-loc padding-right-100">
-                        <li><i class="flaticon-route"></i> Shop A, 2/F Entertainment Building,<br/>
-                            30 Queen’s Road, Central, Hong Kong</li>
-                        <li><i class="flaticon-smartphone"></i> <a href="#"><b><span class="fa fa-phone"></span></b> +(852) 2655 9778</a> <br>
-                            <a href="#"><span class="fa fa-fax"></span></b> +(852) 2655 9768</a></li>
-                        <li><i class="flaticon-mail"></i> <a href="#">lyra@royaltailor.hk</a> <br>
-                            <a href="#">sales@royaltailor.hk</a></li>
+                        <li><i class="flaticon-route"></i> Unit D, 2/F, Far East Mansion,<br/> 5-6 Middle Road,<br/>
+                    Tsim Sha Tsui, Kowloon,<br/>  Hong Kong</li>
+                        <li><i class="flaticon-smartphone"></i> 
+                            <a href="#"><span class="fa fa-phone"></span> +(852) 2723 9716</a> <br>
+                            <a href="#"><span class="fa fa-phone"></span> +(852) 9644 9965</a>
+                        </li>
+                        <li><i class="flaticon-mail"></i> <a href="#">jason@lordscustomtailors.com</a> <br>
+                            <a href="#">john@lordscustomtailors.com</a></li>
                     </ul>
 
                     <!-- Main Heading -->
@@ -37,11 +39,11 @@ $this->load->view('layout/header');
                     </div>
                     <div class="social-links">
                         <ul>
-                            <li><a href="#."><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/lordscustomtailors" target="_blank"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#."><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#."><i class="fa fa-instagram"></i></a></li>
                             <li><a href="#."><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="#."><i class="fa fa-google-plus"></i></a></li>
+
                         </ul>
                     </div>
                 </div>

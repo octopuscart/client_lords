@@ -113,13 +113,14 @@
                             <!-- NAV -->
                             <div class="collapse navbar-collapse goldtextcss" id="nav-open-btn">
                                 <ul class="nav">
-                                    <li class="dropdown"> <a  href="#" class="dropdown-toggle " data-toggle="dropdown">Home</a>
+                                    <li class="dropdown"> <a  href="<?php echo site_url("/");?>" class="dropdown-toggle " data-toggle="dropdown">Home</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="#">About Us</a></li>
-                                            <li><a href="">FAQ'S</a></li>
+                                            <li><a href="<?php echo site_url("aboutus");?>">About Us</a></li>
+                                            <li><a href=<?php echo site_url("faqs");?>>FAQ'S</a></li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"> <a  href="#" class="dropdown-toggle " data-toggle="dropdown">Shop Now</a>
+                                    <li class="dropdown"> 
+                                        <a  href="#" class="dropdown-toggle " data-toggle="dropdown">Shop Now</a>
                                         <ul class="dropdown-menu">
                                             <li><a href="#">Shirts</a></li>
                                             <li><a href="#">Suits</a></li>
@@ -131,16 +132,16 @@
                                     </li>
 
                                     <li > 
-                                        <a href="#">Look Book</a>
+                                        <a href="<?php echo site_url("lookbook");?>">Look Book</a>
                                     </li>
                                     <li > 
-                                        <a href="#">Offers</a>
+                                        <a href="<?php echo site_url("appointment");?>">Make An Appointment</a>
                                     </li>
                                     <li > 
-                                        <a href="#">Our Blog</a>
+                                        <a href="<?php echo site_url('stylingTips');?>">Our Blog</a>
                                     </li>
                                     <li > 
-                                        <a href="#">Contact Us</a>
+                                        <a href="<?php echo site_url('contact-us');?>">Contact Us</a>
                                     </li>
 
 

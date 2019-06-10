@@ -4,5 +4,5 @@ $configuration = $globleConnectDB;
 
 $config['seo_title'] =$configuration['seo_title'];
 $config['seo_desc'] =$configuration['seo_desc'];
-$config['seo_imgurl'] = base_url().'assets/images/logo73.jpg';
+$config['seo_imgurl'] = base_url().'assets/images/fav.png';
 $config['seo_keywords'] = $configuration['seo_keywords'];

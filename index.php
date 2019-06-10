@@ -55,7 +55,7 @@
  */
 //define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 
-if ($_SERVER['SERVER_NAME'] == '192.168.1.2') {
+if ($_SERVER['SERVER_NAME'] == '192.168.1.3') {
     define('ENVIRONMENT', 'development');
 } else {
     define('ENVIRONMENT', 'production');

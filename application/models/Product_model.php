@@ -87,7 +87,7 @@ class Product_model extends CI_Model {
         $container = "";
         foreach ($category as $ckey => $cvalue) {
             $container .= $this->stringCategories($cvalue['id']);
-            $container .=", " . $cvalue['id'];
+            $container .= ", " . $cvalue['id'];
         }
         return $container;
     }
@@ -283,12 +283,10 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
                     $session_cart['total_quantity'] += $value['quantity'];
                     $session_cart['total_price'] += $value['total_price'];
-                }
-                else{
-                 
+                } else {
+
                     unset($session_cart['products'][$key]);
                     $this->session->set_userdata('session_cart', $session_cart);
-               
                 }
             }
             return $session_cart;
@@ -743,6 +741,67 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
     //menu controller
     function menuController() {
         return "";
+    }
+
+    public function AppointmentDataByCountry($country) {
+        $this->db->where('country', $country);
+        $this->db->group_by('aid');
+        $this->db->order_by('id');
+        $query = $this->db->get('appointment_entry');
+        $countryAppointment = $query->result_array();
+        
+
+        $appointmentData1 = [];
+
+        foreach ($countryAppointment as $akey => $avalue) {
+            $aid = $avalue['aid'];
+            $this->db->where('aid', $aid);
+
+            $query = $this->db->get('appointment_entry');
+            $timeData = $query->result_array();
+ 
+            $avalue['dates'] = [];
+            foreach ($timeData as $tkey => $tvalue) {
+                $temparray = array();
+                $temparray['date'] = $tvalue['date'];
+                $temparray['timing1'] = $tvalue['from_time'];
+                $temparray['timing2'] = $tvalue['to_time'];
+                array_push($avalue['dates'], $temparray);
+            }
+      
+            array_push($appointmentData1, $avalue);
+        }
+        return $appointmentData1;
+    }
+    
+    public function AppointmentDataAll() {
+        $date=date("Y-m-d");
+        $this->db->where('date>=', $date);
+        $this->db->group_by('aid');
+        $this->db->order_by('id');
+        $query = $this->db->get('appointment_entry');
+        $countryAppointment = $query->result_array();
+
+        $appointmentData = array();
+
+        foreach ($countryAppointment as $akey => $avalue) {
+            $aid = $avalue['aid'];
+            $this->db->where('aid', $aid);
+            
+            $query = $this->db->get('appointment_entry');
+            $timeData = $query->result_array();
+            $avalue['dates'] = array();
+            foreach ($timeData as $tkey => $tvalue) { 
+                $temparray = array();
+                $temparray['date'] = $tvalue['date'];
+                $temparray['timing1'] = $tvalue['from_time'];
+                $temparray['timing2'] = $tvalue['to_time'];
+                array_push($avalue['dates'], $temparray);
+            }
+            array_push($appointmentData, $avalue);
+        }
+        
+        return $appointmentData;
     }
 
     function order_mail($order_id, $subject = "") {
