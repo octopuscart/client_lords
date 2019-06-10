@@ -398,7 +398,7 @@ $this->load->view('layout/header');
 
 
 
-  <!-- OUR SERVICES -->
+    <!-- OUR SERVICES -->
     <section class="" style="    padding: 0;margin-top: 30px;
              background: none;">
         <div class="container margin-bottom-00"> 
@@ -495,7 +495,7 @@ $this->load->view('layout/header');
 
 
     <div style="clear: both"></div>
-  
+
 
 
 
@@ -503,6 +503,92 @@ $this->load->view('layout/header');
 </div>
 <!-- End Content --> 
 
+
+
+<style>
+    .booking_text{
+        float: left;
+        font-weight: 500;
+        font-size: 23px;
+        color: white;
+    }
+
+
+
+    .appointment_modal_texttwocontry {
+        font-size: 35px;
+        /* margin-top: -60px; */
+        /* margin-bottom: 16px; */
+        padding: 85px 20px;
+        bottom: 0px;
+        color: white;
+        width: 100%;
+        background: #0000009c;
+        /* margin-top: 70px; */
+        text-shadow: 3px 2px 2px #000;
+    }
+
+    .appointment_modal_text {
+        font-size: 35px;
+        height: 202px;
+        position: absolute;
+        /* margin-top: -60px; */
+        /* margin-bottom: 16px; */
+        padding: 20px;
+        top: 0px;
+        color: white;
+        /* background: #00000087; */
+        width: 100%;
+        margin-top: -1px;
+        box-shadow: inset 0px 114px 66px -57px #000000;
+        hadow: inset 0px 21px 62px #000000;
+    }
+
+    .twocoutry {
+        display: block;
+
+        width: 100%;
+
+        background-position: -266px -119px !important;
+    }
+</style>
+
+
+<div class="modal fade" id="appointmentmodel" tabindex="-1" role="dialog" style="z-index: 20000000">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body" style="padding: 0px;">
+                <img src="<?php echo base_url(); ?>assets/images/country/usa.jpg" alt="" style="width: 100%">
+                <h2 class="fw_light color_black appointment_modal_text" >United States Tour 2019
+                <br/><p style="    color: white;
+    font-size: 16px;
+">(14 June - 22 June 2019)</p>
+                </h2>
+                
+            </div>
+            <div class="modal-footer" style="    position: absolute;
+                 bottom: 2px;
+                 box-shadow: inset 0px -35px 46px 13px #000000;
+                 width: 100%;
+                 border: none;">
+                <h3 class="fw_light booking_text" style=""> Make An Appointment</h3>
+                <a href="<?php echo site_url("booking"); ?>" class="btn btn-danger" style="    margin-top: 11px;">Book Now</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="    margin-top: 11px;">Close</button>
+            </div>
+
+
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <?php
 $this->load->view('layout/footer');
 ?>
+<script>
+
+    $(function () {
+        $('#appointmentmodel').modal('show');
+    });
+</script>

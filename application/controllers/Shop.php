@@ -26,6 +26,128 @@ class Shop extends CI_Controller {
 
         $query = $this->db->get('sliders');
         $data['sliders'] = $query->result();
+        
+        
+        
+        $baselink = 'http://' . $_SERVER['SERVER_NAME'];
+     
+        $this->db->select("country, date");
+        $this->db->select("country, hotel, address, days");
+//        $this->db->where('status', 'active');
+        $this->db->group_by("country");
+        $this->db->order_by("DATE(date)<DATE(NOW()) asc");
+        $this->db->order_by("IF(MONTH(date) < MONTH(NOW()), MONTH(date) + 12, MONTH(date)),
+ DAY(date) desc");
+
+        $query = $this->db->get('appointment_entry');
+        $appointment_country = $query->result_array();
+
+
+
+        $cdate = date("Y-m-d");
+//test date
+//$cdate = "2019-04-22"; 
+
+
+        $yourip = json_decode(file_get_contents("https://api.ipify.org?format=json&callback=DisplayIP"));
+
+        $ip = $yourip->ip;
+
+        $locationdata = json_decode(file_get_contents("http://ip-api.com/json/" . $ip));
+
+        $countryc = $locationdata->country;
+
+        $data["country"] = $countryc;
+
+        $this->db->select("country, hotel, address, days, city_state");
+        $this->db->where('date=', $cdate);
+        $this->db->order_by("date asc");
+// $this->db->group_by("country");
+        $this->db->limit(2);
+        $query = $this->db->get('appointment_entry');
+
+        $appointment_current_country1 = $query->result_array();
+
+        $appointment_current_country = [];
+        $appointment_current_country2 = [];
+
+        foreach ($appointment_current_country1 as $key => $value) {
+            $countrydb = $value['country'];
+
+
+            $this->db->select("date");
+            $this->db->where('country=', $countrydb);
+            $this->db->where('date>=', $cdate);
+            $this->db->order_by("date asc");
+            $query = $this->db->get('appointment_entry');
+            $appointment_country_date = $query->result_array();
+
+
+            $d_first = reset($appointment_country_date);
+            $d_last = end($appointment_country_date);
+
+            $value['first_date'] = $d_first['date'];
+            $value['last_date'] = $d_last['date'];
+
+            array_push($appointment_current_country2, $value);
+
+            if ($value['country'] == $countryc) {
+                array_push($appointment_current_country, $value);
+            } else {
+                
+            }
+        }
+        if (count($appointment_current_country)) {
+            $appointment_current_country = $appointment_current_country;
+        } else {
+            $appointment_current_country = $appointment_current_country2;
+        }
+
+        $applicable_class = count($appointment_current_country) == 1 ? 'onecountry' : 'twocoutry';
+        $data['applicable_class'] = $applicable_class;
+
+//        $appointment_current_country = count($appointment_current_country) > 0 ? $appointment_current_country[0] : false;
+
+        $data['appointment_current_country'] = $appointment_current_country;
+
+        $countrylist = array();
+
+        $countryimage = array(
+            "Belgium" => "belgium.jpg",
+            "Australia" => "australia.jpg",
+            "U.S.A" => "usa.jpg",
+            "Canada" => "canada.jpg",
+            "Hong Kong" => "canada.jpg",
+            "New Zealand" => "newzealand.jpg",
+            "Netherlands" => "netherlands.jpg",
+            "Germany" => "germany.jpg",
+            "Switzerland" => "sweetzerland.jpg",
+            "Norway" => "norway.jpg"
+        );
+        foreach ($appointment_country as $key => $value) {
+            $countrylist[$value['country']] = $countryimage[$value['country']];
+        }
+        unset($countrylist['Hong Kong']);
+
+        $data['countryimages'] = $countryimage;
+
+        $data['countrylist'] = $countrylist;
+
+        $product_home_slider_bottom = $this->Product_model->product_home_slider_bottom();
+        $categories = $this->Product_model->productListCategories(0);
+        $data["categories"] = $categories;
+        $data["product_home_slider_bottom"] = $product_home_slider_bottom;
+        $customarray = [1, 2];
+        $this->db->where_in('id', $customarray);
+        $query = $this->db->get('custome_items');
+        $customeitem = $query->result();
+
+        $data['shirtcustome'] = $customeitem[0];
+        $data['suitcustome'] = $customeitem[1];
+
+        $query = $this->db->get('sliders');
+        $data['sliders'] = $query->result();
+        
 
         $this->load->view('home', $data);
     }
