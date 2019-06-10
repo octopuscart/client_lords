@@ -332,11 +332,12 @@ $this->load->view('layout/header');
                                                     <b>Send to:</b>
                                                     <br/>
 
-                                                    Shop A, 2/F Entertainment Building,<br/>
-                                                    30 Queen’s Road, Central, Hong Kong
+                                                    Unit D, 2/F, Far East Mansion,<br/>
+5-6 Middle Road, Tsim Sha Tsui, 
+Kowloon, Hong Kong
                                                     <br/>
-                                                    <i class="fa fa-envelope"></i> sales@royaltailor.hk<br/>
-                                                    <i class="fa fa-phone"></i>  +(852) 2655 9778 
+                                                    <i class="fa fa-envelope"></i> jason@lordscustomtailors.com<br/>
+                                                    <i class="fa fa-phone"></i> +(852) 2723 9716 
 
                                                 </div>
                                                 </p>

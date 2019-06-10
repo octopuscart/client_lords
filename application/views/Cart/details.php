@@ -17,7 +17,7 @@ $this->load->view('layout/header');
 </style>
 
 <!-- Slider -->
-<section class="sub-bnr" data-stellar-background-ratio="0.5">
+<section class="sub-bnr" data-stellar-background-ratio="0.5" style="min-height:      50px;">
     <div class="position-center-center">
         <div class="container">
             <h4>Cart</h4>
@@ -47,36 +47,32 @@ $this->load->view('layout/header');
                 <!-- Cart Details -->
                 <div class="custom_block_item">
 
-                    <div class="cart-head">
+                    <div class="cart-head" style="   ">
                         <ul class="row">
                             <!-- PRODUCTS -->
-                            <li class="col-sm-5 text-left">
+                            <li class="col-sm-7 text-left">
                                 <h6>PRODUCTS</h6>
                             </li>
 
-                            <!-- PRICE -->
-                            <li class="col-sm-2">
-                                <h6>PRICE</h6>
-                            </li>
+
+
                             <!-- QTY -->
-                            <li class="col-sm-2">
+                            <li class="col-sm-5">
                                 <h6>QTY</h6>
                             </li>
 
                             <!-- TOTAL PRICE -->
-                            <li class="col-sm-2">
-                                <h6>TOTAL</h6>
-                            </li>
+
                             <li class="col-sm-1"> </li>
                         </ul>
                     </div>
                     <ul class="row cart-details" ng-repeat="product in globleCartData.products" >
-                        <li class="col-sm-5">
+                        <li class="col-sm-9">
                             <div class="media"> 
                                 <!-- Media Image -->
                                 <div class="media-left media-middle"> 
                                     <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}" class="item-img"> 
-                                        <img class="media-object" src="{{product.file_name}}" alt="" style="height: 100px;width: auto;"> 
+                                        <img class="media-object" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="" style="height: 100px;width: auto;"> 
                                     </a> 
                                 </div>
 
@@ -85,27 +81,14 @@ $this->load->view('layout/header');
                                     <div class="position-center-center" style="    text-align: left;">
                                         <h5>{{product.title}} - {{product.item_name}}</h5>
                                         <p>{{product.sku}}</p>
-                                        <button type="button" ng-click="viewStyle(product)" class="btn btn-primary btn-xs desing_view_button"  style="margin-top: 10px;">View Design</a>
+                                        <button type="button" ng-click="viewStyle(product)" class="btn btn-default btn-small desing_view_button"  style="margin-top: 10px;">View Design</a>
 
                                     </div>
                                 </div>
                             </div>
                         </li>
 
-                        <!-- PRICE -->
-                        <li class="col-sm-2">
-                            <div class="position-center-center"> 
-                                <span class="price">
-                                    {{product.price|currency:" "}}
-                                    <span ng-if="product.extra_price > 0" style="font-size: 12px;
-                                          font-weight: 600;
-                                          text-align: center;">
-                                        <br/>
-                                        Price: {{product.price - product.extra_price}} + Extra Price:{{product.extra_price}} 
-                                    </span>
-                                </span> 
-                            </div>
-                        </li>
+
 
                         <!-- QTY -->
                         <li class="col-sm-2 quantity_li" style="padding-top: 30px;">
@@ -120,15 +103,13 @@ $this->load->view('layout/header');
                             </div><!-- /input-group -->
                         </li>
 
-                        <!-- TOTAL PRICE -->
-                        <li class="col-sm-2">
-                            <div class="position-center-center"> <span class="price">{{product.total_price|currency:"<?php echo globle_currency_type; ?>"}}</span> </div>
-                        </li>
+
 
                         <!-- REMOVE -->
                         <li class="col-sm-1">
                             <div class="position-center-center"> <a href="#." ng-click="removeCart(product.product_id)"><i class="icon-close"></i></a> </div>
                         </li>
+                        <div style="clear:both "></div>
 
                     </ul>
 
@@ -156,10 +137,6 @@ $this->load->view('layout/header');
 
                         </div>
                         <div class="col-md-4">
-
-                            <!-- SUB TOTAL -->
-                            <h2 class=" text-center" style="font-size: 20px;
-                                margin-top: 10px;">TOTAL: <span>{{globleCartData.total_price|currency:"<?php echo globle_currency_type; ?>"}}</span></h2>
 
                         </div>
                         <div class="col-md-4">

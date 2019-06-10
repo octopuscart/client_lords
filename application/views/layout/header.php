@@ -123,7 +123,7 @@
                                         <a  href="#" class="dropdown-toggle " data-toggle="dropdown">Shop Now</a>
                                         <ul class="dropdown-menu">
                                             <li><a href="#">Shirts</a></li>
-                                            <li><a href="#">Suits</a></li>
+                                            <li><a href="<?php echo site_url("Products/CustomSuits");?>">Suits</a></li>
                                             <li><a href="#">Jackets</a></li>
                                             <li><a href="#">Pants</a></li>
                                             <li><a href="#">Tuxedo Suits</a></li>
@@ -207,13 +207,13 @@
                                                     <div class="media-left">
                                                         <div class="cart-img"> 
                                                             <a href="#"> 
-                                                                <img class="media-object img-responsive" src="{{product.file_name}}" alt="..."> 
+                                                                <img class="media-object img-responsive" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="..."> 
                                                             </a> 
                                                         </div>
                                                     </div>
                                                     <div class="media-body">
                                                         <h6 class="media-heading" style="font-size: 12px;">{{product.title}} - {{product.item_name}}</h6>
-                                                        <span class="price">{{product.quantity}}    X    {{product.price|currency:" "}}</span> 
+                                                        <span class="price">{{product.quantity}}</span> 
                                                     </div>
                                                     <a href="#" class="remov" ng-click="removeCart(product.product_id)">
                                                         <i class="fa fa-times"></i>
@@ -222,7 +222,7 @@
                                             </div>
                                             <!--end of product cart list-->
                                             <li class="margin-0 padding-0 price-cart-drop" style="background: #fff!important;">
-                                                <h5>Subtotal: <span>{{globleCartDatac.total_price|currency:" "}}</span></h5>
+                                                <h5>Subtotal: <span>{{globleCartDatac.total_quantity}}</span></h5>
                                             </li>
                                             <li class="margin-0 padding-0"> 
                                                 <a href="<?php echo site_url("Cart/details"); ?>" class="btn margin-bottom-20">VIEW CART</a> 

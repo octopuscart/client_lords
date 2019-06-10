@@ -10,10 +10,8 @@
         </p>
         <p class="selected-element-title_text_price">
             <span ng-if="selecteElements[screencustom.fabric].totalextracost == 0">
-                {{screencustom.productobj.price|currency:"<?php echo globle_currency_type; ?>"}}
             </span>
             <span ng-if="selecteElements[screencustom.fabric].totalextracost">
-                {{(tonumber(screencustom.productobj.price) + tonumber(selecteElements[screencustom.fabric].totalextracost)) | currency:"<?php echo globle_currency_type; ?>"}}
             </span>        </p>
     </div>
 
@@ -31,12 +29,7 @@
                     {{screencustom.productobj.short_description}}
                 </p>
                 <p class="selected-element-title_text_price">
-                    <span ng-if="selecteElements[screencustom.fabric].totalextracost == 0">
-                        {{screencustom.productobj.price|currency:"<?php echo globle_currency_type; ?>"}}
-                    </span>
-                    <span ng-if="selecteElements[screencustom.fabric].totalextracost">
-                        {{(tonumber(screencustom.productobj.price) + tonumber(selecteElements[screencustom.fabric].totalextracost)) | currency:"<?php echo globle_currency_type; ?>"}}
-                    </span>
+                    
 
                 </p>
             </div>
