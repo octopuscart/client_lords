@@ -185,8 +185,7 @@
                                         <?php
                                     } else {
                                         ?>
-                                        <li> <a href="#" >Sign In / Sign Up </a>
-                                        </li>
+                                       
 
                                         <?php
                                     }
@@ -239,6 +238,7 @@
                                             </li>
                                         </ul>
                                     </li>
+                                    <li> <a href="javascript:void(0);" class="search-open"><i class="fa fa-lock"></i></a></li>
                                     <li> <a href="javascript:void(0);" class="search-open"><i class="fa fa-search"></i></a>
                                         <div class="search-inside animated-4s fadeIn"> <i class="lnr lnr-cross search-close"></i>
                                             <div class="search-overlay"></div>

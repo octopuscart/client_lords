@@ -170,7 +170,7 @@ $image2 = "";
 
     <!-- Shop Content -->
     <div class="shop-content pad-t-b-60" >
-        <div class="container">
+        <div class="container" style="width: 90%">
             <div class="row"> 
 
                 <!-- Shop Side Bar -->
