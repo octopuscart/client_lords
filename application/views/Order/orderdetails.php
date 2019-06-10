@@ -245,11 +245,11 @@ $paymentstatus = "";
                                 <table class="table table-bordered"  border-color= "#9E9E9E" align="center" border="1" cellpadding="0" cellspacing="0" width="600" style="background: #fff;padding:20px">
                                     <tr style="font-weight: bold">
                                         <td style="width: 20px;text-align: right">S.No.</td>
-                                        <td colspan="2"  style="text-align: center">Product</td>
+                                        <td colspan="3"  style="text-align: center">Product</td>
 
-                                        <td style="text-align: right;width: 100px"">Price</td>
+
                                         <td style="text-align: right;width: 10px">Qantity</td>
-                                        <td style="text-align: right;width: 100px">Total</td>
+
                                     </tr>
                                     <!--cart details-->
                                     <?php
@@ -262,18 +262,18 @@ $paymentstatus = "";
 
                                             <td style="width: 80px">
                                         <center>   
-                                            <img src=" <?php echo $product->file_name; ?>" style="height: 70px;"/>
+                                            <img src="<?php echo custome_image_server; ?>/suits/fabrics/<?php echo $product->title; ?>.jpg" style="height: 70px;"/>
                                         </center>
                                         </td>
 
-                                        <td style="width: 300px;">
+                                        <td style="width: 300px;" colspan="2">
 
                                             <?php echo $product->title; ?> - <?php echo $product->item_name; ?>
                                             <br/>
                                             <small style="font-size: 12px;">(<?php echo $product->sku; ?>)</small>
 
                                             <h4 class="panel-title">
-                                                <a role="button" class="btn  btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $product->id; ?>" aria-expanded="true" aria-controls="collapseOne" style="    margin: 5px 0px;
+                                                <a role="button" class="btn  btn-default btn-small" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $product->id; ?>" aria-expanded="true" aria-controls="collapseOne" style="    margin: 5px 0px;
                                                    padding: 4px;">
                                                     View Summary
                                                 </a>
@@ -304,42 +304,25 @@ $paymentstatus = "";
 
                                         </td>
 
-                                        <td style="text-align: right">
-                                            {{ <?php echo $product->price; ?> |currency:"<?php echo globle_currency; ?> "}}
-                                            <?php
-                                            if ($product->extra_price > 0) {
-                                                ?>
-                                            <span  style="font-size: 12px;
-                                          font-weight: 600;
-                                          text-align: center;">
-                                        <br/>
-                                       {{ <?php echo $product->price - $product->extra_price; ?> |currency:""}}
-                                              + {{ <?php echo $product->extra_price; ?> |currency:""}}
-                                                </span>
-                                                <?php
-                                            }
-                                            ?>
-                                        </td>
+
 
                                         <td style="text-align: right;width: 50px;">
                                             <?php echo $product->quantity; ?> 
                                         </td>
 
-                                        <td style="text-align: right;">
-                                            {{ <?php echo $product->total_price; ?>|currency:"<?php echo globle_currency; ?> "}}
-                                        </td>
+
                                         </tr>
 
                                         <?php
                                     }
                                     ?>
-                                    <td colspan="7">
+                                    <td colspan="5">
                                         Measurement Type :
                                         <?php
                                         echo $order_data->measurement_style;
                                         if (count($measurements_items)) {
                                             ?>
-                                            <a role="button" class="btn btn-xs btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapsemeasurements" aria-expanded="true" aria-controls="collapseOne">
+                                            <a role="button" class="btn btn-small btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapsemeasurements" aria-expanded="true" aria-controls="collapseOne" style="margin-top: 0px;   padding: 4px; ">
                                                 View Measurement
                                             </a>
                                             <div id="collapsemeasurements" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
@@ -367,7 +350,7 @@ $paymentstatus = "";
 
                                     <!--end of cart details-->
                                     <tr>
-                                        <td colspan="7">
+                                        <td colspan="5">
                                             <?php
                                             $laststatus = "";
                                             $laststatus_cdate = "";
@@ -425,15 +408,9 @@ $paymentstatus = "";
                                         </td>
                                     </tr>
 
-                                    <tr>
-                                        <td colspan="3"  rowspan="4" style="font-size: 12px">
-                                            <b>Total Amount in Words:</b><br/>
-                                            <span style="text-transform: capitalize"> <?php echo $order_data->amount_in_word; ?></span>
-                                        </td>
 
-                                    </tr>
                                     <tr>
-                                        <td colspan="2" style="text-align: right">Sub Total</td>
+                                        <td colspan="4" style="text-align: right">Sub Total</td>
                                         <td style="text-align: right;width: 60px">{{"<?php echo $order_data->sub_total_price; ?>"|currency:"<?php echo globle_currency; ?> "}} </td>
                                     </tr>
     <!--                                <tr>
@@ -441,7 +418,7 @@ $paymentstatus = "";
                                         <td style="text-align: right;width: 60px"><?php echo $order_data->credit_price; ?> </td>
                                     </tr>-->
                                     <tr>
-                                        <td colspan="2" style="text-align: right">Total Amount</td>
+                                        <td colspan="4" style="text-align: right">Total Amount</td>
                                         <td style="text-align: right;width: 60px">{{"<?php echo $order_data->total_price; ?>"|currency:"<?php echo globle_currency; ?> "}} </td>
                                     </tr>
 
@@ -490,8 +467,7 @@ $paymentstatus = "";
 
         $interval(function () {
             if ($scope.checkmailsend == 1) {
-            }
-            else {
+            } else {
                 $scope.sendOrderMailCheck();
             }
         }, 2000)
