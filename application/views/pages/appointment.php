@@ -138,7 +138,7 @@ function createModel($value, $dtvalue) {
 
                                 <?php
                                 if ($value) {
-                       
+
 
                                     foreach ($dataes as $dtkey => $dtvalue) {
                                         $dateid = $value['id'] . $dkey;
@@ -159,28 +159,28 @@ function createModel($value, $dtvalue) {
                                             ?>
                                             </select>
                                         </div>
-            <?php
-        }
-    } else {
-        ?>
+                                        <?php
+                                    }
+                                } else {
+                                    ?>
 
 
                                     <label for="select_date">Available Date</label> 
                                     <select class="form-control" style="padding:12px;"  name="select_date" id="dateselection" style="" required ng-model="dateselection<?php echo $value['id']; ?>"  ng-init="dateselection<?php echo $value['id']; ?> = '<?php echo $value['dates'][0]['date']; ?>'" >
 
-        <?php
-        $dataes = $value['dates'];
-        foreach ($dataes as $dkey => $dvalue) {
-            $dateid = $value['id'] . $dkey;
-            ?>    
+                                        <?php
+                                        $dataes = $value['dates'];
+                                        foreach ($dataes as $dkey => $dvalue) {
+                                            $dateid = $value['id'] . $dkey;
+                                            ?>    
                                             <option  value="<?php echo $dvalue['date']; ?>"><?php echo $dvalue['date']; ?></option>
                                             <?php
                                         }
                                         ?>
                                     </select>
-                                        <?php
-                                    }
-                                    ?>
+                                    <?php
+                                }
+                                ?>
                             </div>
                             <div class="col-md-4" >
                                 <div class="form-group" style="font-color:#dd0101">
@@ -301,10 +301,10 @@ function createModel($value, $dtvalue) {
     <!-- Single Blog Page Area Start Here -->
     <div class="single-blog-page-area" style="padding: 0px 0 0px;background: url(<?php echo base_url(); ?>assets/theme2/img/mapback.png);background-size: contain;">
         <div class="container contact-us-page-area" style="">
-            <div class="row" style="border-bottom: 2px solid;    background: #ffffffb5; ">
+            <div class="" style="border-bottom: 2px solid;    background: #ffffffb5; ">
                 <div class="contact-us-right">
                     <h2 class="title-sidebar text-center" style="padding-bottom:  30px;border-bottom: 1px dotted ">Local Appointment</h2>
-                    <div class="row appointmentheader">
+                    <div class="row appointmentheader hideonmobile">
                         <div class="col-md-1">
                             Country
                         </div>
@@ -322,14 +322,14 @@ function createModel($value, $dtvalue) {
 
                         </div>
                     </div>
-<?php
-foreach ($appointmentdetailslocal as $key => $value) {
-    ?>
+                    <?php
+                    foreach ($appointmentdetailslocal as $key => $value) {
+                        ?>
 
 
                         <div class="row">
-                            <div class="col-md-1"> <?php echo $value['country']; ?></div>
-                            <div class="col-md-2"><?php echo $value['city_state']; ?></div>
+                            <div class="col-md-1 hideonmobile"> <?php echo $value['country']; ?></div>
+                            <div class="col-md-2 hideonmobile"><?php echo $value['city_state']; ?></div>
                             <div class="col-md-3">
                                 <b>
                                     <i class="fa fa-building-o"></i>
@@ -337,16 +337,19 @@ foreach ($appointmentdetailslocal as $key => $value) {
                                 </b>
                                 <br/>
                                 <small>
-    <?php echo $value['address']; ?>
+                                    <?php echo $value['address']; ?>
+                                    <div class="showonmobile">
+                                                   <?php echo ucfirst(strtolower($value['city_state'])); ?>,  <?php echo $value['country']; ?>
+                                                </div>
                                 </small>
                             </div>
                             <div class="col-md-3">
 
                                 <b><?php
-    echo $value["days"];
-    $date1 = date_create($value['start_date']);
-    // echo date_format($date1, "j<\s\u\p>S</\s\u\p>   F");
-    ?></b>
+                                    echo $value["days"];
+                                    $date1 = date_create($value['start_date']);
+                                    // echo date_format($date1, "j<\s\u\p>S</\s\u\p>   F");
+                                    ?></b>
 
                                 <ul style="    margin-bottom: 0px;margin-top: 10px;    font-size: 12px;">
 
@@ -364,9 +367,9 @@ foreach ($appointmentdetailslocal as $key => $value) {
                                 <br/>
 
                                 <button class="btn btn-default btn-lg" style="margin: 10px 0px;" data-toggle="modal" data-target="#<?php echo $value['id']; ?>">Book Now</button>
-    <?php
-    createModel($value, '');
-    ?>
+                                <?php
+                                createModel($value, '');
+                                ?>
                             </div>
                             <div class="col-md-3">
                                 <span style="    line-height: 15px;
@@ -380,15 +383,15 @@ foreach ($appointmentdetailslocal as $key => $value) {
 
                         </div>
 
-    <?php
-}
-?>
+                        <?php
+                    }
+                    ?>
 
                 </div>
             </div>
 
             <!--global appointment-->
-            <div class="row"  style="border-bottom: 2px solid;    background: #ffffffb8; ">
+            <div class=""  style="border-bottom: 2px solid;    background: #ffffffb8; ">
 
 
                 <div style="width:100%">
@@ -405,13 +408,13 @@ foreach ($appointmentdetailslocal as $key => $value) {
                     <div class="tab-content">
 
                         <div role="tabpanel" class="tab-pane contact-us-right active" id="usa_appointment">
-<?php
-if (count($appointmentdatausa)) {
-    ?>
+                            <?php
+                            if (count($appointmentdatausa)) {
+                                ?>
 
 
 
-                                <div class="row appointmentheader">
+                                <div class="row appointmentheader hideonmobile">
                                     <div class="col-md-1">
                                         Country
                                     </div>
@@ -430,12 +433,12 @@ if (count($appointmentdatausa)) {
                                     </div>
                                 </div>
 
-    <?php
-    foreach ($appointmentdatausa as $key => $value) {
-        ?>
+                                <?php
+                                foreach ($appointmentdatausa as $key => $value) {
+                                    ?>
                                     <div class="row appointmentfooter">
-                                        <div class="col-md-1"> <?php echo $value['country']; ?></div>
-                                        <div class="col-md-2"><?php echo ucfirst(strtolower($value['city_state'])); ?></div>
+                                        <div class="col-md-1 hideonmobile"> <?php echo $value['country']; ?></div>
+                                        <div class="col-md-2 hideonmobile"><?php echo ucfirst(strtolower($value['city_state'])); ?></div>
                                         <div class="col-md-3">
                                             <b>
                                                 <i class="fa fa-building-o"></i>
@@ -443,44 +446,47 @@ if (count($appointmentdatausa)) {
                                             </b>
                                             <br/>
                                             <small>
-        <?php echo $value['address']; ?>
+                                                <?php echo $value['address']; ?>
+                                                <div class="showonmobile">
+                                                   <?php echo ucfirst(strtolower($value['city_state'])); ?>,  <?php echo $value['country']; ?>
+                                                </div>
                                             </small>
                                         </div>
                                         <div class="col-md-3">
                                             <i class="fa fa-calendar"></i>
 
                                             <b><?php
-        echo $value["days"];
-        //$date1 = date_create($value['start_date']);
-        // echo date_format($date1, "j<\s\u\p>S</\s\u\p>   F");
-        ?></b>
-                                            <br/><ul style="    margin-bottom: 0px;margin-top: 10px;    font-size: 12px;">
+                                                echo $value["days"];
+                                                //$date1 = date_create($value['start_date']);
+                                                // echo date_format($date1, "j<\s\u\p>S</\s\u\p>   F");
+                                                ?></b>
+                                            <br/><ul style="    margin-bottom: 0px;margin-top: 10px;    font-size: 12px;    padding: 0px 14px;">
 
 
 
 
 
 
-        <?php
-        $dataes = $value['dates'];
-        foreach ($dataes as $dtkey1 => $dtvalue1) {
-            echo "<li>";
+                                                <?php
+                                                $dataes = $value['dates'];
+                                                foreach ($dataes as $dtkey1 => $dtvalue1) {
+                                                    echo "<li>";
 
 
-            echo '<span class = "timeing_open" style="    width: 100px;">' . date_format(date_create($dtvalue1['date']), "d F Y") . "</span>: " . $dtvalue1['timing1'] . " to " . $dtvalue1['timing2'] . "<br/>";
+                                                    echo '<span class = "timeing_open" style="    width: 100px;">' . date_format(date_create($dtvalue1['date']), "d F Y") . "</span>: " . $dtvalue1['timing1'] . " to " . $dtvalue1['timing2'] . "<br/>";
 
-            echo "</li>";
-        }
-        ?>
+                                                    echo "</li>";
+                                                }
+                                                ?>
                                             </ul>
 
 
                                             <br/>
 
                                             <button class="btn btn-default btn-lg" style="margin: 10px 0px;" data-toggle="modal" data-target="#<?php echo $value['id']; ?>">Book Now</button>
-        <?php
-        createModel($value, $dtvalue1);
-        ?>
+                                            <?php
+                                            createModel($value, $dtvalue1);
+                                            ?>
                                         </div>
                                         <div class="col-md-2">
                                             <span style="    line-height: 15px;
@@ -493,9 +499,9 @@ if (count($appointmentdatausa)) {
                                         </div>
 
                                     </div>
-        <?php
-    }
-    ?>
+                                    <?php
+                                }
+                                ?>
 
                                 <?php
                             } else {

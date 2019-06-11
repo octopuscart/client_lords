@@ -1444,6 +1444,7 @@ class CustomApi extends REST_Controller {
                         "function"=>"setJacketBody",
                         "overlay" => ["bodysingleoverlay.png"],
                         "overlay2" => [ "overlaysingle2.png"],
+                        "shirtoverlay"=>"shirtoverlay2.png",
                     ), array(
                         "status" => "0",
                         "title" => "2 Buttons",
@@ -1460,6 +1461,8 @@ class CustomApi extends REST_Controller {
                         "canvas_o"=>"jacketstyleoverlay",
                         "overlay" => [ "bodysingleoverlay.png"],
                         "overlay2" => [ "overlaysingle2.png"],
+                        "style"=>"margin-left:-10px;",
+                        "shirtoverlay"=>"shirtoverlay2.png",
                     )
                     , array(
                         "status" => "0",
@@ -1469,7 +1472,7 @@ class CustomApi extends REST_Controller {
                         "image" => "suit_elements/suittype/41_button.png",
                         "left" => "body_double_4_left0001.png",
                         "right" => "body_double_4_right0001.png",
-                        "button_hole" => ["button_hole_41_10001.png", "button_4_hole_20001.png"],
+                        "button_hole" => ["button_hole_41_10001.png", ],
                         "buttons" => ["buttons_42_120001.png", "buttons_42_340001.png",],
                         "buttons2" => [],
                         "show_buttons" => "true",
@@ -1477,6 +1480,7 @@ class CustomApi extends REST_Controller {
                         "function"=>"setJacketBody",
                         "canvas_o"=>"jacketstyleoverlay",
                         "overlay" => ["double_overlay.png"],
+                        "shirtoverlay"=>"shirtoverlay3.png",
                     )
                     , array(
                         "status" => "0",
@@ -1485,7 +1489,7 @@ class CustomApi extends REST_Controller {
                         "customization_category_id" => "4",
                         "left" => "body_double_4_left0001.png",
                         "right" => "body_double_4_right0001.png",
-                        "button_hole" => ["button_hole_41_10001.png", "button_4_hole_20001.png"],
+                        "button_hole" => ["button_hole_41_10001.png"],
                         "buttons" => ["buttons_42_120001.png", "buttons_42_340001.png", "buttons_42_560001.png"],
                         "buttons2" => [],
                         "image" => "suit_elements/suittype/62_button.png",
@@ -1493,6 +1497,7 @@ class CustomApi extends REST_Controller {
                         "canvas_m"=>"jacketstyle",
                         "canvas_o"=>"jacketstyleoverlay",
                         "overlay" => ["double_overlay.png"],
+                        "shirtoverlay"=>"shirtoverlay3.png",
                     )
                 ],
             "Lapel Style" => [

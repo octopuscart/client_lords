@@ -172,7 +172,7 @@ $this->load->view('layout/header');
                         <div class="col-sm-12 col-xs-12"  style="padding: 0">
                             <div class="tab-content">
 
-                                <div class="{{$index === 0?'active':''}} frame" ng-repeat="fab in cartFabrics" id="fabric_{{fab.product_id}}">
+                                <div class="{{$index === 0?'active':''}} frame1" ng-repeat="fab in cartFabrics" id="fabric_{{fab.product_id}}">
                                     
                                    <?php
                                     $this->load->view('customization/suitBlock');
