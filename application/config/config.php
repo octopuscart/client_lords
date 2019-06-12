@@ -29,6 +29,7 @@ require("configdbconnect.php");
 $configuration = $globleConnectDB;
 
 $baselink = 'http://' . $_SERVER['SERVER_NAME'];
+$islocal = true;
 switch ($baselink) {
     case "http://localhost":
         $baselinkmain = $baselink . $configuration['localpath'];
@@ -40,6 +41,7 @@ switch ($baselink) {
         $baselinkmain = $baselink .  $configuration['localpath'];
         break;    
     default:
+        $islocal = false;
         $baselinkmain =  $configuration['site_url'];
 }
 
@@ -59,7 +61,7 @@ $config['rest_enable_keys'] = FALSE;
   | variable so that it is blank.
   |
  */
-$config['index_page'] = strpos($baselink, '192.168') ? 'index.php/' : '';
+$config['index_page'] = $islocal ? 'index.php/' : '';
 
 /*
   |--------------------------------------------------------------------------

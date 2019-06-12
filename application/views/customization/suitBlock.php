@@ -1,7 +1,7 @@
 
 <div class="fontview_custom customization_block animated zoom "  ng-if="screencustom.view_type == 'front'" >
     <img src="<?php echo custome_image_server; ?>/jacket/overlay/shirtoverlay.png" class="fixpos animated" >
-    <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/sleeve0001.png" class="fixpos animated" >
+    <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/sleeve30001.png" class="fixpos animated" >
     <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/pant_suit_model0001.png" class="fixpos animated" >
 
     <!--breast pocket-->
