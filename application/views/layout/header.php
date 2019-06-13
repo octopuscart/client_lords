@@ -69,10 +69,10 @@
 
 
             var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
-                //$interpolateProvider.startSymbol('{$');
-                //$interpolateProvider.endSymbol('$}');
-                $httpProvider.defaults.headers.common = {};
-                $httpProvider.defaults.headers.post = {};
+            //$interpolateProvider.startSymbol('{$');
+            //$interpolateProvider.endSymbol('$}');
+            $httpProvider.defaults.headers.common = {};
+            $httpProvider.defaults.headers.post = {};
             });
             var baseurl = "<?php echo site_url(); ?>";
             var imageurlg = "<?php echo imageserver; ?>";
@@ -113,35 +113,36 @@
                             <!-- NAV -->
                             <div class="collapse navbar-collapse goldtextcss" id="nav-open-btn">
                                 <ul class="nav">
-                                    <li class="dropdown"> <a  href="<?php echo site_url("/");?>" class="dropdown-toggle " data-toggle="dropdown">Home</a>
+                                    <li class="dropdown"> <a  href="<?php echo site_url("/"); ?>" class="dropdown-toggle " data-toggle="dropdown">Home</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="<?php echo site_url("aboutus");?>">About Us</a></li>
-                                            <li><a href=<?php echo site_url("faqs");?>>FAQ'S</a></li>
+                                            <li><a href="<?php echo site_url("aboutus"); ?>">About Us</a></li>
+                                            <li><a href=<?php echo site_url("faqs"); ?>>FAQ'S</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"> 
                                         <a  href="#" class="dropdown-toggle " data-toggle="dropdown">Shop Now</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="#">Shirts</a></li>
-                                            <li><a href="<?php echo site_url("Products/CustomSuits");?>">Suits</a></li>
-                                            <li><a href="#">Jackets</a></li>
-                                            <li><a href="#">Pants</a></li>
+                                        
+                                            <li><a href="<?php echo site_url('Product/ProductList/1/0'); ?>">Shirts</a></li>
+                                            <li><a href="<?php echo site_url('Product/ProductList/2/0'); ?>">Suits</a></li>
+                                            <li><a href="<?php echo site_url('Product/ProductList/4/0'); ?>">Jackets</a></li>
+                                            <li><a href="<?php echo site_url('Product/ProductList/3/0'); ?>">Pants</a></li>
                                             <li><a href="#">Tuxedo Suits</a></li>
-                                       
+
                                         </ul>
                                     </li>
 
                                     <li > 
-                                        <a href="<?php echo site_url("lookbook");?>">Look Book</a>
+                                        <a href="<?php echo site_url("lookbook"); ?>">Look Book</a>
                                     </li>
                                     <li > 
-                                        <a href="<?php echo site_url("appointment");?>">Make An Appointment</a>
+                                        <a href="<?php echo site_url("appointment"); ?>">Make An Appointment</a>
                                     </li>
                                     <li > 
-                                        <a href="<?php echo site_url('stylingTips');?>">Our Blog</a>
+                                        <a href="<?php echo site_url('stylingTips'); ?>">Our Blog</a>
                                     </li>
                                     <li > 
-                                        <a href="<?php echo site_url('contact-us');?>">Contact Us</a>
+                                        <a href="<?php echo site_url('contact-us'); ?>">Contact Us</a>
                                     </li>
 
 
@@ -185,7 +186,7 @@
                                         <?php
                                     } else {
                                         ?>
-                                       
+
 
                                         <?php
                                     }

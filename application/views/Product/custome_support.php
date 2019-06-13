@@ -62,7 +62,7 @@ $this->load->view('Product/custom_select_left');
                                             <div >
                                                 <div class="elementStyle customization_box_elements {{  cci == selecteElements[screencustom.fabric]['Collar Insert']?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/customization/fabrics_insert/{{cci}}.jpg')" > </div>
                                                 <div class='customization_title'>
-                                                    {{cci}}
+                                                    {{cci.replace('p', 'LT')}}
                                                     <br/>
                                                     <div class="btn-group" role="group" aria-label="...">
                                                         <button class="btn btn-danger btn-small insert_button" ng-click="selectCollarCuffInsertType('Collar Insert Full', 'No')">Inner</button>
@@ -136,7 +136,7 @@ $this->load->view('Product/custom_select_left');
                                                 <div class="elementStyle customization_box_elements {{  cci == selecteElements[screencustom.fabric]['Cuff Insert']?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/customization/fabrics_insert/{{cci}}.jpg')" > </div>
 
                                                 <div class='customization_title'>
-                                                    {{cci}}
+                                                     {{cci.replace('p', 'LT')}}
                                                     <br/>
                                                     <div class="btn-group" role="group" aria-label="...">
                                                         <button class="btn btn-danger btn-small insert_button" ng-click="selectCollarCuffInsertType('Cuff Insert Full', 'No')">Inner</button>

@@ -351,8 +351,8 @@ $image2 = "";
                                                 ?>
 
 
-                                                    <a href="#." class="btn by" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)" title="Choose fabric for multiple customization">Design Now</a> 
-                                        
+                                                   <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn  btn-default" style="font-size: 9px;" title="Customize this fabric">Design Now
+                                                </a> 
 
                                                 <?php
                                                 break;

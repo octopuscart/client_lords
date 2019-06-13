@@ -373,18 +373,15 @@ class CustomApi extends REST_Controller {
                     array(
                         "status" => "1",
                         "title" => "Rounded",
-                        "elements" => ["shirtbody_round0001.png", "body_front_left0001.png"],
+                        "elements" => ["shirtbody_round0001.png"],
                         "customization_category_id" => "6",
-                        "image" => "customization/bottom_rounded.jpeg",
-                        "overlay" => []
-                    ),
-                    array(
+                        "image" => "customization/bottom_rounded.jpeg"
+                    ), array(
                         "status" => "0",
                         "title" => "Squared",
-                        "elements" => ["shirtbody_round0001.png", "body_front_left0001.png"],
+                        "elements" => ["shirtbody_squre0001.png"],
                         "customization_category_id" => "6",
-                        "image" => "customization/bottom_squred.jpeg",
-                        "overlay" => ["bottomsqr.png"]
+                        "image" => "customization/bottom_squred.jpeg"
                     )],
                 "Cuff & Sleeve" => [
                     array(
@@ -578,22 +575,22 @@ class CustomApi extends REST_Controller {
                 ],
                 "Back" => [
                     array(
-                        "status" => "0",
+                        "status" => "1",
                         "title" => "Plain",
                         "customization_category_id" => "5",
                         "halfsleeve" => ["back_half_sleeve0001.png", "back_half_sleeve_cuff0001.png"],
                         "fullsleeve" => ["b_full_shirt_sleeve0001.png",],
-                        "elements" => [ "b_shirtbody_round0001.png",],
-                        "overlay" => [],
+                        "elements" => [ "b_shirtbody_round0001.png", "b_shirtbody_squre0001.png", "yoke0001.png"],
+                        "overlay" => "",
                         "image" => "customization/back_plain.jpeg"
                     ), array(
                         "status" => "0",
-                        "title" => "Side Pleated",
+                        "title" => "Two Side",
                         "customization_category_id" => "5",
                         "halfsleeve" => ["back_half_sleeve0001.png", "back_half_sleeve_cuff0001.png"],
                         "fullsleeve" => ["b_full_shirt_sleeve0001.png", "b_full_shirt_sleeve0001.png",],
-                        "overlay" => ["towside.png"],
-                        "elements" => ["b_shirtbody_round0001.png", ],
+                        "overlay" => "back_two_side_plea_over_lay.png",
+                        "elements" => ["b_shirtbody_round0001.png", "b_shirtbody_squre0001.png", "shirtbody_pleat_side0001.png", "yoke0001.png"],
                         "image" => "customization/back_two_side.jpeg"
                     ), array(
                         "status" => "0",
@@ -601,17 +598,17 @@ class CustomApi extends REST_Controller {
                         "customization_category_id" => "5",
                         "halfsleeve" => ["back_half_sleeve0001.png", "back_half_sleeve_cuff0001.png"],
                         "fullsleeve" => ["b_full_shirt_sleeve0001.png", "back_sleeve_cuff0001.png"],
-                        "overlay" => ["boxpleat.png"],
-                        "elements" => [ "b_shirtbody_round0001.png",   ],
+                        "overlay" => "box_pleat_overlay1.png",
+                        "elements" => [ "b_shirtbody_round0001.png", "b_shirtbody_squre0001.png", "shirtbody_pleat_box0001.png", "yoke0001.png"],
                         "image" => "customization/back_box_pleat.jpeg"
                     ), array(
-                        "status" => "1",
+                        "status" => "0",
                         "title" => "Dart",
                         "customization_category_id" => "5",
                         "halfsleeve" => ["back_half_sleeve0001.png", "back_half_sleeve_cuff0001.png"],
                         "fullsleeve" => ["b_full_shirt_sleeve0001.png", "back_full_sleeve_cuff0001.png"],
-                        "overlay" => ["dartov.png"],
-                        "elements" => ["b_shirtbody_round0001.png",  ],
+                        "overlay" => "dart_overlay1.png",
+                        "elements" => ["b_shirtbody_round0001.png", "b_shirtbody_squre0001.png", "dart20001.png", "yoke0001.png"],
                         "image" => "customization/dart.jpeg"
                     )],
                 "Pocket" => [
