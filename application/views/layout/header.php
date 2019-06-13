@@ -87,11 +87,36 @@
             .ownmenu .dropdown.megamenu .dropdown-menu li a{
                 line-height: 25px;
             }
+            
+            .social_header a {
+    padding: 10px;
+}
 
         </style>
 
 
         <!-- Page Wrapper -->
+        <div id="wrap" class="shop-page" ng-controller="ShopController"> 
+            <!-- Rights -->
+            <div class="rights  linkheader hideonmobile " style="    padding: 0;    background: #fff;">
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-sm-6 " >
+                            <p style="color:black;    font-size: 13px;margin-top: 0px;"><i class="fa fa-phone"></i>+(852) 9644 9965&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-envelope"></i></b> jason@lordscustomtailors.com</p>
+                        </div>
+                        <div class="col-sm-6 text-right" >                 
+                            <div class="social-links social_header" style="    float: right;
+                                 margin-top: 4px;"> 
+                                <a href="" target="_blank"><i class="fa fa-facebook"></i></a> 
+                                <a href="" target="_blank"><i class="fa fa-twitter"></i></a> 
+                                <a href="" target="_blank"><i class="fa fa-instagram"></i></a> 
+                                <a href="h" target="_blank"><i class="fa fa-tripadvisor"></i></a> 
+                                <a href="" target="_blank"><i class="fa fa-pinterest"></i></a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <div id="wrap" class="shop-page" ng-controller="ShopController"> 
 
             <!-- Header -->
