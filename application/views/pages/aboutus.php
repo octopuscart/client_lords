@@ -25,7 +25,7 @@ $this->load->view('layout/header');
 
                             <h3>ABOUT US</h3>
 
-                            <p class="pad-t-b-20" style="text-align: left;padding: 20px;font-size: 15px;">We always listen to the expressed and unexpressed wish of our guests. We have over 6000 fabric choices to attire different style and need. <br/>We tailor-made every lining color and detail for each unique and personalized character.<br/>
+                            <p class="pad-t-b-20" style="text-align: left;padding: 20px;font-size: 15px;">
 
                                 <b>Lord&rsquo;s Custom Tailors</b> is a Hong Kong founded tailoring company dedicated to the traditional workmanship and tailoring styles based from traditional hand creation of custom tailoring. We are makers of fine personalized luxury custom made formal wear to fit men and women with impeccable looks for all seasons.<br />
                                 <br />

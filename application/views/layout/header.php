@@ -103,12 +103,12 @@
                 <div class="container ">
                     <div class="row">
                         <div class="col-sm-6 " >
-                            <p style="color:black;    font-size: 13px;margin-top: 0px;"><i class="fa fa-phone"></i>+(852) 9644 9965&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-envelope"></i></b> jason@lordscustomtailors.com</p>
+                            <p style="color:black;    font-size: 13px;margin-top: 0px;"><a  href="tel:85296449965" style="color:black;"><i class="fa fa-phone"></i>+(852) 9644 9965</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="mailto:jason@lordscustomtailors.com" style="color:black;"><i class="fa fa-envelope"></i></b> jason@lordscustomtailors.com</a></p>
                         </div>
                         <div class="col-sm-6 text-right" >                 
                             <div class="social-links social_header" style="    float: right;
                                  margin-top: 4px;"> 
-                                <a href="" target="_blank"><i class="fa fa-facebook"></i></a> 
+                                <a href="https://www.facebook.com/lordscustomtailors"" target="_blank"><i class="fa fa-facebook"></i></a> 
                                 <a href="" target="_blank"><i class="fa fa-twitter"></i></a> 
                                 <a href="" target="_blank"><i class="fa fa-instagram"></i></a> 
                                 <a href="h" target="_blank"><i class="fa fa-tripadvisor"></i></a> 
@@ -146,7 +146,7 @@
                                         </ul>
                                     </li>
                                     <li class="dropdown"> 
-                                        <a  href="#" class="dropdown-toggle " data-toggle="dropdown">Shop Now</a>
+                                        <a  href="<?php echo site_url('Product/ProductList/2/0'); ?>" class="dropdown-toggle " data-toggle="dropdown">Shop Now</a>
                                         <ul class="dropdown-menu">
                                         
                                             <li><a href="<?php echo site_url('Product/ProductList/1/0'); ?>">Shirts</a></li>

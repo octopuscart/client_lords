@@ -13,15 +13,17 @@
                     Unit D, 2/F, Far East Mansion,<br/> 5-6 Middle Road,
                     Tsim Sha Tsui, <br/>Kowloon, Hong Kong
                 </p>
-                <p><b><i class="fa fa-phone"></i></b> +(852) 2723 9716</p>
-                <p><b><i class="fa fa-envelope"></i></b> jason@lordscustomtailors.com</p>
-                <p><b><i class="fa fa-envelope"></i></b> john@lordscustomtailors.com</p>
+                <p><a href="https://api.whatsapp.com/send?phone=85296449965" style="color:white;"><b><i class="fa fa-phone"></i></b> +(852) 9644 9965</a></p>
+                <p><a href="mailto:jason@lordscustomtailors.com" style="color:white;"><b><i class="fa fa-envelope"></i></b> jason@lordscustomtailors.com</a></p>
+
 
                 <div class="social-links"> 
                     <a href="https://www.facebook.com/lordscustomtailors" target="_blank"><i class="fa fa-facebook"></i></a> 
-                    <a href="#."><i class="fa fa-twitter"></i></a> 
-                    <a href="#."><i class="fa fa-instagram"></i></a> 
-                    <a href="#."><i class="fa fa-pinterest"></i></a>
+
+                    <a href="" target="_blank"><i class="fa fa-twitter"></i></a> 
+                    <a href="" target="_blank"><i class="fa fa-instagram"></i></a> 
+                    <a href="h" target="_blank"><i class="fa fa-tripadvisor"></i></a> 
+                    <a href="" target="_blank"><i class="fa fa-pinterest"></i></a> 
                 </div>
             </div>
 
@@ -29,11 +31,11 @@
             <div class="col-md-3">
                 <h4>Categories</h4>
                 <ul class="links-footer">
-                    <li ><a href="#">Shirts</a></li>
-                    <li ><a href="#">Suits</a></li>
-                    <li ><a href="#">Jackets</a></li>
-                    <li ><a href="#">Pants</a></li>
-                    <li ><a href="#">Tuxedo Suits</a></li>
+                    <li><a href="<?php echo site_url('Product/ProductList/1/0'); ?>">Shirts</a></li>
+                    <li><a href="<?php echo site_url('Product/ProductList/2/0'); ?>">Suits</a></li>
+                    <li><a href="<?php echo site_url('Product/ProductList/4/0'); ?>">Jackets</a></li>
+                    <li><a href="<?php echo site_url('Product/ProductList/3/0'); ?>">Pants</a></li>
+                    <li><a href="#">Tuxedo Suits</a></li>
 
                 </ul>
             </div>

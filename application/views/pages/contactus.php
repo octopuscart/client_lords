@@ -24,13 +24,19 @@ $this->load->view('layout/header');
                     </div>
                     <ul class="studio-loc padding-right-100">
                         <li><i class="flaticon-route"></i> Unit D, 2/F, Far East Mansion,<br/> 5-6 Middle Road,<br/>
-                    Tsim Sha Tsui, Kowloon,<br/>  Hong Kong</li>
+                            Tsim Sha Tsui, Kowloon,<br/>  Hong Kong</li>
                         <li><i class="flaticon-smartphone"></i> 
-                            <a href="#"><span class="fa fa-phone"></span> +(852) 2723 9716</a> <br>
-                            <a href="#"><span class="fa fa-phone"></span> +(852) 9644 9965</a>
+                            <a href="tel:85227239716"><span class="fa fa-phone"></span> +(852) 2723 9716</a> <br>
+                            <a href="tel:85296449965"><span class="fa fa-phone"></span> +(852) 9644 9965</a>
                         </li>
-                        <li><i class="flaticon-mail"></i> <a href="#">jason@lordscustomtailors.com</a> <br>
-                            <a href="#">john@lordscustomtailors.com</a></li>
+                        
+                         <li><i class="fa fa-whatsapp" style="line-height: 28px;"></i> 
+                            <a href="tel:85296449965"> +(852) 9644 9965</a>
+                        </li>
+                        
+                        <li>
+                            <i class="flaticon-mail" style="line-height: 28px;"></i> <a href="#">jason@lordscustomtailors.com</a> <br>
+
                     </ul>
 
                     <!-- Main Heading -->
@@ -42,6 +48,7 @@ $this->load->view('layout/header');
                             <li><a href="https://www.facebook.com/lordscustomtailors" target="_blank"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#."><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#."><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#."><i class="fa fa-tripadvisor"></i></a></li>
                             <li><a href="#."><i class="fa fa-pinterest"></i></a></li>
 
                         </ul>
@@ -85,7 +92,7 @@ $this->load->view('layout/header');
                                 <li class="col-sm-12">
                                     <label>
                                         <select name="subject" placeholder="Subject" class="form-control" style="  height: 50px;
-    background: #fafafa; " required="">
+                                                background: #fafafa; " required="">
                                             <option>Enquiry</option>
                                             <option>Send Swatches</option>
                                             <option>Feedback</option>

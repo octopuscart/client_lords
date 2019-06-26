@@ -47,7 +47,7 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="color: #fff; font-size: 60px; text-transform: uppercase; font-weight: 900; letter-spacing:3px;"> FEEL ROYAL LIFE STYLE </div>
+                         style="color: #fff; font-size: 40px; text-transform: uppercase; font-weight: 900; letter-spacing:3px;"> Leading Bespoke Tailor In Hong Kong </div>
 
 
 
@@ -64,7 +64,7 @@ $this->load->view('layout/header');
                          data-elementdelay="0.1" 
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
-                         data-captionhidden="on"> <a href="#." class="btn btn-1">CUSTOMIZE NOW</a> </div>
+                         data-captionhidden="on"> <a href="<?php echo site_url("Product/ProductList/2/0")?>" class="btn btn-1">SHOP NOW</a> </div>
                 </li>
 
 
@@ -124,7 +124,7 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="z-index: 10;"> <a href="#." class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn btn-1">Discover</a> </div>
+                         style="z-index: 10;"> <a href="<?php echo site_url("Product/ProductList/2/0")?>" class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="<?php echo site_url("appointment")?>" class="btn btn-1">Discover</a> </div>
                 </li>
 
 
@@ -181,7 +181,7 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="z-index: 10;"> <a href="#." class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn btn-1">Discover</a> </div>
+                         style="z-index: 10;"> <a href="<?php echo site_url("Product/ProductList/2/0")?>" class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="<?php echo site_url("appointment")?>" class="btn btn-1">Discover</a> </div>
                 </li>
 
                 <!-- Slider 3 -->
@@ -238,7 +238,7 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="z-index: 10;"> <a href="#." class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="btn btn-1">Discover</a> </div>
+                         style="z-index: 10;"> <a href="<?php echo site_url("Product/ProductList/2/0")?>" class="btn">Shop Now</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="<?php echo site_url("appointment")?>" class="btn btn-1">Discover</a> </div>
                 </li>
 
 
@@ -284,7 +284,7 @@ $this->load->view('layout/header');
                                     <li>Ready Stock Luxury Fabrics<i class="fa fa-check"></i></li>
                                     <li>Customised Service At Your Doorstep <i class="fa fa-check"></i></li>
                                 </ul>
-                                <a href="#." class="btn btn-inverse">Buy Now</a> </article>
+                                <a href="<?php echo site_url("Product/ProductList/2/0")?>" class="btn btn-inverse">Shop Now</a> </article>
                         </div>
 
 
@@ -342,7 +342,7 @@ $this->load->view('layout/header');
                     <!-- Unlimited Features -->
                     <li class="col-sm-3"> <i class="fa fa-list-alt animate fadeInUp" data-wow-delay="0.6s"></i>
                         <h6>Get Size</h6>
-                        <p>Let Size and calculate your measurement. We start working on your shirts, suits or jacket once an order is received.</p>
+                        <p>Let us fit and measure you up. We start working on your shirts, suits or jacket once an order is received.</p>
                     </li>
 
                     <!-- Ultra Responsive -->
