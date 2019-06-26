@@ -52,7 +52,7 @@ $this->load->view('layout/header');
                 <div class="col-sm-6">
                     <!-- Main Heading -->
                     <div class="heading-block left-align margin-bottom-30">
-                        <h3 class="text-transform-none letter-space-0">Conatct Us</h3>
+                        <h3 class="text-transform-none letter-space-0">Contact Us</h3>
                     </div>
 
                     <div class="contact">               

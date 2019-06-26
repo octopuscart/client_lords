@@ -1481,7 +1481,7 @@ class CustomApi extends REST_Controller {
                     )
                     , array(
                         "status" => "0",
-                        "title" => "6 Buttons 2 Buttons Fasten",
+                        "title" => "6 Buttons 1 Button Fasten",
                         "elements" => ["body_42.png",],
                         "customization_category_id" => "4",
                         "left" => "body_double_4_left0001.png",
@@ -1489,7 +1489,7 @@ class CustomApi extends REST_Controller {
                         "button_hole" => ["button_hole_41_10001.png"],
                         "buttons" => ["buttons_42_120001.png", "buttons_42_340001.png", "buttons_42_560001.png"],
                         "buttons2" => [],
-                        "image" => "suit_elements/suittype/62_button.png",
+                        "image" => "suit_elements/suittype/61_button.png",
                         "show_buttons" => "true",
                         "canvas_m"=>"jacketstyle",
                         "canvas_o"=>"jacketstyleoverlay",
