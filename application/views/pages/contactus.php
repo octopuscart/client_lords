@@ -47,7 +47,7 @@ $this->load->view('layout/header');
                         </li>
 
                         <li><i class="fa fa-whatsapp" style="line-height: 28px;"></i> 
-                            <a href="tel:85296449965"> +(852) 9644 9965</a>
+                            <a href="https://api.whatsapp.com/send?phone=85296449965"> +(852) 9644 9965</a>
                         </li>
 
                         <li>
