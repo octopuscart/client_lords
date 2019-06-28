@@ -9,7 +9,7 @@ $this->load->view('layout/header');
 <!-- Content -->
 <div id="content"> 
 
-    <div class="main-page-section half_left_layout" style="    background: white;">
+    <div class="main-page-section half_left_layout hideonmobile" style="    background: white;">
         <div class="">
             <div class="main-half-layout3 half_left_layout studio-bg" style="background: url(<?php echo base_url(); ?>assets/images/contact.jpg);background-repeat: no-repeat;background-size: cover;"></div>
 
@@ -89,7 +89,7 @@ $this->load->view('layout/header');
                                         <input type="text" class="form-control" name="last_name" id="name" placeholder="Last Name" required="">
                                     </label>
                                 </li>
-                                <li class="col-sm-5 pull-right">
+                                <li class="col-sm-6 ">
                                     <label>
                                         <input type="text" class="form-control" name="first_name" id="name" placeholder="First Name" required="">
                                     </label>

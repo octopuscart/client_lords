@@ -31,15 +31,15 @@ $temp = array(
             <div class="row"> 
 
                 <div class="main-page-section half_left_layout" style="    background: white;">
-                    <div class="main-half-layout3 half_left_layout studio-bg" style="background: url(<?php echo base_url(); ?>assets/images/faqback.jpg);background-repeat: no-repeat;background-size: cover;background-position:center"></div>
+                    <div class="main-half-layout3 half_left_layout studio-bg hideonmobile" style="background: url(<?php echo base_url(); ?>assets/images/faqback.jpg);background-repeat: no-repeat;background-size: cover;background-position:center"></div>
 
-                    <div class="main-half-layout-container half_left_layout" style="padding: 40px 0px;">
+                    <div class="main-half-layout-container half_left_layout " style="background:white">
                         <!-- Heading -->
                         <div class="heading-block " style="margin-bottom: 0px;text-align: left;">
 
                             <h3>FAQ's</h3>
 
-                            <div class="row">
+                            <div class="">
                                 <!--accordion-->
                                 <div class="margin-top-30">
                                     <div class="accordion" style=''>
