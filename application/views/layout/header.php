@@ -87,14 +87,15 @@
             .ownmenu .dropdown.megamenu .dropdown-menu li a{
                 line-height: 25px;
             }
-            
+
             .social_header a {
-    padding: 10px;
-}
+                padding: 10px;
+            }
 
         </style>
-<script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-9bfed4d8-7eb3-4134-a09d-a741b88f28d7"></div>
+        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+        <div class="elfsight-app-9bfed4d8-7eb3-4134-a09d-a741b88f28d7"></div>
+        
 
         <!-- Page Wrapper -->
         <div id="wrap" class="shop-page" ng-controller="ShopController"> 
@@ -118,176 +119,176 @@
                     </div>
                 </div>
             </div>
-        <div id="wrap" class="shop-page" ng-controller="ShopController"> 
+            <div id="wrap" class="shop-page" ng-controller="ShopController"> 
 
-            <!-- Header -->
-            <header class="header ">
-                <div class="sticky " style="    background: #000;">
-                    <div class="container">
-                        <div class="logo">
-                            <a href="<?php echo site_url("/"); ?>" style="font-size: 31px;">
-                                <img src="<?php echo base_url() . 'assets/images/logo.png'; ?>" class="logomain">                          
-                            </a> 
-                        </div>
-
-                        <!-- Nav -->
-                        <nav class="navbar ownmenu">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-open-btn" aria-expanded="false"> <span><i class="fa fa-navicon"></i></span> </button>
+                <!-- Header -->
+                <header class="header ">
+                    <div class="sticky " style="    background: #000;">
+                        <div class="container">
+                            <div class="logo">
+                                <a href="<?php echo site_url("/"); ?>" style="font-size: 31px;">
+                                    <img src="<?php echo base_url() . 'assets/images/logo.png'; ?>" class="logomain">                          
+                                </a> 
                             </div>
 
-                            <!-- NAV -->
-                            <div class="collapse navbar-collapse goldtextcss" id="nav-open-btn">
-                                <ul class="nav">
-                                    <li class="dropdown"> <a  href="<?php echo site_url("/"); ?>" class="dropdown-toggle " data-toggle="dropdown">Home</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="<?php echo site_url("aboutus"); ?>">About Us</a></li>
-                                            <li><a href=<?php echo site_url("faqs"); ?>>FAQ'S</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"> 
-                                        <a  href="<?php echo site_url('Product/ProductList/2/0'); ?>" class="dropdown-toggle " data-toggle="dropdown">Shop Now</a>
-                                        <ul class="dropdown-menu">
-                                        
-                                            <li><a href="<?php echo site_url('Product/ProductList/1/0'); ?>">Shirts</a></li>
-                                            <li><a href="<?php echo site_url('Product/ProductList/2/0'); ?>">Suits</a></li>
-                                            <li><a href="<?php echo site_url('Product/ProductList/4/0'); ?>">Jackets</a></li>
-                                            <li><a href="<?php echo site_url('Product/ProductList/3/0'); ?>">Pants</a></li>
-                                            <li><a href="#">Tuxedo Suits</a></li>
+                            <!-- Nav -->
+                            <nav class="navbar ownmenu">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-open-btn" aria-expanded="false"> <span><i class="fa fa-navicon"></i></span> </button>
+                                </div>
 
-                                        </ul>
-                                    </li>
-
-                                    <li > 
-                                        <a href="<?php echo site_url("lookbook"); ?>">Look Book</a>
-                                    </li>
-                                    <li > 
-                                        <a href="<?php echo site_url("appointment"); ?>">Make An Appointment</a>
-                                    </li>
-                                    <li > 
-                                        <a href="<?php echo site_url('stylingTips'); ?>">Our Blog</a>
-                                    </li>
-                                    <li > 
-                                        <a href="<?php echo site_url('contact-us'); ?>">Contact Us</a>
-                                    </li>
-
-
-
-                                    <!--                                     Mega Menu Nav 
-                                                                        <li class="dropdown megamenu"> <a href="#." class="dropdown-toggle" data-toggle="dropdown">Shop Now </a>
-                                                                            <div class="dropdown-menu">
-                                                                                <div class="mega-inside">
-                                                                                    <div class="row">
-                                                                                        <div class="col-sm-3" ng-repeat="catv in categoriesMenu" >
-                                                                                            <h6 style="margin-bottom: 0px">
-                                                                                                <a href="<?php echo site_url("Product/ProductList/"); ?>{{catv.id}}" >{{catv.category_name}}</a>
-                                                                                            </h6>
-                                                                                            <ul>
-                                                                                                <li ng-repeat="subv in catv.sub_category">
-                                                                                                    <a href="<?php echo site_url("Product/ProductList/"); ?>{{subv.id}}" >{{subv.category_name}}</a>
-                                                                                                </li>
-                                                                                                <li></li>
-                                                                                            </ul>
-                                                                                        </div>
-                                    
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>-->
-
-
-
-
-                                    <?php
-                                    $session_data = $this->session->userdata('logged_in');
-                                    if ($session_data) {
-                                        ?>
-                                        <li class="dropdown"> <a href="contact_us_1.html" class="dropdown-toggle" data-toggle="dropdown">Hi, <?php echo $session_data['first_name'] ? $session_data['first_name'] : 'User'; ?>! </a>
+                                <!-- NAV -->
+                                <div class="collapse navbar-collapse goldtextcss" id="nav-open-btn">
+                                    <ul class="nav">
+                                        <li class="dropdown"> <a  href="<?php echo site_url("/"); ?>" class="dropdown-toggle " data-toggle="dropdown">Home</a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="<?php echo site_url("Account/profile"); ?>">Profile</a></li>
-                                                <li><a href="<?php echo site_url("Account/orderList"); ?>">My Order</a></li>
-                                                <li><a href="<?php echo site_url("Account/logout"); ?>">Logout</a></li>
+                                                <li><a href="<?php echo site_url("aboutus"); ?>">About Us</a></li>
+                                                <li><a href=<?php echo site_url("faqs"); ?>>FAQ'S</a></li>
                                             </ul>
                                         </li>
+                                        <li class="dropdown"> 
+                                            <a  href="<?php echo site_url('Product/ProductList/2/0'); ?>" class="dropdown-toggle " data-toggle="dropdown">Shop Now</a>
+                                            <ul class="dropdown-menu">
+
+                                                <li><a href="<?php echo site_url('Product/ProductList/1/0'); ?>">Shirts</a></li>
+                                                <li><a href="<?php echo site_url('Product/ProductList/2/0'); ?>">Suits</a></li>
+                                                <li><a href="<?php echo site_url('Product/ProductList/4/0'); ?>">Jackets</a></li>
+                                                <li><a href="<?php echo site_url('Product/ProductList/3/0'); ?>">Pants</a></li>
+                                                <li><a href="#">Tuxedo Suits</a></li>
+
+                                            </ul>
+                                        </li>
+
+                                        <li > 
+                                            <a href="<?php echo site_url("lookbook"); ?>">Look Book</a>
+                                        </li>
+                                        <li > 
+                                            <a href="<?php echo site_url("appointment"); ?>">Make An Appointment</a>
+                                        </li>
+                                        <li > 
+                                            <a href="<?php echo site_url('stylingTips'); ?>">Our Blog</a>
+                                        </li>
+                                        <li > 
+                                            <a href="<?php echo site_url('contact-us'); ?>">Contact Us</a>
+                                        </li>
+
+
+
+                                        <!--                                     Mega Menu Nav 
+                                                                            <li class="dropdown megamenu"> <a href="#." class="dropdown-toggle" data-toggle="dropdown">Shop Now </a>
+                                                                                <div class="dropdown-menu">
+                                                                                    <div class="mega-inside">
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-3" ng-repeat="catv in categoriesMenu" >
+                                                                                                <h6 style="margin-bottom: 0px">
+                                                                                                    <a href="<?php echo site_url("Product/ProductList/"); ?>{{catv.id}}" >{{catv.category_name}}</a>
+                                                                                                </h6>
+                                                                                                <ul>
+                                                                                                    <li ng-repeat="subv in catv.sub_category">
+                                                                                                        <a href="<?php echo site_url("Product/ProductList/"); ?>{{subv.id}}" >{{subv.category_name}}</a>
+                                                                                                    </li>
+                                                                                                    <li></li>
+                                                                                                </ul>
+                                                                                            </div>
+                                        
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>-->
+
+
+
+
                                         <?php
-                                    } else {
+                                        $session_data = $this->session->userdata('logged_in');
+                                        if ($session_data) {
+                                            ?>
+                                            <li class="dropdown"> <a href="contact_us_1.html" class="dropdown-toggle" data-toggle="dropdown">Hi, <?php echo $session_data['first_name'] ? $session_data['first_name'] : 'User'; ?>! </a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="<?php echo site_url("Account/profile"); ?>">Profile</a></li>
+                                                    <li><a href="<?php echo site_url("Account/orderList"); ?>">My Order</a></li>
+                                                    <li><a href="<?php echo site_url("Account/logout"); ?>">Logout</a></li>
+                                                </ul>
+                                            </li>
+                                            <?php
+                                        } else {
+                                            ?>
+
+
+                                            <?php
+                                        }
                                         ?>
 
+                                    </ul>
+                                </div>
 
-                                        <?php
-                                    }
-                                    ?>
+                                <!-- NAV RIGHT -->
+                                <div class="nav-right">
+                                    <ul >
+                                        <li class="dropdown user-basket"> <span class="cart-num">{{globleCartDatac.total_quantity}}</span> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="fa fa-shopping-cart"></i> </a>
+                                            <ul class="dropdown-menu">
 
-                                </ul>
-                            </div>
-
-                            <!-- NAV RIGHT -->
-                            <div class="nav-right">
-                                <ul >
-                                    <li class="dropdown user-basket"> <span class="cart-num">{{globleCartDatac.total_quantity}}</span> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="fa fa-shopping-cart"></i> </a>
-                                        <ul class="dropdown-menu">
-
-                                            <!--prodcut cart list-->
-                                            <div class="scroll_items"  ng-if="globleCartDatac.total_quantity">
-                                                <li ng-repeat="product in globleCartDatac.products" class="animated flipInX">
-                                                    <div class="media-left">
-                                                        <div class="cart-img"> 
-                                                            <a href="#"> 
-                                                                <img class="media-object img-responsive" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="..."> 
-                                                            </a> 
+                                                <!--prodcut cart list-->
+                                                <div class="scroll_items"  ng-if="globleCartDatac.total_quantity">
+                                                    <li ng-repeat="product in globleCartDatac.products" class="animated flipInX">
+                                                        <div class="media-left">
+                                                            <div class="cart-img"> 
+                                                                <a href="#"> 
+                                                                    <img class="media-object img-responsive" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="..."> 
+                                                                </a> 
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h6 class="media-heading" style="font-size: 12px;">{{product.title}} - {{product.item_name}}</h6>
-                                                        <span class="price">{{product.quantity}}</span> 
-                                                    </div>
-                                                    <a href="#" class="remov" ng-click="removeCart(product.product_id)">
-                                                        <i class="fa fa-times"></i>
-                                                    </a> 
+                                                        <div class="media-body">
+                                                            <h6 class="media-heading" style="font-size: 12px;">{{product.title}} - {{product.item_name}}</h6>
+                                                            <span class="price">{{product.quantity}}</span> 
+                                                        </div>
+                                                        <a href="#" class="remov" ng-click="removeCart(product.product_id)">
+                                                            <i class="fa fa-times"></i>
+                                                        </a> 
+                                                    </li>
+                                                </div>
+                                                <!--end of product cart list-->
+                                                <li class="margin-0 padding-0 price-cart-drop" style="background: #fff!important;">
+                                                    <h5>Subtotal: <span>{{globleCartDatac.total_quantity}}</span></h5>
                                                 </li>
-                                            </div>
-                                            <!--end of product cart list-->
-                                            <li class="margin-0 padding-0 price-cart-drop" style="background: #fff!important;">
-                                                <h5>Subtotal: <span>{{globleCartDatac.total_quantity}}</span></h5>
-                                            </li>
-                                            <li class="margin-0 padding-0"> 
-                                                <a href="<?php echo site_url("Cart/details"); ?>" class="btn margin-bottom-20">VIEW CART</a> 
-                                                <a href="<?php echo site_url("Cart/checkoutInit"); ?>" class="btn">CHECKOUT NOW</a>
-                                            </li>
-                                        </ul>
+                                                <li class="margin-0 padding-0"> 
+                                                    <a href="<?php echo site_url("Cart/details"); ?>" class="btn margin-bottom-20">VIEW CART</a> 
+                                                    <a href="<?php echo site_url("Cart/checkoutInit"); ?>" class="btn">CHECKOUT NOW</a>
+                                                </li>
+                                            </ul>
 
-                                        <ul class="dropdown-menu" ng-if="globleCartDatac.products.length == 0">
-                                            <li class="margin-0 padding-0 price-cart-drop">
-                                                <h5>No Item Found</h5>
-                                            </li>
-                                            <li class="margin-0 padding-0"> 
-                                                <a href="<?php echo site_url(); ?>" class="btn margin-bottom-20">HOME</a> 
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li> <a href="javascript:void(0);" class="search-open"><i class="fa fa-lock"></i></a></li>
-                                    <li> <a href="javascript:void(0);" class="search-open"><i class="fa fa-search"></i></a>
-                                        <div class="search-inside animated-4s fadeIn"> <i class="lnr lnr-cross search-close"></i>
-                                            <div class="search-overlay"></div>
-                                            <div class="position-center-center">
-                                                <div class="container">
-                                                    <div class="search">
-                                                        <form>
-                                                            <input type="search" placeholder="Type Your Search...">
-                                                            <button type="submit"><i class="lnr lnr-magnifier"></i></button>
-                                                        </form>
+                                            <ul class="dropdown-menu" ng-if="globleCartDatac.products.length == 0">
+                                                <li class="margin-0 padding-0 price-cart-drop">
+                                                    <h5>No Item Found</h5>
+                                                </li>
+                                                <li class="margin-0 padding-0"> 
+                                                    <a href="<?php echo site_url(); ?>" class="btn margin-bottom-20">HOME</a> 
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li> <a href="javascript:void(0);" class="search-open"><i class="fa fa-lock"></i></a></li>
+                                        <li> <a href="javascript:void(0);" class="search-open"><i class="fa fa-search"></i></a>
+                                            <div class="search-inside animated-4s fadeIn"> <i class="lnr lnr-cross search-close"></i>
+                                                <div class="search-overlay"></div>
+                                                <div class="position-center-center">
+                                                    <div class="container">
+                                                        <div class="search">
+                                                            <form>
+                                                                <input type="search" placeholder="Type Your Search...">
+                                                                <button type="submit"><i class="lnr lnr-magnifier"></i></button>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
 
 
 
-                        </nav>
+                            </nav>
+                        </div>
                     </div>
-                </div>
-            </header>
-            <!-- End Header --> 
+                </header>
+                <!-- End Header --> 

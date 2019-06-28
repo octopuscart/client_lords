@@ -114,5 +114,13 @@
 
 </body>
 
-<!-- Mirrored from demos.webicode.com/html/BizTo/html/shop-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Feb 2018 16:18:20 GMT -->
+<script>
+    $(function () {
+        setTimeout(function () {
+            $(".eawc-button-button").next().hide();
+            $(".eawc-user-image-image").css({"background": "url(https://lct.costcokart.com/assets/images/fav.png)", "background-size":"cover"})
+        }, 3000)
+    });
+</script>
+
 </html>
