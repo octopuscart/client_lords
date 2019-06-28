@@ -43,7 +43,7 @@ $this->load->view('layout/header');
         </div>
     </section>
 
-
+</div>
 
 
     <?php

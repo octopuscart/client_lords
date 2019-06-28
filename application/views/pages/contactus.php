@@ -4,18 +4,34 @@ $this->load->view('layout/header');
 
 
 <!-- MAP -->
-<section class="map-block">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.5276103373485!2d114.17070935014365!3d22.295877348618493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400f23d5251c9%3A0x66613282f30db84a!2z5bCW5rKZ5ZKA5Lit6ZaT6YGTNS026Jmf6YGg5p2x5aSn5buI!5e0!3m2!1szh-TW!2shk!4v1472542043770" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe><div class="goldline2 " style="margin-bottom: 30px;"></div>
-    <div style="clear: both"></div>
-</section>
+
 <div style="clear: both"></div>
 <!-- Content -->
 <div id="content"> 
+
+    <div class="main-page-section half_left_layout" style="    background: white;">
+        <div class="">
+            <div class="main-half-layout3 half_left_layout studio-bg" style="background: url(<?php echo base_url(); ?>assets/images/contact.jpg);background-repeat: no-repeat;background-size: cover;"></div>
+
+            <div class="main-half-layout-container half_left_layout" style="    width: 50%;
+                 margin: 0px;    margin-bottom: -5px;
+                 padding: 0;">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.5276103373485!2d114.17070935014365!3d22.295877348618493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400f23d5251c9%3A0x66613282f30db84a!2z5bCW5rKZ5ZKA5Lit6ZaT6YGTNS026Jmf6YGg5p2x5aSn5buI!5e0!3m2!1szh-TW!2shk!4v1472542043770" width="100%" height="360" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+            </div>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+
+    <div style="clear: both"></div>
     <!-- Contact Us -->
-    <section class="lets-talk pad-t-b-30">
+    <section class="lets-talk margin-top-20">
         <div class="container"> 
             <!-- Cantact Us -->
             <div class="row">
+
+
                 <div class="col-md-6 contact-social"> 
 
                     <!-- Main Heading -->
@@ -29,11 +45,11 @@ $this->load->view('layout/header');
                             <a href="tel:85227239716"><span class="fa fa-phone"></span> +(852) 2723 9716</a> <br>
                             <a href="tel:85296449965"><span class="fa fa-phone"></span> +(852) 9644 9965</a>
                         </li>
-                        
-                         <li><i class="fa fa-whatsapp" style="line-height: 28px;"></i> 
+
+                        <li><i class="fa fa-whatsapp" style="line-height: 28px;"></i> 
                             <a href="tel:85296449965"> +(852) 9644 9965</a>
                         </li>
-                        
+
                         <li>
                             <i class="flaticon-mail" style="line-height: 28px;"></i> <a href="#">jason@lordscustomtailors.com</a> <br>
 
@@ -120,8 +136,8 @@ $this->load->view('layout/header');
         </div>
 
     </section>
+</div>
 
-
-    <?php
-    $this->load->view('layout/footer');
-    ?>
+<?php
+$this->load->view('layout/footer');
+?>
