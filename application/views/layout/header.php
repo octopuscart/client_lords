@@ -165,6 +165,9 @@
                                         <li > 
                                             <a href="<?php echo site_url("appointment"); ?>">Make An Appointment</a>
                                         </li>
+                                         <li > 
+                                            <a href="<?php echo site_url('our-clients'); ?>">Our Clients</a>
+                                        </li>
                                         <li > 
                                             <a href="<?php echo site_url('stylingTips'); ?>">Our Blog</a>
                                         </li>

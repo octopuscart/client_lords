@@ -214,6 +214,11 @@ class Shop extends CI_Controller {
     public function faqs() {
         $this->load->view('pages/faqs');
     }
+    
+    
+    public function clients() {
+        $this->load->view('pages/clients');
+    }
 
     public function catalogue() {
         $this->load->view('pages/catalogue');

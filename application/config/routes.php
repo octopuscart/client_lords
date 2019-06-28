@@ -59,6 +59,7 @@ $route['lookbook'] = 'Shop/lookbook';
 $route['faqs'] = 'Shop/faqs';
 
 $route['aboutus'] = 'Shop/aboutus';
+$route['our-clients'] = 'Shop/clients';
 
 $route['testimonials'] = 'Shop/aboutus';
 $route['appointment'] = 'Shop/aboutus';
