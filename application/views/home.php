@@ -315,7 +315,7 @@ $this->load->view('layout/header');
             <!-- Heading -->
             <div class="heading-block  margin-bottom-20">
                 <div class="heading-block margin-bottom-30">
-                    <h3>We Are Tailoring Artist</h3>
+                    <h3>We Are Tailoring Artists</h3>
                     <hr>
                 </div>
                 <div class="intro-small col-md-8 center-auto">
@@ -348,7 +348,7 @@ $this->load->view('layout/header');
                     <!-- Ultra Responsive -->
                     <li class="col-sm-3"> <i class="fa fa-cut animate fadeInUp" data-wow-delay="0.4s"></i>
                         <h6>Cut to Create</h6>
-                        <p>Our experienced shanghainese tailor cut and make your new dress. We use only the finest raw materials when putting together in your dress.</p>
+                        <p>Our experienced shanghainese tailor cut and make your new dress. We use only the finest raw materials when putting together in your suit.</p>
                     </li>
 
                     <!-- Discuss Idea -->
@@ -442,7 +442,7 @@ $this->load->view('layout/header');
 
             <!-- Heading -->
             <div class="heading-block white">
-                <h3>What Our Customers Say</h3>
+                <h3>Testimonial</h3>
                 <hr>
             </div>
 
