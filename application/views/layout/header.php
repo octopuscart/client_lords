@@ -140,14 +140,14 @@
                                 <!-- NAV -->
                                 <div class="collapse navbar-collapse goldtextcss" id="nav-open-btn">
                                     <ul class="nav">
-                                        <li class="dropdown"> <a  href="<?php echo site_url("/"); ?>" class="dropdown-toggle " data-toggle="dropdown">Home</a>
+                                        <li class="dropdown"> <a  href="<?php echo site_url("/"); ?>" class="dropdown-toggle " >Home</a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="<?php echo site_url("aboutus"); ?>">About Us</a></li>
                                                 <li><a href=<?php echo site_url("faqs"); ?>>FAQ'S</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown"> 
-                                            <a  href="<?php echo site_url('Product/ProductList/2/0'); ?>" class="dropdown-toggle " data-toggle="dropdown">Shop Now</a>
+                                            <a  href="<?php echo site_url('Product/ProductList/2/0'); ?>" class="dropdown-toggle " >Shop Now</a>
                                             <ul class="dropdown-menu">
 
                                                 <li><a href="<?php echo site_url('Product/ProductList/1/0'); ?>">Shirts</a></li>
