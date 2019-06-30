@@ -22,6 +22,11 @@ $stylearray1 = [
         "details" => "Jason Mirpuri is a Custom Tailor God! Opened the package, put it on and PERFECT. I don’t even care about the shipping wrinkles... I am not taking this off!!",
         "tag" => "‎Joe Curcillo"
     ),
+	array(
+        "images" => "frank.jpg",
+        "details" =>'Fredrik Haren of Singapore "Love the suit! Love the service!"',
+        "tag" => "‎Fredrik Haren (Singapore)"
+    ),
 ];
 $stylearray2 = [
     array(
