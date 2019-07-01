@@ -160,7 +160,7 @@
                                         </li>
 
                                         <li > 
-                                            <a href="<?php echo site_url("lookbook"); ?>">Look Book</a>
+                                            <a href="<?php echo site_url("catalog"); ?>">Catalog</a>
                                         </li>
                                         <li > 
                                             <a href="<?php echo site_url("appointment"); ?>">Make An Appointment</a>

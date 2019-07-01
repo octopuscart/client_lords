@@ -6,12 +6,12 @@ $this->load->view('layout/header');
 <section class="sub-bnr" data-stellar-background-ratio="0.5" style="min-height: 50px;    background: #333333;">
     <div class="position-center-center">
         <div class="container">
-            <h4>Look Book</h4>
+            <h4>Catalog</h4>
 
             <!-- Breadcrumb -->
             <ol class="breadcrumb">
                 <li><a href="<?php echo site_url("/"); ?>">Home</a></li>
-                <li><a href="<?php echo site_url("Shop/lookbook"); ?>">Look Book</a></li>
+                <li><a href="<?php echo site_url("catalog"); ?>">Catalog</a></li>
 
             </ol>
         </div>

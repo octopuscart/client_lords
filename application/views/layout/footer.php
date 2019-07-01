@@ -56,7 +56,7 @@
                 <ul class="links-footer">
                     <li><a href="<?php echo site_url("stylingTips"); ?>">Our Blog</a></li>
                     <li><a href="<?php echo site_url("aboutus"); ?>">About Us</a></li>
-                    <li><a href="<?php echo site_url("lookbook"); ?>">Look Book</a></li>
+                    <li><a href="<?php echo site_url("catalog"); ?>">Catalog</a></li>
                     <li><a href="<?php echo site_url("contact-us"); ?>">Contact Us</a></li>
                     <li><a href="<?php echo site_url("faqs"); ?>">FAQs</a></li>
                 </ul>

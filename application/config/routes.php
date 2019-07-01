@@ -55,7 +55,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['contact-us'] = 'Shop/contactus';
 $route['booking'] = 'Shop/appointment';
 $route['subscribe'] = 'Shop/subscribe';
-$route['lookbook'] = 'Shop/lookbook';
+$route['catalog'] = 'Shop/lookbook';
 $route['faqs'] = 'Shop/faqs';
 
 $route['aboutus'] = 'Shop/aboutus';
