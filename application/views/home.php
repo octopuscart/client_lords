@@ -15,6 +15,26 @@ $this->load->view('layout/header');
         border: 1px solid rgb(255, 214, 88);
         margin-bottom: 30px;
     }
+    
+    .slidericon{}
+    .slidericon a{
+        font-size: 20px;
+        margin: 5px;
+    }
+    .slidericon a {
+    font-size:28px!important;
+    margin: 5px;
+    color: white;
+    border: 2px solid #fff!important;
+    padding: 6px!important;
+    width: 50px!important;
+    height: 50px;
+    float: left;
+    text-align: center;
+    line-height: 10px!important;
+    border-radius: 50%;
+    z-index: 2000;
+}
 </style>
 <!-- Slider -->
 <section class="home-slider">
@@ -48,7 +68,29 @@ $this->load->view('layout/header');
                          data-endspeed="300" 
                          data-captionhidden="on"
                          style="color: #fff; font-size: 40px; text-transform: uppercase; font-weight: 900; letter-spacing:3px;"> Leading Bespoke Tailor In Hong Kong </div>
-
+                    <!-- Layer -->
+                    <div class="tp-caption sft tp-resizeme rs-parallaxlevel-4" 
+                         data-x="center" data-hoffset="0" 
+                         data-y="center" data-voffset="-20" 
+                         data-speed="700" 
+                         data-start="2400"
+                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
+                         data-easing="Back.easeOut" 
+                         data-splitin="none" 
+                         data-splitout="none" 
+                         data-elementdelay="0.1" 
+                         data-endelementdelay="0.1" 
+                         data-endspeed="300" 
+                         data-captionhidden="on"> 
+                    
+                   <div class="slidericon">
+                    <a href="https://www.facebook.com/lordscustomtailors" target="_blank"><i class="fa fa-facebook"></i></a> 
+                    <a href="https://twitter.com/lordscustomtai1" target="_blank"><i class="fa fa-twitter"></i></a> 
+                    <a href="https://www.instagram.com/lordscustomtailors/" target="_blank"><i class="fa fa-instagram"></i></a> 
+                    <a href="" target="_blank"><i class="fa fa-tripadvisor"></i></a> 
+                    <a href="https://www.pinterest.com/lordscustomtailors/" target="_blank"><i class="fa fa-pinterest"></i></a> 
+                   </div>
+                    </div>
 
 
                     <!-- Layer -->
