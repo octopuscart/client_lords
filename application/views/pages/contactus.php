@@ -1,7 +1,20 @@
 <?php
 $this->load->view('layout/header');
 ?>
+<style>
 
+    .contact-social .social-links a {
+        border-radius: 4px;
+        border: 1px solid #252839;
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        margin-right: 5px;
+        line-height: 50px;
+        font-size: 30px;
+    }
+</style>
 
 <!-- MAP -->
 
@@ -39,11 +52,12 @@ $this->load->view('layout/header');
                         <h3 class="text-transform-none letter-space-0">Our Location</h3>
                     </div>
                     <ul class="studio-loc padding-right-100">
-                        <li><i class="flaticon-route"></i> Unit D, 2/F, Far East Mansion,<br/> 5-6 Middle Road,<br/>
+                        <li><i class="flaticon-route"></i>  2/FL Unit D, Far East Mansion,<br/> 5-6 Middle Road,<br/>
                             Tsim Sha Tsui, Kowloon,<br/>  Hong Kong</li>
                         <li><i class="flaticon-smartphone"></i> 
-                            <a href="tel:85227239716"><span class="fa fa-phone"></span> +(852) 2723 9716</a> <br>
-                            <a href="tel:85296449965"><span class="fa fa-phone"></span> +(852) 9644 9965</a>
+                            <a href="tel:85296449965"><span class="fa fa-phone"></span> +(852) 9644 9965</a><br>
+                            <a href="tel:+(1) 646 306 5182"><span class="fa fa-phone"></span> +(1) 646 306 5182</a> 
+
                         </li>
 
                         <li><i class="fa fa-whatsapp" style="line-height: 28px;"></i> 
@@ -51,8 +65,8 @@ $this->load->view('layout/header');
                         </li>
 
                         <li>
-                            <i class="flaticon-mail" style="line-height: 28px;"></i> <a href="#">jason@lordscustomtailors.com</a> <br>
-
+                            <i class="flaticon-mail" style="line-height: 50px;"></i> <a href="mailto:jason@lordscustomtailors.com">jason@lordscustomtailors.com</a> <br>
+                             <a href="mailto:nicole@lordscustomtailors.com">nicole@lordscustomtailors.com</a> <br>
                     </ul>
 
                     <!-- Main Heading -->
@@ -62,10 +76,10 @@ $this->load->view('layout/header');
                     <div class="social-links">
                         <ul>
                             <a href="https://www.facebook.com/lordscustomtailors"" target="_blank"><i class="fa fa-facebook"></i></a> 
-                                <a href="https://twitter.com/lordscustomtai1" target="_blank"><i class="fa fa-twitter"></i></a> 
-                                <a href="https://www.instagram.com/lordscustomtailors/" target="_blank"><i class="fa fa-instagram"></i></a> 
-                                <a href="" target="_blank"><i class="fa fa-tripadvisor"></i></a> 
-                                <a href="https://www.pinterest.com/lordscustomtailors/" target="_blank"><i class="fa fa-pinterest"></i></a> 
+                            <a href="https://twitter.com/lordscustomtai1" target="_blank"><i class="fa fa-twitter"></i></a> 
+                            <a href="https://www.instagram.com/lordscustomtailors/" target="_blank"><i class="fa fa-instagram"></i></a> 
+                            <a href="" target="_blank"><i class="fa fa-tripadvisor"></i></a> 
+                            <a href="https://www.pinterest.com/lordscustomtailors/" target="_blank"><i class="fa fa-pinterest"></i></a> 
 
                         </ul>
                     </div>

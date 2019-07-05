@@ -95,7 +95,7 @@
         </style>
         <script src="https://apps.elfsight.com/p/platform.js" defer></script>
         <div class="elfsight-app-9bfed4d8-7eb3-4134-a09d-a741b88f28d7"></div>
-        
+
 
         <!-- Page Wrapper -->
         <div id="wrap" class="shop-page" ng-controller="ShopController"> 
@@ -152,9 +152,10 @@
 
                                                 <li><a href="<?php echo site_url('Product/ProductList/1/0'); ?>">Shirts</a></li>
                                                 <li><a href="<?php echo site_url('Product/ProductList/2/0'); ?>">Suits</a></li>
-                                                <li><a href="<?php echo site_url('Product/ProductList/4/0'); ?>">Jackets</a></li>
-                                                <li><a href="<?php echo site_url('Product/ProductList/3/0'); ?>">Pants</a></li>
-                                                <li><a href="#">Tuxedo Suits</a></li>
+                                                <li><a href="<?php echo site_url('Product/ProductList/4/0'); ?>">Sport Coats</a></li>
+                                                <li><a href="#">Waist Coats</a></li>
+                                                <li><a href="<?php echo site_url('Product/ProductList/3/0'); ?>">Slacks</a></li>
+                                                <li><a href="#">Tuxedos</a></li>
 
                                             </ul>
                                         </li>
@@ -165,7 +166,7 @@
                                         <li > 
                                             <a href="<?php echo site_url("appointment"); ?>">Make An Appointment</a>
                                         </li>
-                                         <li > 
+                                        <li > 
                                             <a href="<?php echo site_url('our-clients'); ?>">Our Clients</a>
                                         </li>
                                         <li > 

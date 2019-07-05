@@ -106,7 +106,7 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="color: #fff; font-size: 18px; line-height:36px; font-weight: 500; letter-spacing:0px;">We Have Worlds Best Italian Fabrics.<br></div>
+                         style="color: #fff; font-size: 18px; line-height:36px; font-weight: 500; letter-spacing:0px;">Ready Stock Of Luxury European Fabrics.<br></div>
 
                     <!-- Layer -->
                     <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4" 
@@ -135,6 +135,7 @@ $this->load->view('layout/header');
                     <div class="tp-caption sft tp-resizeme font-montserrat rs-parallaxlevel-4" 
                          data-x="center" data-hoffset="0" 
                          data-y="center" data-voffset="0" 
+                      
                          data-speed="700" 
                          data-start="1700" 
                          data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
@@ -145,14 +146,14 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="color: #fff; font-size: 25px; text-transform: uppercase; font-weight: bold;  letter-spacing:3px;"> Worlds Best Italian Fabrics </div>
+                         style="color: #fff; font-size: 50px; text-transform: uppercase; font-weight: bold;  letter-spacing:3px;"> WORLD'S BEST ITALIAN FABRICS </div>
 
                     <!-- Layer -->
                     <div class="tp-caption sfb tp-resizeme  font-playfair text-center rs-parallaxlevel-4" 
                          data-x="center" 
                          data-hoffset="0" 
                          data-y="center" 
-                         data-voffset="-20"
+                         data-voffset="-100"
                          data-speed="700" 
                          data-start="1700" 
                          data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
@@ -163,7 +164,7 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="color: #fff; font-size: 18px; line-height:36px; font-weight: 500; letter-spacing:0px;">We Have Worlds Best Italian Fabrics.<br></div>
+                         style="color: #fff; font-size: 18px; line-height:36px; font-weight: 500; letter-spacing:0px;">We Stock The World's Best Italian Fabrics.<br></div>
 
                     <!-- Layer -->
                     <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4" 
@@ -220,7 +221,7 @@ $this->load->view('layout/header');
                          data-endelementdelay="0.1" 
                          data-endspeed="300" 
                          data-captionhidden="on"
-                         style="color: #fff; font-size: 18px; line-height:36px; font-weight: 500; letter-spacing:0px;">We Have Worlds Best Italian Fabrics.<br></div>
+                         style="color: #fff; font-size: 18px; line-height:36px; font-weight: 500; letter-spacing:0px;">We Stock The World's Best Italian Fabrics.<br></div>
 
                     <!-- Layer -->
                     <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4" 
@@ -279,10 +280,11 @@ $this->load->view('layout/header');
                             <article class="animate fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
                                 <div class="price-head"> <span class="plan-tittle">Why Choose Us</span></div>
                                 <ul>
-                                    <li>Shanghainese Production <i class="fa fa-check"></i></li>
-                                    <li>Can Produce In 1 Day<i class="fa fa-check"></i></li>
-                                    <li>Ready Stock Luxury Fabrics<i class="fa fa-check"></i></li>
-                                    <li>Customised Service At Your Doorstep <i class="fa fa-check"></i></li>
+                                    <li>Top Shanghainese Craftsmanship <i class="fa fa-check"></i></li>
+                                    <li>Ready Stock Of Luxury European Fabrics<i class="fa fa-check"></i></li>
+                                    <li>Fast Delivery<i class="fa fa-check"></i></li>
+                                    <li>Free Alterations <i class="fa fa-check"></i></li>
+                                    <li>Best Customer Service Guaranteed <i class="fa fa-check"></i></li>
                                 </ul>
                                 <a href="<?php echo site_url("Product/ProductList/2/0")?>" class="btn btn-inverse">Shop Now</a> </article>
                         </div>
@@ -335,26 +337,30 @@ $this->load->view('layout/header');
 
                     <!-- OUR SERVICES LIST -->
                     <li class="col-sm-3"> <i class="flaticon-coat animate fadeInUp" data-wow-delay="0.4s"></i>
-                        <h6>Create Own Style</h6>
-                        <p>Our fabrics are sourced from only a handful of mills across the world. Choose any fabric and create own style.</p>
+                        <h6>Create Your Own Style</h6>
+                        <p>Our fabrics are sourced from only the top European mills. Pick your fabric,
+create your own unique style and stand out from the crowd.</p>
                     </li>
 
                     <!-- Unlimited Features -->
                     <li class="col-sm-3"> <i class="fa fa-list-alt animate fadeInUp" data-wow-delay="0.6s"></i>
-                        <h6>Get Size</h6>
-                        <p>Let us fit and measure you up. We start working on your shirts, suits or jacket once an order is received.</p>
+                        <h6>Get Measured</h6>
+                        <p>Let our experienced master fitters measure you for your shirts, suits or
+sport coats which will be handmade to fit you perfectly.</p>
                     </li>
 
                     <!-- Ultra Responsive -->
                     <li class="col-sm-3"> <i class="fa fa-cut animate fadeInUp" data-wow-delay="0.4s"></i>
-                        <h6>Cut to Create</h6>
-                        <p>Our experienced shanghainese tailor cut and make your new dress. We use only the finest raw materials when putting together in your suit.</p>
+                        <h6>Your Bespoke Creation</h6>
+                        <p>Sit back, relax and enjoy the experience of having something made especially
+for you. Leave it to our craftsmen to produce your custom made bespoke
+garment.</p>
                     </li>
 
                     <!-- Discuss Idea -->
                     <li class="col-sm-3"> <i class="fa fa-truck animate fadeInUp" data-wow-delay="0.6s"></i>
                         <h6>Delivery</h6>
-                        <p>We can ship orders to anywhere in the world. Delivery with guaranteed best fit.</p>
+                        <p>We will ship your order anywhere in the world to your door.</p>
                     </li>
 
 
@@ -410,7 +416,8 @@ $this->load->view('layout/header');
             </div>
             <div class="intro-small col-md-9 center-auto margin-bottom-0">
                 <p>
-                    We will offer you with world-famous brands and 6000 kinds of different fabrics.                </p>
+                    We offer a vast selection of over 5,000 luxurious cloths from top European
+mills.               </p>
             </div>
             <?php
             $brandarray = ['loropiana.jpg', 'reda.jpg', 'zegna.jpg', 'hollandsherry.jpg', 'thomasmason.jpg', 'vbc.jpg'];
@@ -442,7 +449,7 @@ $this->load->view('layout/header');
 
             <!-- Heading -->
             <div class="heading-block white">
-                <h3>Testimonial</h3>
+                <h3>Testimonials</h3>
                 <hr>
             </div>
 
