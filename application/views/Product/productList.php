@@ -149,7 +149,7 @@ $image2 = "";
 <section class="sub-bnr" data-stellar-background-ratio="0.5" style="    min-height: 50px;">
     <div class="position-center-center">
         <div class="container">
-            <h4><?php
+            <h4 style="text-transform: capitalize;"><?php
                 echo $custom_item;
                 ?> Customization</h4>
 
