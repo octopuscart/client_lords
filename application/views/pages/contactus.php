@@ -56,7 +56,7 @@ $this->load->view('layout/header');
                             Tsim Sha Tsui, Kowloon,<br/>  Hong Kong</li>
                         <li><i class="flaticon-smartphone"></i> 
                             <a href="tel:85296449965"><span class="fa fa-phone"></span> +(852) 9644 9965</a><br>
-                            <a href="tel:+(1) 646 306 5182"><span class="fa fa-phone"></span> +(1) 646 306 5182</a> 
+                            <a href="tel:+1 (646) 306 5182"><span class="fa fa-phone"></span> +1 (646) 306 5182</a> 
 
                         </li>
 

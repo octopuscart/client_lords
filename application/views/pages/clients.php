@@ -15,12 +15,12 @@ $stylearray1 = [
     array(
         "images" => "avish.jpg",
         "details" => "About to keynote a conference. Wearing my new suit from Lord's Custom Tailors. Thanks Jason Mirpuri!",
-        "tag" => "Avish Parashar"
+        "tag" => "Avish Parashar (Philadelphia)"
     ),
     array(
         "images" => "joeurcillo‎.jpg",
         "details" => "Jason Mirpuri is a Custom Tailor God! Opened the package, put it on and PERFECT. I don’t even care about the shipping wrinkles... I am not taking this off!!",
-        "tag" => "‎Joe Curcillo"
+        "tag" => "‎Joe Curcillo (Harrisburg)"
     ),
 	array(
         "images" => "frank.jpg",
@@ -42,7 +42,7 @@ Jason Mirpuri literally travels the world fitting stylish men & women in beautif
     ),
     array(
         "images" => "acouple.jpg",
-        "details" => "A couple of snappy dressers at the CAPS (Canadian Association of Professional Speakers)Convention. Brian Walter, Jason Mirpuri & Steve Lowell",
+        "details" => "A couple of snappy dressers at the CAPS (Canadian Association of Professional Speakers) Convention. Brian Walter, Jason Mirpuri & Steve Lowell",
         "tag" => "Canadian Association of Professional Speakers"
     ),
     array(
