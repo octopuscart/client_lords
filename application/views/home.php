@@ -644,7 +644,7 @@ $this->load->view('layout/footer');
 ?>
 <script>
 
-    $(function () {
-        $('#appointmentmodel').modal('show');
-    });
+//    $(function () {
+//        $('#appointmentmodel').modal('show');
+//    });
 </script>
