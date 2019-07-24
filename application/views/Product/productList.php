@@ -317,11 +317,11 @@ $image2 = "";
                             <!-- Item -->
                             <div class="col-sm-4 animated zoomIn"  ng-repeat="(k, product) in productProcess.products">
                                 <article class="shop-artical1"> 
-                                    <div class="item-hover1" style="background: url(<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg);    background-size: 139%;
+<!--                                    <div class="item-hover1" style="background: url(<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg);    background-size: 139%;
                                          background-color: white;height: 400px;width: auto;
                                          background-repeat: no-repeat;"> 
-                                    </div>
-                                        <!--<img class="img-responsive" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="product" style="height: 405px;width: 262px;">-->
+                                    </div>-->
+                                        <img class="img-responsive" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="product" style="height: 400px;">
 
 
 
