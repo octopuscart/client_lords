@@ -63,20 +63,24 @@
           background: rgb(225, 225, 225);
           font-family: sans-serif;">
         <div class="" style="padding:50px 0px">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style=" background: linear-gradient(to right, #FFD194, #D1913C);padding: 0 20px">
+
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style=" background: #000;padding: 0 20px">
                 <tr>
                     <td >
-                       
-                        <center><img src="<?php echo site_mail_logo; ?> " style="margin: 10px;
-                                     height: 50px;
+                        <center><img src="<?php echo site_mail_logo; ?> " style="
+                                     height: 80px;
+
                                      width: auto;"/><br/>
-                            <h4 style="color: white;"> <?php echo $web_enquiry['subject']; ?> </h4>
+                            <h4 style="    color: #f7d47a;
+                                font-family: initial;"> <?php echo $web_enquiry['subject']; ?> </h4>
                         </center>
                     </td>
 
                 </tr>
-
             </table>
+
+
+
 
             <table class="carttable"  border-color= "#9E9E9E" align="center" border="1" cellpadding="0" cellspacing="0" width="700" style="background: #fff;padding:20px">
 
@@ -91,7 +95,7 @@
                         <p><?php echo $web_enquiry['message']; ?></p> 
                         <br/>
                         <div style="height: 200px;">End<br />
-                            
+
                         </div>
 
                     </td>
