@@ -74,10 +74,9 @@
                         <span class="fa-stack">
                             <i class="fa fa-money fa-stack-1x"></i>
                             <i class="ion-bag fa-stack-1x "></i>
-                        </span>  Payment Method
-                        <span style="float: right; line-height: 29px;font-size: 12px;color: black;
-    font-weight: bold;" class="ng-binding">
-                            PayPal
+                        </span>  Confirm Order Now
+                        <span style="float: right; line-height: 29px;font-size: 12px;font-weight: 300" class="ng-binding">
+                        
                         </span> 
                     </a>
                     <?php
