@@ -409,18 +409,18 @@ $paymentstatus = "";
                                     </tr>
 
 
-                                    <tr>
+<!--                                    <tr>
                                         <td colspan="4" style="text-align: right">Sub Total</td>
                                         <td style="text-align: right;width: 60px">{{"<?php echo $order_data->sub_total_price; ?>"|currency:"<?php echo globle_currency; ?> "}} </td>
                                     </tr>
-    <!--                                <tr>
+                                    <tr>
                                         <td colspan="2" style="text-align: right">Credit Used</td>
                                         <td style="text-align: right;width: 60px"><?php echo $order_data->credit_price; ?> </td>
-                                    </tr>-->
+                                    </tr>
                                     <tr>
                                         <td colspan="4" style="text-align: right">Total Amount</td>
                                         <td style="text-align: right;width: 60px">{{"<?php echo $order_data->total_price; ?>"|currency:"<?php echo globle_currency; ?> "}} </td>
-                                    </tr>
+                                    </tr>-->
 
 
 
