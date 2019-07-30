@@ -827,7 +827,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             );
             $this->db->insert('user_order_log', $orderlog);
 
-            $subject = "Order Confirmation - Your Order with www.royaltailor.hk [" . $order_no . "] has been successfully placed!";
+            $subject = "Order Confirmation - Your Order with $emailsender [" . $order_no . "] has been successfully placed!";
             $this->email->subject($subject);
 
             if ($checkcode) {
