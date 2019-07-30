@@ -827,19 +827,19 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             );
             $this->db->insert('user_order_log', $orderlog);
 
-            $subject = "Order Confirmation - Your Order with $emailsender [" . $order_no . "] has been successfully placed!";
+            $subject = "Order Confirmation - Your Order with $sendername [" . $order_no . "] has been successfully placed!";
             $this->email->subject($subject);
 
             if ($checkcode) {
-//                $this->email->message($this->load->view('Email/order_mail', $order_details, true));
-//                $this->email->print_debugger();
-//                $send = $this->email->send();
-//                if ($send) {
-//                    echo json_encode("send");
-//                } else {
-//                    $error = $this->email->print_debugger(array('headers'));
-//                    echo json_encode($error);
-//                }
+                $this->email->message($this->load->view('Email/order_mail', $order_details, true));
+                $this->email->print_debugger();
+                $send = $this->email->send();
+                if ($send) {
+                    echo json_encode("send");
+                } else {
+                    $error = $this->email->print_debugger(array('headers'));
+                    echo json_encode($error);
+                }
             } else {
                 echo $this->load->view('Email/order_mail', $order_details, true);
             }
