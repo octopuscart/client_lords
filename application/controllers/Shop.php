@@ -251,7 +251,7 @@ class Shop extends CI_Controller {
 
 
 
-        $usasappointment = $this->Product_model->AppointmentDataByCountry("U.S.A");
+        $usasappointment = $this->Product_model->AppointmentDataAll();
     
         $data['appointmentdatausa'] = $usasappointment;
         $data['appointmentdata'] = [];
