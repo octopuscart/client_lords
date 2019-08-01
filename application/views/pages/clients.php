@@ -22,12 +22,43 @@ $stylearray1 = [
         "details" => "Jason Mirpuri is a Custom Tailor God! Opened the package, put it on and PERFECT. I don’t even care about the shipping wrinkles... I am not taking this off!!",
         "tag" => "‎Joe Curcillo (Harrisburg)"
     ),
-	array(
+    array(
         "images" => "frank.jpg",
-        "details" =>'Fredrik Haren of Singapore "Love the suit! Love the service!"',
+        "details" => 'Fredrik Haren of Singapore "Love the suit! Love the service!"',
         "tag" => "‎Fredrik Haren (Singapore)"
     ),
+    array(
+        "images" => "brian_walter.jpg",
+        "details" => "Getting ready to head off to the National Speakers Association annual convention Influence 18 which will be held in Dallas at The Hilton Anatole Hotel from Saturday 14 July. 
+Lord’s Custom Tailors will be showcasing our suits in the trade display at Influence 18. Come along & see what we have on offer.",
+        "tag" => "‎Brian Walter (Dallas)"
+    ),
+    array(
+        "images" => "andy_lopata.jpg",
+        "details" => "Measuring up another stylish speaker, Andy Lopata at the Asia Professional Speakers Convention in Singapore.",
+        "tag" => "‎Andy Lopata (Broxbourne)"
+    ),
+    array(
+        "images" => "warwickmarry.jpg",
+        "details" => "A quick note to say thanks for my new dinner suit. That fact that you could make it express and get it to me a couple of days prior to me hosting the Queensland Mining Awards was a plus!!
+
+My previous suit was a little restrictive (its those gremlins in the closet who tighten your clothes) but having this one tailored meant that my sleeves and coat tail can be that little bit longer as they need to be and my jacket has an array of pockets for pens, business cards, phones and what not that all sneak into place.
+
+Thanks again to Lords Custom Tailors for a great suit - look forward to the sports coat arriving soon.",
+        "tag" => "Seattle (Glen Waverley, Australia)"
+    ),
+   
+    array(
+        "images" => "michaelperez.jpg",
+        "details" => "Another delighted customer, Michael Perez from Chicago is now stepping out in style with a Lord's Custom Tailored suit or two. Looking good Michael!",
+        "tag" => "‎Michael Perez (Chicago)"
+    ),
+    
 ];
+
+
+
+
 $stylearray2 = [
     array(
         "images" => "joshpaulen.jpg",
@@ -52,23 +83,48 @@ Jason Mirpuri literally travels the world fitting stylish men & women in beautif
 Great jacket has just arrived from Lord’s Custom Taylors. Perfect fit and exactly what I wanted. Great service and would highly recommend them to others.",
         "tag" => "Carole Spiers (UK)"
     ),
+    array(
+        "images" => "lljagee.jpg",
+        "details" => "Wearing my new custom made shirt and jacket from Lord's Custom Tailors today. Big thanks for the awesome work and service.",
+        "tag" => "Ilja Gee (Lübeck)"
+    ),
+    array(
+        "images" => "seattle_washington.jpg",
+        "details" => "This couple know how to stand out in a crowd.",
+        "tag" => "Seattle (Washington)"
+    ),
+    array(
+        "images" => "lindsay_adam.jpg",
+        "details" => "Lindsay Adams acting as Emcee of the Brisbane PSA chapter meeting opening the meeting. Doing his thing in his new suit form Lords Custom Tailors.",
+        "tag" => "Lindsay Adams (Brisbane, Australia)"
+    ),
+     array(
+        "images" => "lle.jpg",
+        "details" => "Lloyd Luna, Lindsay Adams and Elias Kanaris at The Heritage Hotel Manila.",
+        "tag" => "‎At The Heritage Hotel Manila (Philippines)"
+    ),
+    array(
+        "images" => "professional_speaker.jpg",
+        "details" => "Lord's Custom Tailors sponsored the Professional Speakers Australia Convention in Brisbane, Australia recently. We met many amazing professional conference speakers and heard some amazing speeches. We also got to catch up with Lindsay Adams, the lucky winner of one of our tailored suits. That's him on the far left wearing a Lord's creation.",
+        "tag" => "‎Lindsay Adams, Sally Foley-Lewis, Ian Stephens and Trevor Perry"
+    ),
 ];
 ?>
 
 <style>
     .blog-posts article {
-    margin-bottom: 70px;
-       border: 1px solid #85808061;
+        margin-bottom: 70px;
+        border: 1px solid #85808061;
 
-}
-.news-post p {
-    padding: 10px;
+    }
+    .news-post p {
+        padding: 10px;
         margin: 0;
-}
-.news-post a {
-    padding: 10px;
+    }
+    .news-post a {
+        padding: 10px;
         margin-top: -11px!important;
-}
+    }
 </style>
 
 <!-- Slider -->
@@ -97,21 +153,21 @@ Great jacket has just arrived from Lord’s Custom Taylors. Perfect fit and exac
             <div class="row"> 
                 <div class="row">
                     <div class="col-md-6">
-                        <?php
-                        foreach ($stylearray1 as $key => $value) {
-                            ?>    
+<?php
+foreach ($stylearray1 as $key => $value) {
+    ?>    
 
                             <!-- POST -->
                             <div class="col-md-12 ">
                                 <article > <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/customers/<?php echo $value['images']; ?>" alt="" >
-                                
+
                                     <p ><?php echo $value['details']; ?></p>
-                                   <a href="#." class="red-more"><?php echo $value['tag']; ?></a>
+                                    <a href="#." class="red-more"><?php echo $value['tag']; ?></a>
                                 </article>
                             </div>
-                            <?php
-                        }
-                        ?>
+    <?php
+}
+?>
                     </div>
                     <div class="col-md-6">
                         <?php
@@ -120,14 +176,14 @@ Great jacket has just arrived from Lord’s Custom Taylors. Perfect fit and exac
 
                             <div class="col-md-12 ">
                                 <article > <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/customers/<?php echo $value['images']; ?>" alt="" >
-                                
+
                                     <p ><?php echo $value['details']; ?></p>
-                                   <a href="#." class="red-more"><?php echo $value['tag']; ?></a>
+                                    <a href="#." class="red-more"><?php echo $value['tag']; ?></a>
                                 </article>
                             </div>
-                            <?php
-                        }
-                        ?>
+    <?php
+}
+?>
                     </div>
                 </div>
 
