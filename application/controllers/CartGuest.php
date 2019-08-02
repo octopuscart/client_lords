@@ -263,6 +263,15 @@ class CartGuest extends CI_Controller {
             );
             $this->db->insert('user_order_status', $order_status_data);
 //                    $this->Product_model->order_to_vendor($last_id);
+            
+            
+            $orderlog = array(
+                'log_type' =>  "Order Pending",
+                'log_datetime' => date('Y-m-d H:i:s'),
+                'user_id' => 'guest',
+                'log_detail' => "Order Enquiry By Customer, Waiting For Confirmation",
+            );
+            $this->db->insert('system_log', $orderlog);
 
             $newdata = array(
                 'username' => '',
