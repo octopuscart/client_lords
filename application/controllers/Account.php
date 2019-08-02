@@ -19,7 +19,9 @@ class Account extends CI_Controller {
     }
 
     public function index() {
-        redirect('Account/profile');
+        if ($this->user_id) {
+            redirect('Account/profile');
+        }
     }
 
     //Profile page
@@ -80,8 +82,10 @@ class Account extends CI_Controller {
     //login page
     //login page
     function login() {
-        
-        redirect("CartGuest/checkoutInit");
+        if ($this->user_id) {
+            redirect('Account/profile');
+        }
+//        redirect("CartGuest/checkoutInit");
         $data1['msg'] = "";
 
         $query = $this->db->get('country');
@@ -241,6 +245,9 @@ class Account extends CI_Controller {
 
     //Address management
     function address() {
+        if ($this->user_id == 0) {
+            redirect('Account/login');
+        }
         $user_address_details = $this->User_model->user_address_details($this->user_id);
         $data['user_address_details'] = $user_address_details;
 
@@ -264,10 +271,12 @@ class Account extends CI_Controller {
             $this->db->update('shipping_address');
 
             $category_array = array(
-                'address' => $this->input->post('address'),
+                'address1' => $this->input->post('address1'),
+                'address2' => $this->input->post('address2'),
                 'city' => $this->input->post('city'),
                 'state' => $this->input->post('state'),
-                'pincode' => $this->input->post('pincode'),
+//                'pincode' => $this->input->post('pincode'),
+                'country' => $this->input->post('country'),
                 'user_id' => $this->user_id,
                 'status' => 'default',
             );
@@ -281,6 +290,7 @@ class Account extends CI_Controller {
 
     //function credits
     function credits() {
+
         if ($this->user_id == 0) {
             redirect('Account/login');
         }
@@ -307,8 +317,44 @@ class Account extends CI_Controller {
     }
 
     function testReg() {
+        if ($this->user_id == 0) {
+            redirect('Account/login');
+        }
         $user_id = $this->user_id;
         $this->User_model->registration_mail($user_id);
+    }
+
+    function userMeausrements() {
+        if ($this->user_id == 0) {
+            redirect('Account/login');
+        }
+        $userid = $this->user_id;
+
+
+        $data = array();
+
+        $this->db->where('user_id', $userid);
+        $query = $this->db->get('custom_measurement_profile');
+        $measurement_items = $query->result_array();
+        $measurement_array = array();
+        foreach ($measurement_items as $mskey => $msvalue) {
+            $msid = $msvalue['id'];
+            $this->db->where('custom_measurement_profile', $msid);
+            $this->db->order_by('display_index');
+            $query = $this->db->get('custom_measurement');
+            $measurements = $query->result_array();
+            $tempmes = array();
+            $measurement_array[$msvalue['id']] = $msvalue;
+            foreach ($measurements as $mk => $mv) {
+                $mestitle = $mv['measurement_key'];
+                $mesvalue = $mv['measurement_value'];
+                $tempmes[$mestitle] = $mesvalue;
+            }
+
+            $measurement_array[$msid]['measurements'] = $tempmes;
+        }
+        $data['measurements'] = $measurement_array;
+         $this->load->view('Account/measurements', $data);
     }
 
 }

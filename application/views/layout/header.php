@@ -203,25 +203,7 @@
 
 
 
-                                        <?php
-                                        $session_data = $this->session->userdata('logged_in');
-                                        if ($session_data) {
-                                            ?>
-                                            <li class="dropdown"> <a href="contact_us_1.html" class="dropdown-toggle" data-toggle="dropdown">Hi, <?php echo $session_data['first_name'] ? $session_data['first_name'] : 'User'; ?>! </a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="<?php echo site_url("Account/profile"); ?>">Profile</a></li>
-                                                    <li><a href="<?php echo site_url("Account/orderList"); ?>">My Order</a></li>
-                                                    <li><a href="<?php echo site_url("Account/logout"); ?>">Logout</a></li>
-                                                </ul>
-                                            </li>
-                                            <?php
-                                        } else {
-                                            ?>
 
-
-                                            <?php
-                                        }
-                                        ?>
 
                                     </ul>
                                 </div>
@@ -270,8 +252,30 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li> <a href="javascript:void(0);" class="search-open"><i class="fa fa-lock"></i></a></li>
-                                        <li> <a href="javascript:void(0);" class="search-open"><i class="fa fa-search"></i></a>
+
+
+                                        <?php
+                                        $session_data = $this->session->userdata('logged_in');
+                                        if ($session_data) {
+                                            ?>
+                                            <li class="dropdown"> <a href="contact_us_1.html" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i></a>
+                                                <ul class="dropdown-menu">
+                                                    <li class="authen_li"><a href="<?php echo site_url("Account/profile"); ?>">Profile</a></li>
+                                                    <li class="authen_li"><a href="<?php echo site_url("Account/orderList"); ?>">My Order</a></li>
+                                                    <li class="authen_li"><a href="<?php echo site_url("Account/logout"); ?>">Logout</a></li>
+                                                </ul>
+                                            </li>
+                                            <?php
+                                        } else {
+                                            ?>
+
+                                            <li> <a href="<?php echo site_url('Account/login'); ?>" ><i class="fa fa-lock"></i></a></li>
+
+                                            <?php
+                                        }
+                                        ?>
+
+<!--                                        <li> <a href="javascript:void(0);" class="search-open"><i class="fa fa-search"></i></a>
                                             <div class="search-inside animated-4s fadeIn"> <i class="lnr lnr-cross search-close"></i>
                                                 <div class="search-overlay"></div>
                                                 <div class="position-center-center">
@@ -285,7 +289,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
+                                        </li>-->
                                     </ul>
                                 </div>
 

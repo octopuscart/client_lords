@@ -12,7 +12,7 @@ $this->load->view('layout/header');
     .noti-check1{
         background: #f5f5f5;
         padding: 25px 30px;
-       
+
         font-weight: 600;
         margin-bottom: 30px;
     }
@@ -61,7 +61,7 @@ $this->load->view('layout/header');
         color: green;
     }
 
-    
+
 
     .cartdetail_small {
         float: left;
@@ -105,7 +105,7 @@ $this->load->view('layout/header');
                         <div class="col-md-12">
                             <div class="">
                                 <h6>Addresses
-                                    <!--<button class="btn btn-small" data-toggle="modal" data-target="#changeAddress" style="margin-left: 20px;padding: 5px 11px;color:white;"><i class="fa fa-plus"></i> Add New</button>-->
+                                    <button class="btn btn-small" data-toggle="modal" data-target="#changeAddress" style="margin-left: 20px;padding: 5px 11px;color:white;"><i class="fa fa-plus"></i> Add New</button>
                                 </h6>
                             </div>
                             <div class="noti-check1" style="#f5f5f5">  
@@ -124,11 +124,12 @@ $this->load->view('layout/header');
                                                 <?php } ?> 
                                                 <div class=" address_block <?php echo $value['status']; ?> ">
                                                     <p>
-                                                        <?php echo $value['address']; ?>,<br/>
-                                                        <?php echo $value['city']; ?>, <?php echo $value['state']; ?> <?php echo $value['pincode']; ?>
+                                                        <?php echo $value['address1']; ?>,<br/>
+                                                        <?php echo $value['address2']; ?>,<br/>
+                                                        <?php echo $value['city']; ?>, <?php echo $value['state']; ?> 
                                                     </p>
                                                     <?php if ($value['status'] != 'default') { ?> 
-                                                        <a href="<?php echo site_url("Account/address/?setAddress=" . $value['id']); ?>" class="btn btn-default btn-xs address_button">Set As Default</a>
+                                                        <a href="<?php echo site_url("Account/address/?setAddress=" . $value['id']); ?>" class="btn btn-default btn-small address_button">Set As Default</a>
                                                     <?php } ?> 
                                                 </div>
                                             </div>
@@ -157,7 +158,7 @@ $this->load->view('layout/header');
 
             <!-- Modal -->
             <div class="modal  fade" id="changeAddress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="    z-index: 20000000;">
-                <div class="modal-dialog modal-sm woocommerce" role="document">
+                <div class="modal-dialog woocommerce" role="document">
                     <form action="#" method="post">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -166,24 +167,63 @@ $this->load->view('layout/header');
                             </div>
                             <div class="modal-body checkout-form">
 
-                                <label class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
-                                    Address
-                                    <input type="text" name="address"  value="" class="woocommerce-Input woocommerce-Input--text input-text">
-                                </label>
+                                <table class="table">
+                                    <tbody><tr>
+                                            <td style="line-height: 25px;">
+                                                <span for="name" class=""><b>Address (Line 1)</b></span>
+                                            </td>
+                                            <td>
+                                                <input type="text" required="" name="address1" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style=";">
+                                            </td>
+                                        </tr>
 
-                                <label class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
-                                    City
-                                    <input type="text" name="city"  value="" class="woocommerce-Input woocommerce-Input--text input-text">
-                                </label>
-                                <br/>
-                                <label class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
-                                    State
-                                    <input type="text" name="state"  value="" class="woocommerce-Input woocommerce-Input--text input-text">
-                                </label >
-                                <label class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
-                                    Pincode
-                                    <input type="text" name="pincode"  value="" class="woocommerce-Input woocommerce-Input--text input-text">
-                                </label>
+                                        <tr>
+                                            <td style="line-height: 25px;">
+                                                <span for="name" class=""><b>Address (Line 2)</b></span>
+                                            </td>
+                                            <td>
+                                                <input type="text" required="" name="address2" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style=";">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="line-height: 25px;">
+                                                <span for="name" class=""><b>Town/City</b></span>
+
+                                            </td>
+                                            <td>
+                                                <input type="text" required="" name="city" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style=";">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="line-height: 25px;">
+                                                <span for="name"><b>State</b></span>
+                                            </td>
+                                            <td>
+                                                <input type="text" required="" name="state" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style=";">
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td style="line-height: 25px;">
+                                                <span for="name"><b>Zip/Postal</b></span>
+                                            </td>
+                                            <td>
+                                                <input type="text"  name="zipcode" class="form-control " value="" style=";">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="line-height: 25px;">
+                                                <span for="name"><b>Country</b></span>
+                                            </td>
+                                            <td>
+                                                <input type="text" required="" name="country" class="form-control" value="" style=";">
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" name="add_address" class="btn btn-primary btn-small" style="color: white">Add Address</button>
@@ -193,14 +233,14 @@ $this->load->view('layout/header');
                 </div>
             </div>
 
-           
+
 
             <?php
             $this->load->view('layout/footer');
             ?>
- <script>
-            $(function(){
-                $(".woocommerce-MyAccount-navigation-link--dashboard").removeClass("active");
-                $(".address_page").addClass("active");
-            })
+            <script>
+                $(function () {
+                    $(".woocommerce-MyAccount-navigation-link--dashboard").removeClass("active");
+                    $(".address_page").addClass("active");
+                })
             </script>

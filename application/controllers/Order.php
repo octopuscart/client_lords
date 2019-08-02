@@ -32,6 +32,12 @@ class Order extends CI_Controller {
 
         $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
 
+        $status = $order_details['order_status'][0]->status;
+        
+        if ($status == "Order Confirmed") {
+            redirect("Order/orderdetailsguest/$order_key");
+        }
+
         $file_newname = "";
         $this->db->where('active', 'yes');
         $query = $this->db->get('payment_barcode');
@@ -49,7 +55,23 @@ class Order extends CI_Controller {
                     'remark' => "Order Confirmed By Customer,  Waiting For Payment",
                 );
                 $this->db->insert('user_order_status', $order_status_data);
+                redirect("Order/orderdetailsguest/$order_key");
             }
+            
+            if (isset($_POST['cancel'])) {
+                $order_status_data = array(
+                    'c_date' => date('Y-m-d'),
+                    'c_time' => date('H:i:s'),
+                    'order_id' => $order_id,
+                    'status' => "Order Cancelled",
+                    'user_id' => "Guest",
+                    'remark' => $this->input->post('reason'),
+                );
+                $this->db->insert('user_order_status', $order_status_data);
+                redirect("Order/orderdetailsguest/$order_key");
+            }
+            
+            
             try {
                 $order_id = $order_details['order_data']->id;
             } catch (customException $e) {

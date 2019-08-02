@@ -345,7 +345,8 @@ $paymentstatus = "";
                                         echo $order_data->measurement_style;
                                         if (count($measurements_items)) {
                                             ?>
-                                            <a role="button" class="btn btn-xs btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapsemeasurements" aria-expanded="true" aria-controls="collapseOne">
+                                            <a role="button" class="btn btn-xs btn-default  btn-xs pull-right" data-toggle="collapse" data-parent="#accordion" href="#collapsemeasurements" aria-expanded="true" aria-controls="collapseOne" style="    margin: 5px 0px;
+                                               padding: 4px;">
                                                 View Measurement
                                             </a>
                                             <div id="collapsemeasurements" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">

@@ -265,3 +265,21 @@ footer {
   
 
 }
+
+.authen_li{
+    clear: both;
+    width: -webkit-fill-available!important;
+    text-align: left;
+         padding: 5px 0px!important;
+}
+
+li.authen_li a {
+    color: black!important;
+    padding: 5px 0px!important;
+}
+
+.measurementbox .list-group-item>.badge {
+    float: right;
+    line-height: 23px;
+    width: 100px;
+}
