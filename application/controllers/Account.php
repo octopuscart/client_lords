@@ -25,7 +25,7 @@ class Account extends CI_Controller {
     }
 
     //Profile page
-    public function profile() {
+    public function profile2() {
 
         $query = $this->db->get('country');
         $countrylist = $query->result();
@@ -316,6 +316,68 @@ class Account extends CI_Controller {
         $this->load->view('Account/credits', $data);
     }
 
+    function profile() {
+        $data = array();
+        // echo password_hash('rasmuslerdorf', PASSWORD_DEFAULT)."\n";
+        $userid = $this->user_id;
+        $query = $this->db->get_where("admin_users", array("id" => $userid));
+        $userdata = $query->row();
+        $data['userdata'] = $userdata;
+
+
+        $query = $this->db->get("country");
+        $countrydata = $query->result_array();
+        $data['country'] = $countrydata;
+
+        $config['upload_path'] = 'assets/profile_image';
+        $config['allowed_types'] = '*';
+
+        if (isset($_POST['changePassword'])) {
+            $c_password = $this->input->post('c_password');
+            $n_password = $this->input->post('n_password');
+            $r_password = $this->input->post('r_password');
+            $dc_password = $userdata->password;
+            if (md5($c_password) == $dc_password) {
+                if ($r_password == $n_password) {
+                    $message = array(
+                        'title' => 'Password Changed.',
+                        'text' => 'Your password has been changed successfully.',
+                        'show' => true,
+                        'icon' => 'happy.png'
+                    );
+                    $this->session->set_flashdata("checklogin", $message);
+
+
+                    $passowrd = array("password" => md5($n_password), "password2" => $n_password);
+                    $this->db->set($passowrd);
+                    $this->db->where("id", $userid);
+                    $this->db->update("admin_users");
+
+                    redirect("profile");
+                } else {
+                    $message = array(
+                        'title' => 'Password Error.',
+                        'text' => 'Entered password does not match.',
+                        'show' => true,
+                        'icon' => 'warn.png'
+                    );
+                    $this->session->set_flashdata("checklogin", $message);
+                }
+            } else {
+                $message = array(
+                    'title' => 'Password Errors.',
+                    'text' => 'Current password does not match.',
+                    'show' => true,
+                    'icon' => 'warn.png'
+                );
+                $this->session->set_flashdata("checklogin", $message);
+            }
+        }
+        
+        
+        $this->load->view('Account/profile2', $data);
+    }
+
     function testReg() {
         if ($this->user_id == 0) {
             redirect('Account/login');
@@ -354,7 +416,7 @@ class Account extends CI_Controller {
             $measurement_array[$msid]['measurements'] = $tempmes;
         }
         $data['measurements'] = $measurement_array;
-         $this->load->view('Account/measurements', $data);
+        $this->load->view('Account/measurements', $data);
     }
 
 }
