@@ -364,11 +364,6 @@ class Shop extends CI_Controller {
 
     function styleTipsDetails($style_index, $title) {
 
-        if ($this->session_user) {
-            $checklogin = true;
-        } else {
-            $checklogin = false;
-        }
 
         if (isset($_POST['submit'])) {
             $blogdata = array(
@@ -382,7 +377,7 @@ class Shop extends CI_Controller {
         }
 
 
-        $data['checklogin'] = $checklogin;
+        
 
 
         $this->db->where('id', $style_index);
