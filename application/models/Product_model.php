@@ -130,9 +130,13 @@ where pa.product_id = $product_id group by attribute_value_id";
             $productobj = $product[0];
 
             $item_price = $this->category_items_prices_id($productobj['category_items_id'], $custom_id);
-
-            $productobj['price'] = $item_price->price;
-            $productobj['regular_price'] = $item_price->price;
+            if (DEFAULT_PAYMENT == 'No') {
+                $productobj['price'] = '0';
+                $productobj['regular_price'] = '0';
+            } else {
+                $productobj['price'] = $item_price->price;
+                $productobj['regular_price'] = $item_price->price;
+            }
 
             $productobj['item_id'] = $custom_id;
 
@@ -749,7 +753,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         $this->db->order_by('id');
         $query = $this->db->get('appointment_entry');
         $countryAppointment = $query->result_array();
-        
+
 
         $appointmentData1 = [];
 
@@ -759,7 +763,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
             $query = $this->db->get('appointment_entry');
             $timeData = $query->result_array();
- 
+
             $avalue['dates'] = [];
             foreach ($timeData as $tkey => $tvalue) {
                 $temparray = array();
@@ -768,14 +772,14 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 $temparray['timing2'] = $tvalue['to_time'];
                 array_push($avalue['dates'], $temparray);
             }
-      
+
             array_push($appointmentData1, $avalue);
         }
         return $appointmentData1;
     }
-    
+
     public function AppointmentDataAll() {
-        $date=date("Y-m-d");
+        $date = date("Y-m-d");
         $this->db->where('date>=', $date);
         $this->db->group_by('aid');
         $this->db->order_by('id');
@@ -787,11 +791,11 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         foreach ($countryAppointment as $akey => $avalue) {
             $aid = $avalue['aid'];
             $this->db->where('aid', $aid);
-            
+
             $query = $this->db->get('appointment_entry');
             $timeData = $query->result_array();
             $avalue['dates'] = array();
-            foreach ($timeData as $tkey => $tvalue) { 
+            foreach ($timeData as $tkey => $tvalue) {
                 $temparray = array();
                 $temparray['date'] = $tvalue['date'];
                 $temparray['timing1'] = $tvalue['from_time'];
@@ -800,7 +804,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             }
             array_push($appointmentData, $avalue);
         }
-        
+
         return $appointmentData;
     }
 
@@ -827,7 +831,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             );
             $this->db->insert('user_order_log', $orderlog);
 
-            $subject = "Order Confirmation - Your Order with $sendername [" . $order_no . "] has been successfully placed!";
+            $subject = "Order Enquiry - Your Order with $sendername [" . $order_no . "] has been submitted for enquiry.";
             $this->email->subject($subject);
 
             if ($checkcode) {

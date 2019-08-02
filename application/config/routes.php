@@ -72,3 +72,5 @@ $route['stylingTipsTag'] = 'Shop/stylingTipsTag';
 $route['styleTips/(:any)/(:any)'] = 'Shop/styleTipsDetails/$1/$2';
 
 $route['Products/CustomSuits'] = 'Product/ProductList/2/0';
+
+$route['orderConfirmation/(:any)'] = 'Order/orderConfirmation/$1';

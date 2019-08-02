@@ -307,9 +307,9 @@ class Cart extends CI_Controller {
                     'c_date' => date('Y-m-d'),
                     'c_time' => date('H:i:s'),
                     'order_id' => $last_id,
-                    'status' => "Order Confirmed",
+                    'status' => "Order Pending",
                     'user_id' => $this->user_id,
-                    'remark' => "Order Confirmed By Using " . $paymentmathod . ",  Waiting For Payment",
+                    'remark' => "Order Enquiry By Customer, Waiting For Confirmation",
                 );
                 $this->db->insert('user_order_status', $order_status_data);
 //                    $this->Product_model->order_to_vendor($last_id);

@@ -28,6 +28,39 @@ class Order extends CI_Controller {
         echo money_format("%.2n", $number);
     }
 
+    public function orderConfirmation($order_key) {
+
+        $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
+
+        $file_newname = "";
+        $this->db->where('active', 'yes');
+        $query = $this->db->get('payment_barcode');
+        $paymentbarcode = $query->row();
+        $order_details['paymentbarcode'] = $paymentbarcode;
+        $order_id = $order_details['order_data']->id;
+        if ($order_details) {
+            if (isset($_POST['confirm'])) {
+                $order_status_data = array(
+                    'c_date' => date('Y-m-d'),
+                    'c_time' => date('H:i:s'),
+                    'order_id' => $order_id,
+                    'status' => "Order Confirmed",
+                    'user_id' => "Guest",
+                    'remark' => "Order Confirmed By Customer,  Waiting For Payment",
+                );
+                $this->db->insert('user_order_status', $order_status_data);
+            }
+            try {
+                $order_id = $order_details['order_data']->id;
+            } catch (customException $e) {
+                
+            }
+        } else {
+            //redirect('/');
+        }
+        $this->load->view('Order/orderdetails_confirmation', $order_details);
+    }
+
     //orders details
     public function orderdetails($order_key) {
 
@@ -47,56 +80,7 @@ class Order extends CI_Controller {
         $paymentbarcode = $query->row();
         $order_details['paymentbarcode'] = $paymentbarcode;
 
-        if (isset($_POST['submit'])) {
-            if (!empty($_FILES['picture']['name'])) {
-                $config['upload_path'] = 'assets_main/sliderimages';
-                $config['allowed_types'] = '*';
-                $temp1 = rand(100, 1000000);
-                $ext1 = explode('.', $_FILES['picture']['name']);
-                $ext = strtolower(end($ext1));
-                $file_newname = $temp1 . "1." . $ext;
-                $config['file_name'] = $file_newname;
-                //Load upload library and initialize configuration
-                $this->load->library('upload', $config);
-                $this->upload->initialize($config);
-                if ($this->upload->do_upload('picture')) {
-                    $uploadData = $this->upload->data();
-                    $picture = $uploadData['file_name'];
-                } else {
-                    $picture = '';
-                }
-            } else {
-                $picture = '';
-            }
-            $order_id = $order_details['order_data']->id;
-            $paymentdict = array(
-                'mobile_no' => $this->input->post('mobile_no'),
-                'payment_id' => $this->input->post('payment_id'),
-                'payment_date' => $this->input->post('payment_date'),
-                'description' => $this->input->post('description'),
-                'file_name' => $file_newname,
-                'order_id' => $order_id,
-                'c_date' => date('Y-m-d'),
-                'c_time' => date('H:i:s'),
-            );
-            $this->db->insert('user_order_payment', $paymentdict);
 
-
-            $description = $this->input->post('description');
-            $paymentid = $this->input->post('payment_id');
-            $orderstatus = array(
-                'c_date' => date('Y-m-d'),
-                'c_time' => date('H:i:s'),
-                'status' => "Payment Done",
-                'remark' => "Payment Done, and txn id. $paymentid",
-                'description' => $description,
-                'order_id' => $order_id
-            );
-            $this->db->insert('user_order_status', $orderstatus);
-
-
-          
-        }
 
         $order_id = $order_details['order_data']->id;
         if ($order_details) {
@@ -125,11 +109,11 @@ class Order extends CI_Controller {
         $paymentbarcode = $query->row();
         $order_details['paymentbarcode'] = $paymentbarcode;
 
-      
+
 
         $order_id = $order_details['order_data']->id;
-        
-        
+
+
         if ($order_details) {
 
             try {

@@ -530,7 +530,7 @@ foreach ($measurements_list as $key => $value) {
 
 
 
-            }, 1000)
+            }, 3000)
 
 
             //  end of slider section

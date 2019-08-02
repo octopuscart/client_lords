@@ -40,6 +40,8 @@ define('paypal_api_password', $configuration['paypal_api_password']);
 define('paypal_api_signature', $configuration['paypal_api_signature']);
 define('paypal_api_currency_code', $configuration['paypal_api_currency_code']);
 
+define('DEFAULT_PAYMENT', $globleConnectCartCheckout['default_payment_mode']);
+
 
 //reporting configuration
 define('EMAIL_HEADER', $globleConnectReport['email_header']);
@@ -55,6 +57,7 @@ define('DEFAULT_PAYMENT_MODE', $globleConnectCartCheckout['default_payment_mode'
 define('ORDER_PREFIX', $globleConnectCartCheckout['order_prefix']);
 define('PRODUCT_PATH_PRE', $globleConnectCartCheckout['product_path_pre']);
 define('PRODUCT_PATH_POST', $globleConnectCartCheckout['product_path_post']);
+
 
 
 

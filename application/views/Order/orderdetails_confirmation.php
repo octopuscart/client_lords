@@ -75,68 +75,35 @@ $paymentstatus = "";
     <!--======= PAGES INNER =========-->
     <section class="order-details-page-area">
         <div class="container">
-            <div class="row  "> 
-
-                <div class="col-md-3" style="    border: 1px solid #000;
-                     padding: 6px;
-                     border-radius: 5px;">
-                    <h3 class="headerorder">Order Status</h3>
-
-                    <?php
-                    $count = 0;
-                    $countord = count($order_status);
-                    foreach ($order_status as $oskey => $osvalue) {
-                        ?>
-                        <div class="media" style="border-bottom: 1px solid #000;
-                             margin-bottom: 10px;
-                             padding-bottom: 10px;">
-                            <div class="media-left">
-                                <a href="#">
-                                    <i class='icon-circle'><?php
-                                        echo $countord - $count;
-                                        ?></i>
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading" style="font-size: 15px">  <?php
-                                    echo $osvalue->status;
-                                    ?></h4>
-                                <small style="font-weight:300;font-size:13px">
-                                    <?php
-                                    if ($osvalue->status == "Shipped") {
-                                        echo $osvalue->description;
-                                    } else {
-                                        echo $osvalue->remark;
-                                    }
-                                    ?>
-
-                                </small>
-                                <br/>
-                                <span style="font-size: 10px;">
-                                    <i class="fa fa-calendar"></i> 
-                                    <?php
-                                    echo $osvalue->c_date . " " . $osvalue->c_time;
-                                    ?>
-                                </span>
-                            </div>
-                        </div>
-                        <?php
-                        $count++;
-                        ?>
-
-                        <?php
-                    }
-                    ?>
-
-                    <button class="btn btn-inverse btn-block" ng-click="sendOrderMail('<?php echo $order_data->order_no; ?>')">
-                        <i class="fa fa-envelope"></i> Request Order Copy On Mail
-                    </button>
 
 
-
-
-                </div>
+            <div class="row"> 
+                <div class="col-md-2"></div>
                 <div class="col-md-9">
+
+                    <form method="post" action="#" ng-if="orderConfirmation.orderconfirm == 'yes'">
+                        <div class="butongroup" style="    text-align: center;padding: 30px;    border: 1px solid #000;
+
+                             border-radius: 5px;margin-bottom: 50px;">
+                            <h2>
+                                Please conform you order.
+                            </h2>
+                            <button type="submit" class="btn btn-success" name="confirm"><i class="fa fa-thumbs-up"></i> Confirm Order Now</button>
+                            <button type="button" class="btn btn-success" ng-click="changeConfirm('no')"><i class="fa fa-times"></i> Cancel</button>
+                        </div>
+                    </form>
+                    <form method="post" action="#" ng-if="orderConfirmation.orderconfirm == 'no'">
+                        <div class="butongroup" style="    text-align: center;padding: 30px;    border: 1px solid #000;
+
+                             border-radius: 5px;margin-bottom: 50px;">
+                            <p>Please tell us reason to cancellation of the order.</p>
+                            <textarea name="reason" class="form-control"></textarea><br/>
+                            <button type="submit" class="btn btn-success" name="cancel"><i class="fa fa-save"></i> Submit</button>
+                            <button type="button" class="btn btn-success" ng-click="changeConfirm('yes')"><i class="fa fa-times"></i></button>
+
+                        </div>
+                    </form>
+
                     <div class="pricing">
                         <div class="col-md-4">
 
@@ -246,13 +213,10 @@ $paymentstatus = "";
                                     <tr style="font-weight: bold">
                                         <td style="width: 20px;text-align: right">S.No.</td>
                                         <td colspan="2"  style="text-align: center">Product</td>
-                                        <?php if ($order_data->sub_total_price) { ?>
-                                            <td style="text-align: right;width: 100px"">Price</td>
-                                        <?php } ?>
+
+                                        <td style="text-align: right;width: 100px"">Price</td>
                                         <td style="text-align: right;width: 10px">Qantity</td>
-                                        <?php if ($order_data->sub_total_price) { ?>
-                                            <td style="text-align: right;width: 100px">Total</td>
-                                        <?php } ?>
+                                        <td style="text-align: right;width: 100px">Total</td>
                                     </tr>
                                     <!--cart details-->
                                     <?php
@@ -306,34 +270,31 @@ $paymentstatus = "";
 
 
                                         </td>
-                                        <?php if ($order_data->sub_total_price) { ?>
-                                            <td style="text-align: right">
-                                                {{ <?php echo $product->price; ?> |currency:"<?php echo globle_currency; ?> "}}
-                                                <?php
-                                                if ($product->extra_price > 0) {
-                                                    ?>
-                                                    <span  style="font-size: 12px;
-                                                           font-weight: 600;
-                                                           text-align: center;">
-                                                        <br/>
-                                                        {{ <?php echo $product->price - $product->extra_price; ?> |currency:""}}
-                                                        + {{ <?php echo $product->extra_price; ?> |currency:""}}
-                                                    </span>
-                                                    <?php
-                                                }
+
+                                        <td style="text-align: right">
+                                            {{ <?php echo $product->price; ?> |currency:"<?php echo globle_currency; ?> "}}
+                                            <?php
+                                            if ($product->extra_price > 0) {
                                                 ?>
-                                            </td>
-                                        <?php } ?>
+                                                <span  style="font-size: 12px;
+                                                       font-weight: 600;
+                                                       text-align: center;">
+                                                    <br/>
+                                                    {{ <?php echo $product->price - $product->extra_price; ?> |currency:""}}
+                                                    + {{ <?php echo $product->extra_price; ?> |currency:""}}
+                                                </span>
+                                                <?php
+                                            }
+                                            ?>
+                                        </td>
+
                                         <td style="text-align: right;width: 50px;">
                                             <?php echo $product->quantity; ?> 
                                         </td>
 
-                                        <?php if ($order_data->sub_total_price) { ?>
-
-                                            <td style="text-align: right;">
-                                                {{ <?php echo $product->total_price; ?>|currency:"<?php echo globle_currency; ?> "}}
-                                            </td>
-                                        <?php } ?>
+                                        <td style="text-align: right;">
+                                            {{ <?php echo $product->total_price; ?>|currency:"<?php echo globle_currency; ?> "}}
+                                        </td>
                                         </tr>
 
                                         <?php
@@ -430,30 +391,28 @@ $paymentstatus = "";
 
                                         </td>
                                     </tr>
-                                    <?php if ($order_data->sub_total_price) { ?>
-                                        <tr>
-                                            <td colspan="3"  rowspan="4" style="font-size: 12px">
-                                                <b>Total Amount in Words:</b><br/>
-                                                <span style="text-transform: capitalize"> <?php echo $order_data->amount_in_word; ?></span>
-                                            </td>
 
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2" style="text-align: right">Sub Total</td>
-                                            <td style="text-align: right;width: 60px">{{"<?php echo $order_data->sub_total_price; ?>"|currency:"<?php echo globle_currency; ?> "}} </td>
-                                        </tr>
-        <!--                                <tr>
-                                            <td colspan="2" style="text-align: right">Credit Used</td>
-                                            <td style="text-align: right;width: 60px"><?php echo $order_data->credit_price; ?> </td>
-                                        </tr>-->
-                                        <tr>
-                                            <td colspan="2" style="text-align: right">Total Amount</td>
-                                            <td style="text-align: right;width: 60px">{{"<?php echo $order_data->total_price; ?>"|currency:"<?php echo globle_currency; ?> "}} </td>
-                                        </tr>
+                                    <tr>
+                                        <td colspan="3"  rowspan="4" style="font-size: 12px">
+                                            <b>Total Amount in Words:</b><br/>
+                                            <span style="text-transform: capitalize"> <?php echo $order_data->amount_in_word; ?></span>
+                                        </td>
 
-                                        <?php
-                                    }
-                                    ?>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="text-align: right">Sub Total</td>
+                                        <td style="text-align: right;width: 60px">{{"<?php echo $order_data->sub_total_price; ?>"|currency:"<?php echo globle_currency; ?> "}} </td>
+                                    </tr>
+    <!--                                <tr>
+                                        <td colspan="2" style="text-align: right">Credit Used</td>
+                                        <td style="text-align: right;width: 60px"><?php echo $order_data->credit_price; ?> </td>
+                                    </tr>-->
+                                    <tr>
+                                        <td colspan="2" style="text-align: right">Total Amount</td>
+                                        <td style="text-align: right;width: 60px">{{"<?php echo $order_data->total_price; ?>"|currency:"<?php echo globle_currency; ?> "}} </td>
+                                    </tr>
+
+
 
 
                                 </table>
@@ -462,7 +421,9 @@ $paymentstatus = "";
 
                     </div>
                 </div>
+                <div class="col-md-1"></div>
             </div>
+            <br/>
         </div>
     </section>
 
@@ -476,6 +437,13 @@ $paymentstatus = "";
 <script>
 
     App.controller('OrderDetailsController', function ($scope, $http, $timeout, $interval) {
+
+    $scope.orderConfirmation = {"orderconfirm":"yes"};
+    $scope.changeConfirm = function(ctype){
+    $scope.orderConfirmation.orderconfirm = ctype;
+    }
+
+
     var url = baseurl + "Api/order_mail/" + <?php echo $order_data->id; ?> + "/" + '<?php echo $order_data->order_no; ?>';
     $scope.checkmailsend = 0;
     $scope.sendOrderMail = function (order_no) {

@@ -117,7 +117,7 @@ $this->load->view('layout/header');
                                 <span class="fa-stack">
                                     <i class="fa fa-money fa-stack-1x"></i>
                                     <i class="ion-bag fa-stack-1x "></i>
-                                </span>   Confirm Order Now
+                                </span>   Order Enquiry
                                 <span style="float: right; line-height: 29px;font-size: 12px;" class="ng-binding">
                                     
                                 </span> 
@@ -140,7 +140,7 @@ $this->load->view('layout/header');
                                                                 <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon btn btn-info btn-lg checkout_button_pre " ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
                                                             </div>
                                                             <div class="proceed-button pull-right ">
-                                                                <button type="submit" name="place_order" class="btn-apply-coupon btn btn-info btn-lg checkout_button_next "  value="Post Payment">
+                                                                <button type="submit" name="place_order" class="btn-apply-coupon btn btn-info btn-lg checkout_button_next "  value="Order Enquiry">
                                                                     Place Order <i class="fa fa-arrow-right"></i>
                                                                 </button>                                                                    </div>
                                                         </td>

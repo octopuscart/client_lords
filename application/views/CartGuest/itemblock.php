@@ -12,7 +12,7 @@
                             <i class="ion-bag fa-stack-1x "></i>
                         </span>   My Shopping Bag
                         <span style="float: right; line-height: 29px;color: black;
-    font-weight: bold;" class="ng-binding">Total: {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}} ({{globleCartData.total_quantity}})</span> 
+                              font-weight: bold;" class="ng-binding">Total: <?php if(DEFAULT_PAYMENT != 'No'){?> {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}} <?php }?>({{globleCartData.total_quantity}})</span> 
                     </a>
                     <?php
                 }
@@ -27,8 +27,8 @@
                             <i class="ion-bag fa-stack-1x "></i>
                         </span>   Your Size
                         <span style="float: right; line-height: 29px;font-size: 12px;color: black;
-    font-weight: bold;" class="ng-binding">
-                            <?php echo $measurement_style_type; ?>
+                              font-weight: bold;" class="ng-binding">
+                              <?php echo $measurement_style_type; ?>
                         </span> 
                     </a>
                     <?php
@@ -46,11 +46,11 @@
                             <i class="ion-bag fa-stack-1x "></i>
                         </span>   Shipping Address
                         <span style="float: right; line-height: 29px;font-size: 12px;color: black;
-    font-weight: bold;" class="ng-binding">
-                            <?php
-                            if (count($user_address_details)) {
-                                $value = $user_address_details[0];
-                                ?>
+                              font-weight: bold;" class="ng-binding">
+                              <?php
+                              if (count($user_address_details)) {
+                                  $value = $user_address_details[0];
+                                  ?>
                                 <?php echo $user_details['name']; ?>,
                                 <?php echo $value['address1']; ?>,
                                 <?php echo $value['address2']; ?>,
@@ -74,9 +74,9 @@
                         <span class="fa-stack">
                             <i class="fa fa-money fa-stack-1x"></i>
                             <i class="ion-bag fa-stack-1x "></i>
-                        </span>  Confirm Order Now
+                        </span>  Order Enquiry
                         <span style="float: right; line-height: 29px;font-size: 12px;font-weight: 300" class="ng-binding">
-                        
+
                         </span> 
                     </a>
                     <?php
