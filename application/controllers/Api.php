@@ -278,7 +278,7 @@ class Api extends REST_Controller {
 
             $query_attr = "SELECT product_id FROM product_attribute
                            where  attribute_id in ($colorslist) 
-                           group by product_id";
+                           group by product_id order by FIELD(attribute_id, $colorslist)";
             $queryat = $this->db->query($query_attr);
             $productslist = $queryat->result();
             foreach ($productslist as $key => $value) {
@@ -300,6 +300,7 @@ class Api extends REST_Controller {
         }
 
         $proquery = "";
+        $proquerylist = "0";
         if (count($productdict)) {
             $proquerylist = implode(",", $productdict);
             $proquery = " and pt.id in ($proquerylist) ";
@@ -310,7 +311,7 @@ class Api extends REST_Controller {
 
 
         $product_query = "select pt.id as product_id, pt.*
-            from products as pt where pt.category_id in ($categoriesString) $pricequery $proquery order by display_index desc";
+            from products as pt where pt.category_id in ($categoriesString) $pricequery $proquery order by display_index desc,FIELD(product_id, $proquerylist)";
         $product_result = $this->Product_model->query_exe($product_query);
 
         $productListSt = [];
