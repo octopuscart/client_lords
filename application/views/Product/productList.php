@@ -360,7 +360,7 @@ $image2 = "";
                     <div class="side-bar">
                         <div class="search">
                             <form>
-                                <input type="text" placeholder="SEARCH" id="searchproduct" data-provide="typeahead">
+                                <input type="text" placeholder="SEARCH" id="searchproduct" data-provide="typeahead" ng-model="attribute_search.search_title">
                                 <button type="submit"> <i class="fa fa-search"></i></button>
                             </form>
                         </div>
@@ -481,6 +481,19 @@ $image2 = "";
 
                 <!-- Main Shop Itesm -->          
                 <div class="col-md-9"> 
+                    <div class="searchfor"  ng-if="productProcess.finalProducts.length > 0" style="    width: 100%;
+                         float: left;
+                         height: 43px;">
+                        <span class="searchtitle" ng-if="attribute_search.search_title">
+                            <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                                <button type="button" class="btn btn-default">  {{attribute_search.search_title}}</button>
+                                <button type="button" class="btn btn-default" ng-click="removeSearch()"><i class="fa fa-times"></i></button>
+
+                            </div>
+
+                        </span>
+                    </div>
+
 
                     <div id="content1"  ng-if="productProcess.finalProducts.length == 0" style="padding: 100px 0px;"> 
 

@@ -11,7 +11,7 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
     $scope.pricerange = {'min': 0, 'max': 0};
     $scope.productProcess = {'state': 1, 'showstate': 1, 'pagination': {'paginate': [1, 12], 'perpage': 12}, 'products': [], 'finalProducts': []};
 
-
+    $scope.attribute_search = {"search": "", "color": "", "search_title": ""};
 
 
     $scope.getProducts = function (attrs) {
@@ -22,6 +22,12 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
             var colorc = "colors=" + $scope.attribute_search.color;
             argsk.push(colorc);
         }
+
+        if ($scope.attribute_search.search) {
+            var colorc = "search=" + $scope.attribute_search.search;
+            argsk.push(colorc);
+        }
+
         var stargs = "";
         if (argsk.length) {
             stargs = argsk.join("&");
@@ -56,7 +62,7 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
     }
 
     $scope.attribute_checked = {};
-    $scope.attribute_search = {"search": "", "color": ""};
+
     $scope.getProducts();
 
     $scope.attribute_checked_pre = {};
@@ -113,14 +119,12 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
             console.log($scope.productProcess.products.slice(countdata[0] - 1, countdata[1]))
             console.log(countdata[0] - 1, countdata[1])
             $scope.productProcess.finalProducts = $scope.productProcess.products.slice(countdata[0] - 1, countdata[1]);
+            $scope.attribute_search.search = "";
 
 
             $scope.productProcess.showstate = 2;
 
         }, 500)
-
-
-
 
     }
 
@@ -150,6 +154,17 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
     $scope.checkProduct();
 
 
+    $scope.$watch('attribute_search.search', function (n, o) {
+        console.log(n, o)
+    })
+
+    $scope.removeSearch = function () {
+        $scope.attribute_search.search = "";
+        $scope.attribute_search.search_title = "";
+        $scope.getProducts();
+    }
+
+
 
     var search = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('item_code'),
@@ -169,7 +184,7 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
             {highlight: true},
             {
                 name: 'search',
-                displayKey: 'item_code',
+                displayKey: 'title',
                 limit: 8,
                 source: search.ttAdapter(),
                 templates: {
@@ -180,6 +195,12 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
 
     ).bind('typeahead:selected', function (obj, select_data) {
         var checked = select_data.sid;
+        $timeout(function () {
+            $scope.attribute_search.search = checked;
+            $scope.attribute_search.search_title = select_data.title;
+            $scope.getProducts();
+        })
+
 //            $("input[name=searchtag]").val(checkd);
 
         console.log(checked)

@@ -271,6 +271,7 @@ class Api extends REST_Controller {
         $countpr = 0;
         $pricequery = "";
         $colors = $this->get("colors");
+        $search = $this->get("search");
 
         $colorslist = str_replace("-", ",", $colors);
 
@@ -304,6 +305,9 @@ class Api extends REST_Controller {
         if (count($productdict)) {
             $proquerylist = implode(",", $productdict);
             $proquery = " and pt.id in ($proquerylist) ";
+        }
+        if($search){
+            $proquery = " and pt.id in ($search) ";
         }
 
         $categoriesString = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
