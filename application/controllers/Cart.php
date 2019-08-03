@@ -307,7 +307,7 @@ class Cart extends CI_Controller {
                     'c_date' => date('Y-m-d'),
                     'c_time' => date('H:i:s'),
                     'order_id' => $last_id,
-                    'status' => "Order Pending",
+                    'status' => "Order Enquiry",
                     'user_id' => $this->user_id,
                     'remark' => "Order Enquiry By Customer, Waiting For Confirmation",
                 );
@@ -315,7 +315,7 @@ class Cart extends CI_Controller {
 //                    $this->Product_model->order_to_vendor($last_id);
                 
                 $orderlog = array(
-                'log_type' =>  "Order Pending",
+                'log_type' =>  "Order Enquiry",
                 'log_datetime' => date('Y-m-d H:i:s'),
                 'user_id' => $user_id,
                 'log_detail' => "Order Enquiry By Customer, Waiting For Confirmation",

@@ -22,12 +22,12 @@ class Product extends CI_Controller {
         $this->db->where('id', $custom_id);
         $query = $this->db->get('custome_items');
         $customeitem = $query->row();
-
+       $staticcat = $customeitem->category_id;
         if ($cat_id == 0) {
             $cat_id = $customeitem->category_id;
         }
 
-        $categories = $this->Product_model->productListCategories($cat_id, $custom_id);
+        $categories = $this->Product_model->productListCategories($staticcat, $custom_id);
 
         $data["categorie_parent"] = $this->Product_model->getparent($cat_id);
 

@@ -255,7 +255,7 @@ class CartGuest extends CI_Controller {
             
             
             $orderlog = array(
-                'log_type' =>  "Order Pending",
+                'log_type' =>  "Order Enquiry",
                 'log_datetime' => date('Y-m-d H:i:s'),
                 'user_id' => 'guest',
                 'log_detail' => "Order Enquiry By Customer, Waiting For Confirmation",
