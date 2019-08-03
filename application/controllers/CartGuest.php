@@ -15,11 +15,11 @@ class CartGuest extends CI_Controller {
         } else {
             $this->user_id = 0;
         }
-
         $this->checklogin = $this->session->userdata('logged_in');
         $this->user_id = $this->session->userdata('logged_in')['login_id'];
     }
 
+    
     function redirectCart() {
         if ($this->checklogin) {
             $session_cart = $this->Product_model->cartDataCustome($this->user_id);
@@ -32,6 +32,7 @@ class CartGuest extends CI_Controller {
             redirect('Cart/details');
         }
     }
+    
 
     public function index() {
         $this->redirectCart();
@@ -46,51 +47,39 @@ class CartGuest extends CI_Controller {
         $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
-
         $address = $this->session->userdata('shipping_address');
         $data['user_address_details'] = $address ? [$this->session->userdata('shipping_address')] : [];
-
         $address = $this->session->userdata('customer_inforamtion');
         $data['user_details'] = $address ? $this->session->userdata('customer_inforamtion') : array();
-
-
         $this->load->view('CartGuest/checkoutInit', $data);
     }
 
+    
     function checkoutSize() {
         $this->redirectCart();
         $address = $this->session->userdata('shipping_address');
         $data['user_address_details'] = $address ? [$this->session->userdata('shipping_address')] : [];
-
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
-
         if ($this->checklogin) {
             $session_cart = $this->Product_model->cartDataCustome($this->user_id);
         } else {
             $session_cart = $this->Product_model->cartDataCustome();
         }
-
         $custome_items = $session_cart['custome_items'];
-
         $data['custome_items'] = $custome_items;
-
         $this->db->select("group_concat(measurements) as measurement");
         $this->db->where_in('id', $custome_items);
         $query = $this->db->get('custome_items');
         $custome_measurements = $query->row();
         $data['customitems'] = $custome_measurements;
-
         $measurementarray = explode(",", $custome_measurements->measurement);
-
         $this->db->select("*");
         $this->db->order_by('display_index', 'asc');
         $this->db->where_in('id', $measurementarray);
         $query = $this->db->get('measurement');
         $custome_measurements = $query->result_array();
         $data['measurements_list'] = $custome_measurements;
-
-
         if ($this->input->post('submit_measurement')) {
             $measurement_style = array(
                 'measurement_style' => $this->input->post('measurement_type'),
@@ -105,13 +94,13 @@ class CartGuest extends CI_Controller {
                     $measurement_style['measurement_dict'][$mtitle] = $mvalue;
                 }
             }
-
             $this->session->set_userdata('measurement_style', $measurement_style);
             redirect('CartGuest/checkoutShipping');
         }
         $this->load->view('Cart/checkoutSize', $data);
     }
 
+    
     function checkoutShipping() {
         $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');

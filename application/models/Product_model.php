@@ -92,7 +92,7 @@ class Product_model extends CI_Model {
         return $container;
     }
 
-    function singleProductAttrs($product_id) {
+    function singleProductAttrsPre($product_id) {
         $query = "SELECT pa.attribute, pa.product_id, cav.additional_value, pa.attribute_value_id, cav.attribute_value FROM product_attribute as pa 
 join category_attribute_value as cav on cav.id = pa.attribute_value_id
 where pa.product_id = $product_id group by attribute_value_id";
@@ -107,6 +107,15 @@ where pa.product_id = $product_id group by attribute_value_id";
                 }
             }
         return $arrayattr;
+    }
+    
+    
+    function singleProductAttrs($product_id) {
+        $query = "SELECT pa.attribute_id, pa.product_id, pa.attribute_value as code FROM product_attribute as pa 
+           where pa.product_id = $product_id group by pa.attribute_id";
+        $product_attr_color = $this->query_exe($query);
+        $arrayattr = [];
+        return $product_attr_color;
     }
 
     //product prices

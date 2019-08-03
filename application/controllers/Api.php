@@ -155,7 +155,7 @@ class Api extends REST_Controller {
     }
 
     //ProductList APi
-    public function productListApi_get($category_id, $custom_id) {
+    public function productListApi_v1_pre_get($category_id, $custom_id) {
         $attrdatak = $this->get();
         $products = [];
         $countpr = 0;
@@ -208,6 +208,7 @@ class Api extends REST_Controller {
         $categoriesString = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
         $categoriesString = ltrim($categoriesString, ", ");
 
+
         $product_query = "select pt.id as product_id, pt.*
             from products as pt where pt.category_id in ($categoriesString) $pricequery $proquery order by display_index desc";
         $product_result = $this->Product_model->query_exe($product_query);
@@ -222,7 +223,7 @@ class Api extends REST_Controller {
             $value['attr'] = $this->Product_model->singleProductAttrs($value['product_id']);
             $item_price = $this->Product_model->category_items_prices_id($value['category_items_id'], $custom_id);
 
-            $value['price'] =$item_price ? $item_price->price :0;
+            $value['price'] = $item_price ? $item_price->price : 0;
             array_push($productListSt, $value['product_id']);
             array_push($pricecount, $value['price']);
             array_push($productListFinal, $value);
@@ -237,26 +238,100 @@ class Api extends REST_Controller {
             $productString = implode(",", $productListSt);
 
 
-            $attr_query = "select count(cav.id) product_count, '' as checked, cvv.widget, cav.attribute_value, cav.additional_value, cav.id, pa.attribute, pa.attribute_id from product_attribute as pa
-        join category_attribute_value as cav on cav.id = pa.attribute_value_id
-        join category_attribute as cvv on cvv.id = cav.attribute_id
-        where pa.product_id in ($productString)
-        group by cav.id";
+            $attr_query = "SELECT cc.code as code,  cc.title as title, '' as checked, cc.id as attribute_id, pa.product_id FROM `configuration_colors` as cc
+   join product_attribute as pa on pa.attribute_id = cc.id 
+        
+        group by cc.id";
             $attr_result = $this->Product_model->query_exe($attr_query);
 
+            $attr_filter['color'] = $attr_result;
+        }
 
-            foreach ($attr_result as $key => $value) {
-                $filter = $value['attribute_id'];
-                $attitle = $value['attribute'];
-                $widget = $value['widget'];
-                if (isset($attr_filter[$filter])) {
-                    array_push($attr_filter[$filter], $value);
-                } else {
-                    $attr_filter[$filter] = array("title" => $attitle, "attrs" => [], "widget" => $widget);
-                    array_push($attr_filter[$filter], $value);
-                }
+        $this->output->set_header('Content-type: application/json');
+        $productArray = array('attributes' => $attr_filter,
+            'products' => $productListFinal,
+            'product_count' => count($product_result),
+            'price' => $pricelist);
+        $this->response($productArray);
+    }
+
+    public function searchProductApi_get($custom_id, $category_id) {
+        $searchtext = $this->get('searchText');
+        $categoriesString = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
+        $categoriesString = ltrim($categoriesString, ", ");
+        $product_query = "select pt.id as sid, pt.title as title
+            from products as pt where pt.category_id in ($categoriesString) and title like '%$searchtext%' order by display_index desc";
+        $product_result = $this->Product_model->query_exe($product_query);
+        $this->response($product_result);
+    }
+
+    public function productListApi_get($category_id, $custom_id) {
+        $attrdatak = $this->get();
+        $products = [];
+        $countpr = 0;
+        $pricequery = "";
+        $colors = $this->get("colors");
+
+        $colorslist = str_replace("-", ",", $colors);
+
+        if ($colorslist) {
+
+            $query_attr = "SELECT product_id FROM product_attribute
+                           where  attribute_id in ($colorslist) 
+                           group by product_id";
+            $queryat = $this->db->query($query_attr);
+            $productslist = $queryat->result();
+            foreach ($productslist as $key => $value) {
+                array_push($products, $value->product_id);
             }
         }
+
+        //print_r($products);
+
+        $productdict = [];
+
+        $productcheck = array_count_values($products);
+
+
+
+        foreach ($productcheck as $key => $value) {
+
+            array_push($productdict, $key);
+        }
+
+        $proquery = "";
+        if (count($productdict)) {
+            $proquerylist = implode(",", $productdict);
+            $proquery = " and pt.id in ($proquerylist) ";
+        }
+
+        $categoriesString = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
+        $categoriesString = ltrim($categoriesString, ", ");
+
+
+        $product_query = "select pt.id as product_id, pt.*
+            from products as pt where pt.category_id in ($categoriesString) $pricequery $proquery order by display_index desc";
+        $product_result = $this->Product_model->query_exe($product_query);
+
+        $productListSt = [];
+
+        $productListFinal = [];
+
+        $pricecount = [];
+
+        foreach ($product_result as $key => $value) {
+            $value['attr'] = $this->Product_model->singleProductAttrs($value['product_id']);
+            $item_price = $this->Product_model->category_items_prices_id($value['category_items_id'], $custom_id);
+
+            $value['price'] = $item_price ? $item_price->price : 0;
+            array_push($productListSt, $value['product_id']);
+            array_push($pricecount, $value['price']);
+            array_push($productListFinal, $value);
+        }
+
+        $attr_filter = array();
+        $pricelist = array();
+
 
         $this->output->set_header('Content-type: application/json');
         $productArray = array('attributes' => $attr_filter,
@@ -475,10 +550,10 @@ class Api extends REST_Controller {
         $extra_cost = $this->post('extra_price');
 
         if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue,$extra_cost, $this->user_id);
+            $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue, $extra_cost, $this->user_id);
             $session_cart = $this->Product_model->cartDataCustome($this->user_id);
         } else {
-            $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue,$extra_cost);
+            $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue, $extra_cost);
             $session_cart = $this->Product_model->cartDataCustome();
         }
 
@@ -615,9 +690,9 @@ class Api extends REST_Controller {
                     ), array(
                         "status" => "1",
                         "title" => "Single Cuff Rounded",
-                        "elements" => [ "cuff_m_rounded20001.png"],
-                        "insertele" => [ "cuff_m_rounded30001.png"],
-                        "inserteleo" => [ "cuff_m_rounded30001.png"],
+                        "elements" => ["cuff_m_rounded20001.png"],
+                        "insertele" => ["cuff_m_rounded30001.png"],
+                        "inserteleo" => ["cuff_m_rounded30001.png"],
                         "customization_category_id" => "3",
                         "image" => "cuff_single_rounded.jpg",
                         "sleeve1" => ["shirt_sleeve0001.png"],
@@ -631,9 +706,9 @@ class Api extends REST_Controller {
                     ), array(
                         "status" => "0",
                         "title" => "Single Cuff Cutaway",
-                        "elements" => [ "cuff_m_cutaway20001.png"],
-                        "insertele" => [ "cuff_m_cutaway30001.png"],
-                        "inserteleo" => [ "cuff_m_cutaway30001.png"],
+                        "elements" => ["cuff_m_cutaway20001.png"],
+                        "insertele" => ["cuff_m_cutaway30001.png"],
+                        "inserteleo" => ["cuff_m_cutaway30001.png"],
                         "customization_category_id" => "3",
                         "image" => "single_cuff_cutaway.jpg",
                         "insert_style_css" => "",
@@ -647,9 +722,9 @@ class Api extends REST_Controller {
                     ), array(
                         "status" => "0",
                         "title" => "Single Cuff Squred",
-                        "elements" => [ "cuff_m_squre20001.png"],
-                        "insertele" => [ "cuff_m_cutaway30001.png"],
-                        "inserteleo" => [ "cuff_m_cutaway30001.png"],
+                        "elements" => ["cuff_m_squre20001.png"],
+                        "insertele" => ["cuff_m_cutaway30001.png"],
+                        "inserteleo" => ["cuff_m_cutaway30001.png"],
                         "customization_category_id" => "3",
                         "image" => "cuff_single_squred.jpg",
                         "insert_style_css" => "",
@@ -665,9 +740,9 @@ class Api extends REST_Controller {
                         "title" => "2 Buttons Cutaway",
                         "customization_category_id" => "3",
                         "sleeve1" => ["shirt_sleeve0001.png"],
-                        "elements" => [ "cuff_m_cutaway20001.png"],
-                        "insertele" => [ "cuff_m_cutaway30001.png"],
-                        "inserteleo" => [ "cuff_m_cutaway30001.png"],
+                        "elements" => ["cuff_m_cutaway20001.png"],
+                        "insertele" => ["cuff_m_cutaway30001.png"],
+                        "inserteleo" => ["cuff_m_cutaway30001.png"],
                         "image" => "2_buttons_cutaway.jpg",
                         "insert_style_css" => "",
                         "insert_style" => "cuff_m_cutaway20001.png",
@@ -680,9 +755,9 @@ class Api extends REST_Controller {
                         "status" => "0",
                         "title" => "2 Buttons Rounded",
                         "sleeve1" => ["shirt_sleeve0001.png"],
-                        "elements" => [ "cuff_m_rounded20001.png"],
-                        "insertele" => [ "cuff_m_rounded30001.png"],
-                        "inserteleo" => [ "cuff_m_rounded30001.png"],
+                        "elements" => ["cuff_m_rounded20001.png"],
+                        "insertele" => ["cuff_m_rounded30001.png"],
+                        "inserteleo" => ["cuff_m_rounded30001.png"],
                         "customization_category_id" => "3",
                         "image" => "2_buttons_rounded.jpg",
                         "insert_style_css" => "",
@@ -697,9 +772,9 @@ class Api extends REST_Controller {
                         "title" => "French Cuff Squred",
                         "sleeve1" => ["shirt_sleeve0001.png"],
                         "customization_category_id" => "3",
-                        "elements" => [ "cuff_m_franch_squre_insert0001.png", "cuff_m_franch_squre0001.png"],
-                        "insertele" => [ "cuff_m_franch_squre0001.png"],
-                        "inserteleo" => [ "cuff_m_franch_squre0001.png"],
+                        "elements" => ["cuff_m_franch_squre_insert0001.png", "cuff_m_franch_squre0001.png"],
+                        "insertele" => ["cuff_m_franch_squre0001.png"],
+                        "inserteleo" => ["cuff_m_franch_squre0001.png"],
                         "image" => "cuff_franch_rounded.jpg",
                         "insert_style_css" => "",
                         "insert_style" => "cuff_m_franch_squre_insert0001.png",
@@ -714,9 +789,9 @@ class Api extends REST_Controller {
                         "title" => "French Cuff Cutaway",
                         "sleeve1" => ["shirt_sleeve0001.png"],
                         "customization_category_id" => "3",
-                        "elements" => [ "cuff_m_franch_cutaway20001.png"],
+                        "elements" => ["cuff_m_franch_cutaway20001.png"],
                         "insertele" => [],
-                        "inserteleo" => [ "cuff_m_franch_squre0001.png"],
+                        "inserteleo" => ["cuff_m_franch_squre0001.png"],
                         "image" => "cufffranchcuffcutaway.jpeg",
                         "insert_style_css" => "",
                         "insert_style" => "",
@@ -729,9 +804,9 @@ class Api extends REST_Controller {
                     array(
                         "status" => "0",
                         "title" => "Convertible Cuff Cutaway",
-                        "elements" => [ "cuff_m_cutaway20001.png"],
-                        "insertele" => [ "cuff_m_cutaway30001.png"],
-                        "inserteleo" => [ "cuff_m_cutaway30001.png"],
+                        "elements" => ["cuff_m_cutaway20001.png"],
+                        "insertele" => ["cuff_m_cutaway30001.png"],
+                        "inserteleo" => ["cuff_m_cutaway30001.png"],
                         "customization_category_id" => "3",
                         "image" => "convertiblecutaway.jpeg",
                         "insert_style_css" => "",
@@ -751,7 +826,7 @@ class Api extends REST_Controller {
                         "customization_category_id" => "5",
                         "halfsleeve" => ["back_half_sleeve0001.png", "back_half_sleeve_cuff0001.png"],
                         "fullsleeve" => ["b_full_shirt_sleeve0001.png",],
-                        "elements" => [ "b_shirtbody_round0001.png", "b_shirtbody_squre0001.png", "yoke0001.png"],
+                        "elements" => ["b_shirtbody_round0001.png", "b_shirtbody_squre0001.png", "yoke0001.png"],
                         "overlay" => "",
                         "image" => "back_plain.jpeg"
                     ), array(
@@ -770,7 +845,7 @@ class Api extends REST_Controller {
                         "halfsleeve" => ["back_half_sleeve0001.png", "back_half_sleeve_cuff0001.png"],
                         "fullsleeve" => ["b_full_shirt_sleeve0001.png", "back_full_sleeve_cuff0001.png"],
                         "overlay" => "box_pleat_overlay1.png",
-                        "elements" => [ "b_shirtbody_round0001.png", "b_shirtbody_squre0001.png", "shirtbody_pleat_box0001.png", "yoke0001.png"],
+                        "elements" => ["b_shirtbody_round0001.png", "b_shirtbody_squre0001.png", "shirtbody_pleat_box0001.png", "yoke0001.png"],
                         "image" => "back_box_pleat.jpeg"
                     ), array(
                         "status" => "0",
@@ -819,7 +894,7 @@ class Api extends REST_Controller {
                     ), array(
                         "status" => "0",
                         "title" => "Fly Front",
-                        "elements" => [ "flyfront0001.png"],
+                        "elements" => ["flyfront0001.png"],
                         "customization_category_id" => "4",
                         "image" => "front_fly.jpeg",
                         "show_buttons" => "false",
@@ -827,7 +902,7 @@ class Api extends REST_Controller {
                     , array(
                         "status" => "1",
                         "title" => "Pleated",
-                        "elements" => [ "flyfront0001.png"],
+                        "elements" => ["flyfront0001.png"],
                         "customization_category_id" => "4",
                         "image" => "front_ivy.jpeg",
                         "show_buttons" => "true",
@@ -837,7 +912,7 @@ class Api extends REST_Controller {
                     array(
                         "status" => "1",
                         "title" => "Regular",
-                        "elements" => [ "collar_ragular_5w0001.png"],
+                        "elements" => ["collar_ragular_5w0001.png"],
                         "customization_category_id" => "2",
                         "insert_style" => "collar_m_comman_insert20001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
@@ -850,7 +925,7 @@ class Api extends REST_Controller {
                         "customization_category_id" => "2",
                         "insert_style" => "collar_m_comman_insert20001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
-                        "elements" => [ "collar_medium_spread_5w0001.png"],
+                        "elements" => ["collar_medium_spread_5w0001.png"],
                         "insert_full" => ["collar_m_medium_spread20001.png"],
                         "image" => "collar_medium_spread.jpeg",
                         "buttons" => "buttonsh1.png",
@@ -861,14 +936,14 @@ class Api extends REST_Controller {
                         "insert_style" => "collar_m_comman_insert20001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
                         "insert_full" => ["collar_m_full_cutaway20001.png"],
-                        "elements" => [ "collar_fullcutaway_5w0001.png"],
+                        "elements" => ["collar_fullcutaway_5w0001.png"],
                         "image" => "collar_full_cutaway.jpeg",
                         "buttons" => "buttonsh1.png",
                     ), array(
                         "status" => "0",
                         "title" => "Wide Spread",
                         "customization_category_id" => "2",
-                        "elements" => [ "collar_wide_spread_5w0001.png"],
+                        "elements" => ["collar_wide_spread_5w0001.png"],
                         "image" => "collar_wide_spread.jpeg",
                         "insert_style" => "collar_m_comman_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
@@ -879,9 +954,9 @@ class Api extends REST_Controller {
                         "status" => "0",
                         "title" => "Button Down",
                         "customization_category_id" => "2",
-                        "elements" => [ "collar_button_down_5w0001.png"],
+                        "elements" => ["collar_button_down_5w0001.png"],
                         "image" => "collar_regular_button_down.jpeg",
-                        "overlay" => [ "button_down_overlay.png"],
+                        "overlay" => ["button_down_overlay.png"],
                         "insert_style" => "collar_m_comman_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
                         "insert_full" => ["collar_wide_spread20001.png"],
@@ -891,8 +966,8 @@ class Api extends REST_Controller {
                         "status" => "0",
                         "title" => "Hidden Button Down",
                         "customization_category_id" => "2",
-                        "elements" => [ "collar_hidden_button_down_5w0001.png"],
-                        "overlay" => [ "hidden_button_down_overlay.png"],
+                        "elements" => ["collar_hidden_button_down_5w0001.png"],
+                        "overlay" => ["hidden_button_down_overlay.png"],
                         "image" => "hidden_button_down.jpeg",
                         "insert_style" => "collar_m_comman_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
@@ -903,7 +978,7 @@ class Api extends REST_Controller {
                         "status" => "0",
                         "title" => "Round Point",
                         "customization_category_id" => "2",
-                        "elements" => [ "collar_round_point_5w0001.png"],
+                        "elements" => ["collar_round_point_5w0001.png"],
                         "image" => "collar_round_point.jpeg",
                         "insert_style" => "collar_m_comman_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
@@ -914,7 +989,7 @@ class Api extends REST_Controller {
                         "status" => "0",
                         "title" => "Wing Tip",
                         "customization_category_id" => "2",
-                        "elements" => [ "collar_wingtip_5w0001.png"],
+                        "elements" => ["collar_wingtip_5w0001.png"],
                         "image" => "collar_wingtip.jpeg",
                         "insert_style" => "collar_m_comman_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
@@ -925,7 +1000,7 @@ class Api extends REST_Controller {
                         "status" => "0",
                         "title" => "Mandarian",
                         "customization_category_id" => "2",
-                        "elements" => [ "collar_mandarian_5w0001.png"],
+                        "elements" => ["collar_mandarian_5w0001.png"],
                         "image" => "collar_mandarin.jpeg",
                         "insert_style" => "collar_m_comman_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",

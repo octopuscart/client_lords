@@ -117,21 +117,23 @@ class User_model extends CI_Model {
             );
             $this->db->insert('system_log', $orderlog);
 
-            $subject = "Welcome to ".email_sender_name." - Your account has been successfully created!";
+            $subject = "Welcome to " . email_sender_name . " - Your account has been successfully created!";
             $this->email->subject($subject);
-            
+
             $customerdetails['customer'] = $customer;
 
             $htmlsmessage = $this->load->view('Email/registration', $customerdetails, true);
             $this->email->message($htmlsmessage);
-
-            $this->email->print_debugger();
-            $send = $this->email->send();
-            if ($send) {
-                echo json_encode("send");
-            } else {
-                $error = $this->email->print_debugger(array('headers'));
-                echo json_encode($error);
+            $checkcode = REPORT_MODE;
+            if ($checkcode) {
+                $this->email->print_debugger();
+                $send = $this->email->send();
+                if ($send) {
+                    echo json_encode("send");
+                } else {
+                    $error = $this->email->print_debugger(array('headers'));
+                    echo json_encode($error);
+                }
             }
         }
     }

@@ -21,7 +21,203 @@ $image2 = "";
     {{showmodel = 1}}
 </div>
 
+<style type="text/css">
 
+
+
+
+    .tt-dropdown-menu,
+    .gist {
+        text-align: left;
+    }
+
+
+
+
+    /*
+     site theme 
+     ---------- 
+    */
+
+    .typeahead,
+    .tt-query,
+    .tt-hint {
+        width: 100%; 
+        height: 100% !important;
+        padding: 8px 12px;
+
+        line-height: 26px;
+        border: 2px solid #ccc;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        outline: none;
+    }
+
+    .typeahead {
+        background-color: #fff;
+    }
+
+    .typeahead:focus {
+        border: 2px solid #0097cf;
+    }
+
+    .tt-query {
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    }
+
+    .tt-hint {
+        color: #999
+    }
+    .twitter-typeahead{
+        width:100% !important;
+    }
+
+
+    .tt-dropdown-menu {
+        width: 98%; 
+        margin-left: 6px;
+        padding: 8px 0;
+        background-color: #fff  !important;
+        border: 1px solid #ccc  !important;
+        border: 1px solid rgba(0, 0, 0, 0.2)  !important;
+
+        -webkit-border-bottom-left-radius: 8px;
+        -moz-border-bottom-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+
+        -webkit-border-bottom-right-radius: 8px;
+        -moz-border-bottom-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+
+
+
+        -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+        -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+        box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    }
+
+    .tt-dropdown-menu img{
+        height: 33px;
+        width: 33px;
+        border-radius: 50%;
+        border: 2px solid #D8D8D8;
+    }
+
+    .tt-suggestion {
+        padding: 3px 20px;
+
+
+        line-height: 24px;
+    }
+
+    .tt-suggestion.tt-cursor {
+        color: #fff;
+        background-color: #0097cf;
+
+    }
+
+    .tt-suggestion p {
+        margin: 0;
+    }
+
+
+    .typeaheadgroup{
+
+        margin: 0px;
+        padding: 3px 5px;
+        float: left;
+        width: 100%;
+        background: #E0E0E0;
+        color: #000000;
+        border-bottom: 1px solid #ccc;
+
+    }
+
+    .typeahead,
+    .tt-query,
+    .tt-hint {
+        width: 396px;
+        height: 30px;
+        padding: 8px 12px;
+        font-size: 15px;
+        line-height: 30px;
+        border: 2px solid #ccc;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        outline: none;
+    }
+
+    .typeahead {
+        background-color: #fff;
+    }
+
+    .typeahead:focus {
+        border: 2px solid #000000;
+    }
+
+    .tt-query {
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    }
+
+    .tt-hint {
+        color: #999
+    }
+
+    .tt-menu {
+
+        text-align: left;
+        padding: 8px 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+        -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+        box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    }
+
+    .tt-suggestion {
+        padding: 3px 20px;
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .tt-suggestion:hover {
+        cursor: pointer;
+        color: #000;
+        background-color: #EAEAEA;
+    }
+
+    .tt-suggestion.tt-cursor {
+        cursor: pointer;
+        color: #000;
+        background-color: #EAEAEA;
+
+    }
+    .tt-suggestion.tt-cursor:hover {
+        color: #fff !important;
+    }
+
+    .tt_select_link:hover{
+        color: #fff !important;
+    }
+
+    .tt-suggestion p {
+        margin: 0;
+    }
+
+    .gist {
+        font-size: 14px;
+    }
+</style>
 <style>
     .page_navigation a {
         padding: 5px 10px;
@@ -39,21 +235,7 @@ $image2 = "";
     }
 
     .colorblock{
-        font-weight: 500;
-        padding: 0px 10px;
-        height: 8px;
-        /* float: left; */
-        width: 15px;
-        position: absolute;
-        /* float: left; */
-        /* margin-top: -71px; */
-        /* position: absolute; */
-        margin: auto;
-        /* border: 1px solid #0000005e; */
-        /* border: 1px solid #0000005e; */
-        text-shadow: 0px 1px 4px #000;
-        /* margin-top: -71px; */
-        margin-left: -7px;
+        padding:5px 10px;
     }
 
 
@@ -135,11 +317,11 @@ $image2 = "";
         ?>
     }
     article.shop-artical1 {
-    margin-bottom: 30px;
-    border: 1px solid #000;
-    padding-bottom: 10px;
-    border-style: dashed;
-}
+        margin-bottom: 30px;
+        border: 1px solid #000;
+        padding-bottom: 10px;
+        border-style: dashed;
+    }
 
 </style>
 
@@ -178,7 +360,7 @@ $image2 = "";
                     <div class="side-bar">
                         <div class="search">
                             <form>
-                                <input type="text" placeholder="SEARCH">
+                                <input type="text" placeholder="SEARCH" id="searchproduct" data-provide="typeahead">
                                 <button type="submit"> <i class="fa fa-search"></i></button>
                             </form>
                         </div>
@@ -257,30 +439,40 @@ $image2 = "";
 
                         <!-- HEADING -->
 
-                        <div class="product_attr" ng-repeat="(attrk, attrv) in productResults.attributes" >
-                            <div class="heading" ng-if='attrv.widget == "color"'>
+
+
+
+
+
+
+
+
+                        <div class="product_attr">
+                            <div class="heading" >
                                 <h6>Color</h6>
                                 <hr class="dotted">
                             </div>
 
                             <!-- COLORE -->
-                            <ul class="cate" ng-if='attrv.widget == "color"'>
-                                <li ng-repeat="atv in attrv" ng-if='atv.product_count'>
+                            <ul class="cate" style="width:200px">
+                                <?php
+                                foreach ($color_attr as $cckey => $ccvalue) {
+                                    ?>
+                                    <li>
 
-                                    <label style="font-weight: 500;background: {{atv.additional_value}};padding: 0px 5px;float: left;
-                                           margin-right: 5px;border: 1px solid #0000005e;border: 1px solid #0000005e;
-                                           text-shadow: 0px 1px 4px #000;">
-                                        <input type="checkbox"  ng-model="atv.checked" ng-click="attributeProductGet(atv)" style="opacity: 0;"> 
+                                        <label style="font-weight: 500;background: <?php echo $ccvalue['code'];?>;padding: 0px 8px;float: left;
+                                               margin-right: 5px;border: 1px solid #0000005e;border: 1px solid #0000005e;
+                                               text-shadow: 0px 1px 4px #000;    border-radius: 50%;">
+                                            <input type="checkbox" ng-model="attribute<?php echo $ccvalue['attribute_id'];?>.checked"  ng-click="attributeProductGet('<?php echo $ccvalue['attribute_id'];?>', '<?php echo $ccvalue['code'];?>', attribute<?php echo $ccvalue['attribute_id'];?>.checked)" style="opacity: 0;"> 
 
-                                        <i class="fa fa-check" ng-if="atv.checked" style="    position: absolute;
-                                           margin-top: -22px;
-                                           color: #fff;"></i>
-                                        <!--{{atv.attribute_value}} ({{atv.product_count}})-->
-                                    </label>
-
-
-                                    <!--<a href="#."><input type="checkbox">{{atv.attribute_value}} <span>(32) </span></a>-->
-                                </li>
+                                            <i class="fa fa-check" ng-if="attribute<?php echo $ccvalue['attribute_id'];?>.checked" style="    position: absolute;
+                                               margin-top: -22px;
+                                               color: #fff;"></i>
+                                        </label>
+                                    </li>
+                                    <?php
+                                }
+                                ?>
                             </ul>
                         </div>
 
@@ -290,17 +482,15 @@ $image2 = "";
                 <!-- Main Shop Itesm -->          
                 <div class="col-md-9"> 
 
-                
-                    <div id="content1"  ng-if="productProcess.state == 1" style="padding: 100px 0px;"> 
+
+                    <div id="content1"  ng-if="productProcess.showstate == 1" style="padding: 100px 0px;"> 
 
                         <!-- Tesm Text -->
                         <section class="error-page text-center pad-t-b-130">
-                            <div class="{{productResults.products.length?'container1':'container'}}"> 
-                                <center>
-                                    <img src="<?php echo base_url() . 'assets/theme2/img/loader.gif' ?>">
-                                </center>
+                            <div class=""> 
+                             
                                 <!-- Heading -->
-                                <h1 style="font-size: 40px;text-align: center">Loading...</h1>
+                                <h1 style="font-size: 40px;">Loading...</h1>
                             </div>
                         </section>
 
@@ -313,15 +503,15 @@ $image2 = "";
 
                     <div class="" > 
 
-                        <div class="row products-container content" ng-if="productProcess.state == 2">
+                        <div class="row products-container content" ng-if="productProcess.showstate == 2">
                             <!-- Item -->
-                            <div class="col-sm-4 animated zoomIn"  ng-repeat="(k, product) in productProcess.products">
+                            <div class="col-sm-4"  ng-repeat="(k, product) in productProcess.finalProducts">
                                 <article class="shop-artical1"> 
 <!--                                    <div class="item-hover1" style="background: url(<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg);    background-size: 139%;
                                          background-color: white;height: 400px;width: auto;
                                          background-repeat: no-repeat;"> 
                                     </div>-->
-                                        <img class="img-responsive" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="product" style="height: 400px;">
+                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="product" style="height: 400px;">
 
 
 
@@ -332,26 +522,27 @@ $image2 = "";
                                             <span style="font-size: 12px">{{product.short_description}} </span>
                                         </a> 
                                         <p style="    margin-bottom: 0px;
-                                           height: 5px;
+                                           height: 15px;
                                            float: left;
                                            width: 100%;" ng-if="product.attr.length">
 
-                                            <span class="colorblock" style="background: {{product.attr[0]['Colors']}};"></span>
+                                            <span class="colorblock" style="background: {{pattr['code']}};" ng-repeat="pattr in product.attr"></span>
                                         </p>
                                         <p style="    margin-bottom: 0px;
-                                           height: 5px;
+                                           height: 15px;
                                            float: left;
                                            width: 100%;" ng-if="product.attr.length == 0">
 
-                                            <span class="colorblock" ></span>
+                                            <span class="colorblock" style="background: #fff;" ></span>
                                         </p>
+
                                         <?php
                                         switch ($custom_id) {
                                             case "1":
                                                 ?>
 
 
-                                                   <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn  btn-default" style="font-size: 9px;" title="Customize this fabric">Design Now
+                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn  btn-default" style="font-size: 9px;" title="Customize this fabric">Design Now
                                                 </a> 
 
                                                 <?php
@@ -445,13 +636,7 @@ $image2 = "";
 
 
 
-                    <!--                     Pagination 
-                                        <ul class="pagination">
-                                            <li><a href="#.">1</a></li>
-                                            <li><a href="#.">2</a></li>
-                                            <li><a href="#.">....</a></li>
-                                            <li><a href="#.">&gt;</a></li>
-                                        </ul>-->
+          
 
                     <div class="col-md-12" id="paging_container1">
                         <div class="showing-info">
@@ -459,7 +644,7 @@ $image2 = "";
                         </div>
                         <div class="row products-container content" ng-if="productProcess.state == 2">
                             <!-- Item -->
-                            <div class="col-sm-4 animated zoomIn"  ng-repeat="(k, product) in productResults.products">
+                            <div class="col-sm-4 animated zoomIn"  ng-repeat="(k, product) in productProcess.products">
                             </div>
                         </div>
                         <center>
@@ -564,10 +749,8 @@ $image2 = "";
 
 <script>
     var category_id = <?php echo $category; ?>;
-    var custom_id = <?php echo $custom_id; ?>;</script>
-<!--angular controllers-->
-
-
+    var custom_id = <?php echo $custom_id; ?>;
+    var searchUrlProduct = "<?php echo site_url('Api/searchProductApi'); ?>/" + custom_id + "/" + category_id + "?searchText=%QUERY%";</script>
 <?php
 $this->load->view('layout/footer');
 ?>
@@ -578,10 +761,30 @@ $this->load->view('layout/footer');
 <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
 
 <!--angular controllers-->
+<script id="result-template" type="text/x-handlebars-template">
 
+
+    <div class="col-sm-12">
+
+    <div class="col-sm-12">  
+    <span class="search_title col-sm-12" style="padding: 0px;margin-top: -5px;">{{title}}</span>
+    <small style="font-size: 10px;margin-top: -9px;float: left;">{{sub_title}}</small>
+
+    </div> 
+
+    </div>
+
+</script>
 
 <script type="text/javascript">
     $(document).ready(function () {
 
+
+
+
+
+
+
     });
+
 </script>

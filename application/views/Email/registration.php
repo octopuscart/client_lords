@@ -62,22 +62,27 @@
           padding: 0;
           background: rgb(225, 225, 225);
           font-family: sans-serif;">
-        
-         <div class="" style="padding:50px 0px;    background: #ababab;">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style=" background: linear-gradient(to right, #FFD194, #D1913C);padding: 0 20px">
+
+        <div class="" style="padding:50px 0px;    background: #ababab;">
+          
+            
+            
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style=" background: #000;padding: 0 20px">
                 <tr>
                     <td >
-                         <center><img src="<?php echo site_mail_logo; ?> " style="margin: 10px;
-                                     height: 50px;
+                        <center><img src="<?php echo site_mail_logo; ?> " style="
+                                     height: 80px;
+
                                      width: auto;"/><br/>
-                            <h4 style="color: white;"> Welcome</h4>
+                            <h4 style="    color: #f7d47a;
+                                font-family: initial;"> Welcome</h4>
                         </center>
                     </td>
 
                 </tr>
             </table>
-        
-        
+
+
 
             <table class="carttable"  border-color= "#9E9E9E" align="center" border="1" cellpadding="0" cellspacing="0" width="700" style="background: #fff;padding:20px">
 
@@ -88,7 +93,7 @@
 
                         <p>Dear <?php echo $customer->first_name; ?> <?php echo $customer->last_name; ?>,</p><br/>
 
-                        <p> Thank you for registering your online Royal Tailor account from <?php echo $customer->country; ?>. </p>
+                        <p> Thank you for registering your online account from <?php echo $customer->country; ?>. </p>
                         <p>You will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more. </p> 
                         <p>Your Login Credentials: </p>
                         <table style="    margin-top: 12px;
@@ -111,7 +116,7 @@
                         </table>
 
 
-                       
+
                         <div >                        <?php echo EMAIL_FOOTER; ?>
 
                         </div>

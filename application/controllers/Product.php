@@ -28,12 +28,38 @@ class Product extends CI_Controller {
         }
 
         $categories = $this->Product_model->productListCategories($cat_id, $custom_id);
+
         $data["categorie_parent"] = $this->Product_model->getparent($cat_id);
+
         $data["categories"] = $categories;
         $data["category"] = $cat_id;
         $data["custom_item"] = $customeitem->item_name;
         $data["custom_id"] = $custom_id;
         $data["item_price"] = $customeitem->price;
+
+        $categoriesString = $this->Product_model->stringCategories($cat_id) . ", " . $cat_id;
+        $categoriesString = ltrim($categoriesString, ", ");
+
+
+        $product_query = "select group_concat(pt.id) as product_id
+            from products as pt where pt.category_id in ($categoriesString) order by display_index desc";
+        $product_result = $this->Product_model->query_exe($product_query);
+
+        $productstring = "";
+
+        if (count($product_result)) {
+            $productstring = $product_result[0]['product_id'];
+        }
+
+        $productstring = trim($productstring, ",");
+
+        $attr_query = "SELECT cc.code as code,  cc.title as title, '' as checked, cc.id as attribute_id, pa.product_id FROM `configuration_colors` as cc
+   join product_attribute as pa on pa.attribute_id = cc.id 
+        where pa.product_id in ($productstring)
+        group by cc.id";
+        $attr_result = $this->Product_model->query_exe($attr_query);
+
+        $data["color_attr"] = $attr_result;
 
         $this->load->view('Product/productList', $data);
     }
@@ -112,7 +138,7 @@ class Product extends CI_Controller {
         if ($custom_id == 3) {
             redirect('Product/customizationPant/' . $product_id . "/" . $custom_id);
         }
-        
+
         if ($custom_id == 5) {
             redirect('Product/customizationTuxedoSuit/' . $product_id . "/" . $custom_id);
         }
@@ -125,7 +151,7 @@ class Product extends CI_Controller {
     }
 
     function customizationShirt($productid, $custom_id) {
-        $productdetails = $this->Product_model->productDetails($productid , $custom_id);
+        $productdetails = $this->Product_model->productDetails($productid, $custom_id);
         $data['productdetails'] = $productdetails;
         $data["custom_item"] = "Pant";
         $data['custom_id'] = $custom_id;
@@ -140,18 +166,18 @@ class Product extends CI_Controller {
         $data['tuxedotype'] = "0";
         $this->load->view('Product/customization_suit_v2', $data);
     }
-    
+
     function customizationTuxedoSuit($productid, $custom_id) {
         $productdetails = $this->Product_model->productDetails($productid, $custom_id);
         $data['productdetails'] = $productdetails;
         $data["custom_item"] = "TuxedoSuit";
         $data['custom_id'] = $custom_id;
-        
+
         $data['tuxedotype'] = "1";
-        
+
         $this->load->view('Product/customization_suit_v2', $data);
     }
-    
+
     function customizationTuxedoJacket($productid, $custom_id) {
         $productdetails = $this->Product_model->productDetails($productid, $custom_id);
         $data['productdetails'] = $productdetails;
@@ -160,7 +186,7 @@ class Product extends CI_Controller {
         $data['tuxedotype'] = "1";
         $this->load->view('Product/customization_suit_v2', $data);
     }
-    
+
     function customizationTuxedoPant($productid, $custom_id) {
         $productdetails = $this->Product_model->productDetails($productid, $custom_id);
         $data['productdetails'] = $productdetails;
@@ -169,8 +195,7 @@ class Product extends CI_Controller {
         $data['tuxedotype'] = "1";
         $this->load->view('Product/customization_suit_v2', $data);
     }
-    
-    
+
     function customizationSuitV2($productid, $custom_id) {
         $productdetails = $this->Product_model->productDetails($productid, $custom_id);
         $data['productdetails'] = $productdetails;
@@ -188,8 +213,7 @@ class Product extends CI_Controller {
         $data['tuxedotype'] = "0";
         $this->load->view('Product/customization_suit_v2', $data);
     }
-    
-    
+
     function customizationPantV2($productid, $custom_id) {
         $productdetails = $this->Product_model->productDetails($productid, $custom_id);
         $data['productdetails'] = $productdetails;
