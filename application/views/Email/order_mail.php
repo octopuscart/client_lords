@@ -172,7 +172,8 @@
                         </td>
 
                         <td style="width: 50px">
-                            <center>   <img src=" <?php echo $product->file_name; ?>" style="height: 50px;"></img>
+                            <center>  
+                                <img src=" <?php echo $product->file_name; ?>" style="height: 50px;"></img>
                         </td>
 
                         <td style="width: 200px;">

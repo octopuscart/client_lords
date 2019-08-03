@@ -74,8 +74,7 @@
                                      height: 80px;
 
                                      width: auto;"/><br/>
-                            <h4 style="    color: #f7d47a;
-                                font-family: initial;"> Welcome</h4>
+                       
                         </center>
                     </td>
 

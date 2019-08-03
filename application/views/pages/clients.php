@@ -45,7 +45,7 @@ Lord’s Custom Tailors will be showcasing our suits in the trade display at Inf
 My previous suit was a little restrictive (its those gremlins in the closet who tighten your clothes) but having this one tailored meant that my sleeves and coat tail can be that little bit longer as they need to be and my jacket has an array of pockets for pens, business cards, phones and what not that all sneak into place.
 
 Thanks again to Lords Custom Tailors for a great suit - look forward to the sports coat arriving soon.",
-        "tag" => "Seattle (Glen Waverley, Australia)"
+        "tag" => "Glen Waverley (Australia)"
     ),
    
     array(
