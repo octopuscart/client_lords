@@ -86,7 +86,7 @@ Great jacket has just arrived from Lord’s Custom Taylors. Perfect fit and exac
     array(
         "images" => "lljagee.jpg",
         "details" => "Wearing my new custom made shirt and jacket from Lord's Custom Tailors today. Big thanks for the awesome work and service.",
-        "tag" => "Ilja Gee (Lübeck)"
+        "tag" => "Ilja Gee (Germany)"
     ),
     array(
         "images" => "seattle_washington.jpg",
