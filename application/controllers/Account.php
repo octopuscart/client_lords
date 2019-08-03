@@ -317,6 +317,11 @@ class Account extends CI_Controller {
     }
 
     function profile() {
+        
+         if ($this->user_id == 0) {
+            redirect('Account/login');
+        }
+
         $data = array();
         // echo password_hash('rasmuslerdorf', PASSWORD_DEFAULT)."\n";
         $userid = $this->user_id;
