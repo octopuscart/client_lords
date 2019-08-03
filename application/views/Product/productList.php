@@ -460,12 +460,12 @@ $image2 = "";
                                     ?>
                                     <li>
 
-                                        <label style="font-weight: 500;background: <?php echo $ccvalue['code'];?>;padding: 0px 8px;float: left;
+                                        <label style="font-weight: 500;background: <?php echo $ccvalue['code']; ?>;padding: 0px 8px;float: left;
                                                margin-right: 5px;border: 1px solid #0000005e;border: 1px solid #0000005e;
                                                text-shadow: 0px 1px 4px #000;    border-radius: 50%;">
-                                            <input type="checkbox" ng-model="attribute<?php echo $ccvalue['attribute_id'];?>.checked"  ng-click="attributeProductGet('<?php echo $ccvalue['attribute_id'];?>', '<?php echo $ccvalue['code'];?>', attribute<?php echo $ccvalue['attribute_id'];?>.checked)" style="opacity: 0;"> 
+                                            <input type="checkbox" ng-model="attribute<?php echo $ccvalue['attribute_id']; ?>.checked"  ng-click="attributeProductGet('<?php echo $ccvalue['attribute_id']; ?>', '<?php echo $ccvalue['code']; ?>', attribute<?php echo $ccvalue['attribute_id']; ?>.checked)" style="opacity: 0;"> 
 
-                                            <i class="fa fa-check" ng-if="attribute<?php echo $ccvalue['attribute_id'];?>.checked" style="    position: absolute;
+                                            <i class="fa fa-check" ng-if="attribute<?php echo $ccvalue['attribute_id']; ?>.checked" style="    position: absolute;
                                                margin-top: -22px;
                                                color: #fff;"></i>
                                         </label>
@@ -482,13 +482,12 @@ $image2 = "";
                 <!-- Main Shop Itesm -->          
                 <div class="col-md-9"> 
 
-
-                    <div id="content1"  ng-if="productProcess.showstate == 1" style="padding: 100px 0px;"> 
+                    <div id="content1"  ng-if="productProcess.finalProducts.length == 0" style="padding: 100px 0px;"> 
 
                         <!-- Tesm Text -->
                         <section class="error-page text-center pad-t-b-130">
                             <div class=""> 
-                             
+
                                 <!-- Heading -->
                                 <h1 style="font-size: 40px;">Loading...</h1>
                             </div>
@@ -503,6 +502,7 @@ $image2 = "";
 
                     <div class="" > 
 
+
                         <div class="row products-container content" ng-if="productProcess.showstate == 2">
                             <!-- Item -->
                             <div class="col-sm-4"  ng-repeat="(k, product) in productProcess.finalProducts">
@@ -516,7 +516,8 @@ $image2 = "";
 
 
                                     <div class="info"> 
-                                        <a href="#.">
+                                        <a href="#." style="width: 100%;
+                                           float: left;">
                                             {{product.title}}
                                             <br>
                                             <span style="font-size: 12px">{{product.short_description}} </span>
@@ -535,6 +536,7 @@ $image2 = "";
 
                                             <span class="colorblock" style="background: #fff;" ></span>
                                         </p>
+                                        <br/>
 
                                         <?php
                                         switch ($custom_id) {
@@ -636,13 +638,13 @@ $image2 = "";
 
 
 
-          
+
 
                     <div class="col-md-12" id="paging_container1">
                         <div class="showing-info">
                             <p class="text-center"><span class="info_text ">Showing {0}-{1} of {2} results</span></p>
                         </div>
-                        <div class="row products-container content" ng-if="productProcess.state == 2">
+                        <div class="row products-container content" >
                             <!-- Item -->
                             <div class="col-sm-4 animated zoomIn"  ng-repeat="(k, product) in productProcess.products">
                             </div>

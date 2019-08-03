@@ -4,15 +4,15 @@
 
 App.controller('ProductController', function ($scope, $http, $timeout, $interval) {
 
-    $scope.productResults = {'products':[]};
+    $scope.productResults = {'products': []};
     $scope.productAttr = {};
     $scope.init = 0;
-   
+
     $scope.pricerange = {'min': 0, 'max': 0};
-    $scope.productProcess = {'state': 1, 'showstate':1, 'pagination': {'paginate': [1, 12], 'perpage': 12}, 'products': [],'finalProducts':[] };
+    $scope.productProcess = {'state': 1, 'showstate': 1, 'pagination': {'paginate': [1, 12], 'perpage': 12}, 'products': [], 'finalProducts': []};
 
 
-   
+
 
     $scope.getProducts = function (attrs) {
         $scope.productResults.products = [];
@@ -33,18 +33,22 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
         }
         $http.get(url).then(function (result) {
             $scope.productProcess.products = result.data.products;
-            $scope.productProcess.state = 2;
+            $scope.productProcess.showstate = 1;
             $timeout(function () {
                 $('#paging_container1').pajinate({
                     items_per_page: 12,
                     num_page_links_to_display: 5,
                 });
-                $scope.checkProduct();
+
+                $timeout(function () {
+                    $scope.checkProduct();
+                }, 100)
+
 
                 $(".page_link").click(function () {
                     $("html, body").animate({scrollTop: 0}, "slow")
                 })
-            }, 1500)
+            }, 1000)
             $scope.init = 1;
         }, function () {
             $scope.productProcess.state = 0;
@@ -58,7 +62,7 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
     $scope.attribute_checked_pre = {};
 
     $scope.attributeProductGet = function (atv, atc, checkattr) {
-$scope.productProcess.showstate = 1;
+        $scope.productProcess.showstate = 1;
         console.log(checkattr)
         //check attribute id
         if (checkattr) {
@@ -103,12 +107,17 @@ $scope.productProcess.showstate = 1;
         }
         $scope.productProcess.showstate = 1;
         $timeout(function () {
-           $scope.productProcess.showstate = 2;
+//            $scope.productProcess.showstate = 2;
             $scope.productProcess.pagination.paginate = countdata;
             $scope.productProcess.pagination.perpage = '12';
             console.log($scope.productProcess.products.slice(countdata[0] - 1, countdata[1]))
+            console.log(countdata[0] - 1, countdata[1])
             $scope.productProcess.finalProducts = $scope.productProcess.products.slice(countdata[0] - 1, countdata[1]);
-        }, 1100)
+
+
+            $scope.productProcess.showstate = 2;
+
+        }, 500)
 
 
 
@@ -137,8 +146,8 @@ $scope.productProcess.showstate = 1;
         $scope.productProcess.currentpage = Number($scope.productProcess.currentpage) - 1;
         $scope.checkProduct();
     });
-    
-      $scope.checkProduct();
+
+    $scope.checkProduct();
 
 
 
