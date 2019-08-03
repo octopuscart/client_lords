@@ -289,44 +289,45 @@ class Shop extends CI_Controller {
             $sendername = email_sender_name;
             $email_bcc = email_bcc;
             $sendernameeq = $this->input->post('last_name') . " " . $this->input->post('first_name');
-//            if ($this->input->post('email')) {
-//                $this->email->set_newline("\r\n");
-//                $this->email->from(email_sender, $sendername);
-//                $this->email->reply_to(email_bcc, $sendername);
-//                $this->email->to($this->input->post('email'));
-//                $this->email->bcc(email_bcc);
-//                $subjectt = email_sender_name . " Appointment : " . $appointment['select_date'] . " (" . $appointment['select_time'] . ")";
-//                $orderlog = array(
-//                    'log_type' => 'Appointment',
-//                    'log_datetime' => date('Y-m-d H:i:s'),
-//                    'user_id' => 'Appointment User',
-//                    'log_detail' => $sendernameeq . "  " . $subjectt
-//                );
-//                $this->db->insert('system_log', $orderlog);
-//
-//                $subject = $subjectt;
-//                $this->email->subject($subject);
-//
-//                $appointment['appointment'] = $appointment;
-//
-//
-//                $htmlsmessage = $this->load->view('Email/appointment', $appointment, true);
-//                if (REPORT_MODE == 1) {
-//                    $this->email->message($htmlsmessage);
-//                    $this->email->print_debugger();
-////                    $send = $this->email->send();
-////                    if ($send) {
-////                        echo json_encode("send");
-////                    } else {
-////                        $error = $this->email->print_debugger(array('headers'));
-////                        echo json_encode($error);
-////                    }
-//                } else {
-//                    echo $htmlsmessage;
-//                }
-//            }
+            if ($this->input->post('email')) {
+                $this->email->set_newline("\r\n");
+                $this->email->from(email_sender, $sendername);
+                $this->email->reply_to(email_bcc, $sendername);
+                $this->email->to($this->input->post('email'));
+                $this->email->bcc(email_bcc);
+                $subjectt = email_sender_name . " Appointment : " . $appointment['select_date'] . " (" . $appointment['select_time'] . ")";
+                $orderlog = array(
+                    'log_type' => 'Appointment',
+                    'log_datetime' => date('Y-m-d H:i:s'),
+                    'user_id' => 'Appointment User',
+                    'log_detail' => $sendernameeq . "  " . $subjectt
+                );
+                $this->db->insert('system_log', $orderlog);
 
-            redirect('Shop/appointment');
+                $subject = $subjectt;
+                $this->email->subject($subject);
+
+                $appointment['appointment'] = $appointment;
+
+
+                $htmlsmessage = $this->load->view('Email/appointment', $appointment, true);
+                if (REPORT_MODE == 1) {
+                    $this->email->message($htmlsmessage);
+                    $this->email->print_debugger();
+                    $send = $this->email->send();
+                    if ($send) {
+                        redirect('Shop/appointment');
+                        echo json_encode("send");
+                    } else {
+                        $error = $this->email->print_debugger(array('headers'));
+                        echo json_encode($error);
+                    }
+                } else {
+                    echo $htmlsmessage;
+                }
+            }
+
+            
         }
         $this->load->view('pages/appointment', $data);
     }
