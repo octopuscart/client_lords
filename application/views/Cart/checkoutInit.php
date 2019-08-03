@@ -118,40 +118,32 @@ $this->load->view('layout/header');
 
 
 
-
-                            <!-- Cart Details -->
-                            <div class="custom_block_item">
+    <div class="custom_block_item">
 
                                 <div class="cart-head">
                                     <ul class="row">
                                         <!-- PRODUCTS -->
-                                        <li class="col-sm-6 text-left">
+                                        <li class="col-sm-8 text-left">
                                             <h6>PRODUCTS</h6>
                                         </li>
 
-                                        <!-- PRICE -->
-                                        <li class="col-sm-2">
-                                            <h6>PRICE</h6>
-                                        </li>
+                                    
                                         <!-- QTY -->
-                                        <li class="col-sm-2">
+                                        <li class="col-sm-4">
                                             <h6>QTY</h6>
                                         </li>
 
-                                        <!-- TOTAL PRICE -->
-                                        <li class="col-sm-2">
-                                            <h6>TOTAL</h6>
-                                        </li>
+                                     
 
                                     </ul>
                                 </div>
                                 <ul class="row cart-details" ng-repeat="product in globleCartData.products" >
-                                    <li class="col-sm-6">
+                                    <li class="col-sm-8">
                                         <div class="media"> 
                                             <!-- Media Image -->
                                             <div class="media-left media-middle"> 
                                                 <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}" class="item-img"> 
-                                                    <img class="media-object" src="{{product.file_name}}" alt="" style="height: 100px;width: auto;"> 
+                                                    <img class="media-object" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="" style="height: 100px;width: auto;"> 
                                                 </a> 
                                             </div>
 
@@ -160,33 +152,22 @@ $this->load->view('layout/header');
                                                 <div class="position-center-center" style="    text-align: left;">
                                                     <h5>{{product.title}} - {{product.item_name}}</h5>
                                                     <p>{{product.sku}}</p>
-                                                    <button type="button" ng-click="viewStyle(product)" class="btn btn-primary btn-xs desing_view_button"  style="margin-top: 10px;">View Design</a>
+                                                    <button type="button" ng-click="viewStyle(product)" class="btn btn-default btn-small desing_view_button"  style="margin-top: 10px;">View Design</a>
 
                                                 </div>
                                             </div>
                                         </div>
                                     </li>
 
-                                    <!-- PRICE -->
-                                    <li class="col-sm-2">
-                                        <div class="position-center-center"> <span class="price">{{product.price|currency:" "}}<span ng-if="product.extra_price > 0" style="font-size: 12px;
-                                          font-weight: 600;
-                                          text-align: center;">
-                                        <br/>
-                                        Price: {{product.price - product.extra_price}} + Extra Price:{{product.extra_price}} 
-                                    </span></span> </div>
-                                    </li>
+                                   
 
                                     <!-- QTY -->
-                                    <li class="col-sm-2 quantity_li" style="padding-top: 30px;">
+                                    <li class="col-sm-4 quantity_li" style="padding-top: 30px;">
                                         <div class="position-center-center"> <span class="price">{{product.quantity}}</span> </div>
 
                                     </li>
 
-                                    <!-- TOTAL PRICE -->
-                                    <li class="col-sm-2">
-                                        <div class="position-center-center"> <span class="price">{{product.total_price|currency:"<?php echo globle_currency_type; ?>"}}</span> </div>
-                                    </li>
+                                  
 
 
 
