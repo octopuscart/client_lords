@@ -26,11 +26,11 @@ class Shop extends CI_Controller {
 
         $query = $this->db->get('sliders');
         $data['sliders'] = $query->result();
-        
-        
-        
+
+
+
         $baselink = 'http://' . $_SERVER['SERVER_NAME'];
-     
+
         $this->db->select("country, date");
         $this->db->select("country, hotel, address, days");
 //        $this->db->where('status', 'active');
@@ -147,12 +147,13 @@ class Shop extends CI_Controller {
 
         $query = $this->db->get('sliders');
         $data['sliders'] = $query->result();
-        
+
 
         $this->load->view('home', $data);
     }
 
     public function contactus() {
+         $checkcode = REPORT_MODE;
         if (isset($_POST['sendmessage'])) {
             $web_enquiry = array(
                 'last_name' => $this->input->post('last_name'),
@@ -189,20 +190,26 @@ class Shop extends CI_Controller {
 
                 $web_enquiry['web_enquiry'] = $web_enquiry;
 
-                $htmlsmessage = $this->load->view('Email/web_enquiry', $web_enquiry, true);
-                $this->email->message($htmlsmessage);
 
-                $this->email->print_debugger();
-                $send = $this->email->send();
-                if ($send) {
-                     json_encode("send");
+
+                if ($checkcode) {
+                    $htmlsmessage = $this->load->view('Email/web_enquiry', $web_enquiry, true);
+                    $this->email->message($htmlsmessage);
+                    $this->email->print_debugger();
+                    $send = $this->email->send();
+                    if ($send) {
+                        redirect('Shop/contactus');
+                        echo json_encode("send");
+                    } else {
+                        $error = $this->email->print_debugger(array('headers'));
+                        echo json_encode($error);
+                    }
                 } else {
-                    $error = $this->email->print_debugger(array('headers'));
-                    echo json_encode($error);
+                    echo $this->load->view('Email/web_enquiry', $web_enquiry, true);
                 }
             }
 
-           // redirect('Shop/contactus');
+            // redirect('Shop/contactus');
         }
         $this->load->view('pages/contactus');
     }
@@ -214,8 +221,7 @@ class Shop extends CI_Controller {
     public function faqs() {
         $this->load->view('pages/faqs');
     }
-    
-    
+
     public function clients() {
         $this->load->view('pages/clients');
     }
@@ -225,7 +231,7 @@ class Shop extends CI_Controller {
     }
 
     public function appointment() {
-       
+
 
         $data['timeslot'] = [];
 
@@ -252,7 +258,7 @@ class Shop extends CI_Controller {
 
 
         $usasappointment = $this->Product_model->AppointmentDataAll();
-    
+
         $data['appointmentdatausa'] = $usasappointment;
         $data['appointmentdata'] = [];
 
@@ -377,7 +383,7 @@ class Shop extends CI_Controller {
         }
 
 
-        
+
 
 
         $this->db->where('id', $style_index);

@@ -56,9 +56,9 @@
     <body ng-app="App">
 
         <!--LOADER--> 
-        <div id="loader">
+        <div id="loader1">
             <div class="position-center-center">
-                <img src="<?php echo base_url(); ?>assets/theme/images/crown.gif"  style="    height: 50px;">
+                <!--<img src="<?php echo base_url(); ?>assets/theme/images/crown.gif"  style="    height: 50px;">-->
                 <!--<div class="loader"></div>-->
             </div>
         </div>

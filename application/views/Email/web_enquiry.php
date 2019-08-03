@@ -83,24 +83,34 @@
 
 
             <table class="carttable"  border-color= "#9E9E9E" align="center" border="1" cellpadding="0" cellspacing="0" width="700" style="background: #fff;padding:20px">
-
-
-
                 <tr>
-                    <td colspan="6" style="font-size: 12px;">
-
-                        <p><?php echo $web_enquiry['first_name']; ?> <?php echo $web_enquiry['last_name']; ?>,</p><br/>
-                        E:<?php echo $web_enquiry['email']; ?><br/>
-                        T:<?php echo $web_enquiry['contact']; ?>
-                        <p><?php echo $web_enquiry['message']; ?></p> 
-                        <br/>
-                        <div style="height: 200px;">End<br />
-
-                        </div>
-
+                    <th style="    width: 100px;">Name</th>
+                    <td><?php echo $web_enquiry['first_name']; ?> <?php echo $web_enquiry['last_name']; ?></td>
+                </tr>   
+                <tr>
+                    <th>Email</th>
+                    <td><?php echo $web_enquiry['email']; ?></td>
+                </tr>
+                <tr>
+                    <th>Contact No.</th>
+                    <td><?php echo $web_enquiry['contact']; ?></td>
+                </tr>   
+                <tr>
+                    <th>Subject</th>
+                    <td><?php echo $web_enquiry['subject']; ?></td>
+                </tr>  
+                <tr>
+                    <th>Message</th>
+                    <td>
+                        <?php echo $web_enquiry['message']; ?> 
                     </td>
                 </tr>
-
+                <tr>
+                    <td colspan="2">
+                        <h4 style="    color: #f7d47a;text-align: center;
+                                font-family: initial;"> Thank You</h4>
+                    </td>
+                </tr>
             </table>
 
         </div>
