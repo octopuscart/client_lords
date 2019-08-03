@@ -10,17 +10,17 @@ $stylearray1 = [
     array(
         "images" => "colonelmichal.jpg",
         "details" => "Colonel Michael Daily from San Diego celebrating his 65th birthday in style dressed up in his classic charcoal grey pinstripe suit by Lord's Custom Tailors. Happy Birthday Colonel, you look sharp!",
-        "tag" => "Colonel Michael Daily (San Diego)"
+        "tag" => "Colonel Michael Daily (San Diego, California)"
     ),
     array(
         "images" => "avish.jpg",
         "details" => "About to keynote a conference. Wearing my new suit from Lord's Custom Tailors. Thanks Jason Mirpuri!",
-        "tag" => "Avish Parashar (Philadelphia)"
+        "tag" => "Avish Parashar (Philadelphia, U.S.A)"
     ),
     array(
         "images" => "joeurcillo‎.jpg",
         "details" => "Jason Mirpuri is a Custom Tailor God! Opened the package, put it on and PERFECT. I don’t even care about the shipping wrinkles... I am not taking this off!!",
-        "tag" => "‎Joe Curcillo (Harrisburg)"
+        "tag" => "‎Joe Curcillo (Harrisburg, U.S.A)"
     ),
     array(
         "images" => "frank.jpg",
@@ -31,12 +31,12 @@ $stylearray1 = [
         "images" => "brian_walter.jpg",
         "details" => "Getting ready to head off to the National Speakers Association annual convention Influence 18 which will be held in Dallas at The Hilton Anatole Hotel from Saturday 14 July. 
 Lord’s Custom Tailors will be showcasing our suits in the trade display at Influence 18. Come along & see what we have on offer.",
-        "tag" => "‎Brian Walter (Dallas)"
+        "tag" => "‎Brian Walter (Dallas, U.S.A)"
     ),
     array(
         "images" => "andy_lopata.jpg",
         "details" => "Measuring up another stylish speaker, Andy Lopata at the Asia Professional Speakers Convention in Singapore.",
-        "tag" => "‎Andy Lopata (Broxbourne)"
+        "tag" => "‎Andy Lopata (Broxbourne, England)"
     ),
     array(
         "images" => "warwickmarry.jpg",
@@ -45,15 +45,13 @@ Lord’s Custom Tailors will be showcasing our suits in the trade display at Inf
 My previous suit was a little restrictive (its those gremlins in the closet who tighten your clothes) but having this one tailored meant that my sleeves and coat tail can be that little bit longer as they need to be and my jacket has an array of pockets for pens, business cards, phones and what not that all sneak into place.
 
 Thanks again to Lords Custom Tailors for a great suit - look forward to the sports coat arriving soon.",
-        "tag" => "Glen Waverley (Australia)"
+        "tag" => "Warwick Merry (Glen Waverley, Australia)"
     ),
-   
     array(
         "images" => "michaelperez.jpg",
         "details" => "Another delighted customer, Michael Perez from Chicago is now stepping out in style with a Lord's Custom Tailored suit or two. Looking good Michael!",
-        "tag" => "‎Michael Perez (Chicago)"
+        "tag" => "‎Michael Perez (Chicago, U.S.A)"
     ),
-    
 ];
 
 
@@ -64,7 +62,7 @@ $stylearray2 = [
         "images" => "joshpaulen.jpg",
         "details" => "Josh Paulen from San Francisco has good taste. Not only did he make a wise choice with his new bride, he chose to wear a tailored suit from Lord's Custom Tailors on his wedding day. <br/>
 Jason Mirpuri literally travels the world fitting stylish men & women in beautiful suits just like this. ",
-        "tag" => "Josh Paulen (San Francisco)"
+        "tag" => "Josh Paulen (San Francisco, California)"
     ),
     array(
         "images" => "shairly.jpg",
@@ -74,7 +72,7 @@ Jason Mirpuri literally travels the world fitting stylish men & women in beautif
     array(
         "images" => "acouple.jpg",
         "details" => "A couple of snappy dressers at the CAPS (Canadian Association of Professional Speakers) Convention. Brian Walter, Jason Mirpuri & Steve Lowell",
-        "tag" => "Canadian Association of Professional Speakers"
+        "tag" => "‎--------"
     ),
     array(
         "images" => "caroal.jpg",
@@ -86,27 +84,27 @@ Great jacket has just arrived from Lord’s Custom Taylors. Perfect fit and exac
     array(
         "images" => "lljagee.jpg",
         "details" => "Wearing my new custom made shirt and jacket from Lord's Custom Tailors today. Big thanks for the awesome work and service.",
-        "tag" => "Ilja Gee (Germany)"
+        "tag" => "Ilja Gee (Berlin, Germany)"
     ),
     array(
         "images" => "seattle_washington.jpg",
         "details" => "This couple know how to stand out in a crowd.",
-        "tag" => "Seattle (Washington)"
+        "tag" => "Mr. & Mrs. Andrew Farrell (Seattle, Washington)"
     ),
     array(
         "images" => "lindsay_adam.jpg",
         "details" => "Lindsay Adams acting as Emcee of the Brisbane PSA chapter meeting opening the meeting. Doing his thing in his new suit form Lords Custom Tailors.",
         "tag" => "Lindsay Adams (Brisbane, Australia)"
     ),
-     array(
+    array(
         "images" => "lle.jpg",
         "details" => "Lloyd Luna, Lindsay Adams and Elias Kanaris at The Heritage Hotel Manila.",
-        "tag" => "‎At The Heritage Hotel Manila (Philippines)"
+        "tag" => "‎-------"
     ),
     array(
         "images" => "professional_speaker.jpg",
         "details" => "Lord's Custom Tailors sponsored the Professional Speakers Australia Convention in Brisbane, Australia recently. We met many amazing professional conference speakers and heard some amazing speeches. We also got to catch up with Lindsay Adams, the lucky winner of one of our tailored suits. That's him on the far left wearing a Lord's creation.",
-        "tag" => "‎Lindsay Adams, Sally Foley-Lewis, Ian Stephens and Trevor Perry"
+        "tag" => "‎--------"
     ),
 ];
 ?>
@@ -170,9 +168,9 @@ foreach ($stylearray1 as $key => $value) {
 ?>
                     </div>
                     <div class="col-md-6">
-                        <?php
-                        foreach ($stylearray2 as $key => $value) {
-                            ?>    
+<?php
+foreach ($stylearray2 as $key => $value) {
+    ?>    
 
                             <div class="col-md-12 ">
                                 <article > <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/customers/<?php echo $value['images']; ?>" alt="" >

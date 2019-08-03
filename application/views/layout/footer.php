@@ -22,13 +22,12 @@
                 <h4>Our Location</h4>
                 <p>
                     <b><i class="fa fa-location-arrow"></i></b>
-                    2/FL Unit D, Far East Mansion,<br/> 5-6 Middle Road,
+                    2/F Unit D, Far East Mansion,<br/> 5-6 Middle Road,
                     Tsim Sha Tsui, <br/>Kowloon, Hong Kong
                 </p>
                 <p><a href="https://api.whatsapp.com/send?phone=85296449965" style="color:white;"><b><i class="fa fa-phone"></i></b> +(852) 9644 9965</a></p>
                 <p><a href="tel:+1 (646) 306 5182" style="color:white;"><b><i class="fa fa-phone"></i></b> +1 (646) 306 5182</a></p>
                 <p><a href="mailto:jason@lordscustomtailors.com" style="color:white;"><b><i class="fa fa-envelope"></i></b> jason@lordscustomtailors.com</a></p>
-                <p><a href="mailto:nicole@lordscustomtailors.com" style="color:white;"><b><i class="fa fa-envelope"></i></b> nicole@lordscustomtailors.com</a></p>
 
 
                 <div class="social-links"> 
