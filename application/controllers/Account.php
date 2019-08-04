@@ -11,6 +11,7 @@ class Account extends CI_Controller {
         $this->load->model('User_model');
         $this->load->model('Product_model');
         $session_user = $this->session->userdata('logged_in');
+        $this->session_user_data = $this->session->userdata('logged_in');
         if ($session_user) {
             $this->user_id = $session_user['login_id'];
         } else {
@@ -121,6 +122,16 @@ class Account extends CI_Controller {
                     $productlist = $session_cart['products'];
 
                     $this->Product_model->cartOperationCustomCopy($user_id);
+                    $first_name = $userdata['first_name'];
+                    $last_name = $userdata['last_name'];
+                     $orderlog = array(
+                        'log_type' => "Login",
+                        'log_datetime' => date('Y-m-d H:i:s'),
+                        'user_id' => $user_id,
+                        'order_id' => "",
+                        'log_detail' => "$first_name $last_name Login Succesful",
+                    );
+                    $this->db->insert('system_log', $orderlog);
 
                     $this->session->set_userdata('logged_in', $sess_data);
 
@@ -178,6 +189,15 @@ class Account extends CI_Controller {
                         'login_id' => $user_id,
                     );
 
+                    $orderlog = array(
+                        'log_type' => "Registration",
+                        'log_datetime' => date('Y-m-d H:i:s'),
+                        'user_id' => $user_id,
+                        'order_id' => "",
+                        'log_detail' => "$first_name $last_name Login Succesful",
+                    );
+                    $this->db->insert('system_log', $orderlog);
+
 
                     try {
                         $this->User_model->registration_mail($user_id);
@@ -211,7 +231,18 @@ class Account extends CI_Controller {
             'password' => '',
             'logged_in' => FALSE,
         );
-
+   
+        $first_name = $this->session_user_data['first_name'];
+        $last_name = $this->session_user_data['last_name'];
+        $orderlog = array(
+            'log_type' => "Logout",
+            'log_datetime' => date('Y-m-d H:i:s'),
+            'user_id' => $this->user_id,
+            'order_id' => "",
+            'log_detail' => "$first_name $last_name Logout Succesful",
+        );
+     
+        $this->db->insert('system_log', $orderlog);
         $this->session->unset_userdata($newdata);
         $this->session->sess_destroy();
 
@@ -317,8 +348,8 @@ class Account extends CI_Controller {
     }
 
     function profile() {
-        
-         if ($this->user_id == 0) {
+
+        if ($this->user_id == 0) {
             redirect('Account/login');
         }
 
@@ -378,8 +409,8 @@ class Account extends CI_Controller {
                 $this->session->set_flashdata("checklogin", $message);
             }
         }
-        
-        
+
+
         $this->load->view('Account/profile2', $data);
     }
 

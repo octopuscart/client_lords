@@ -55,6 +55,17 @@ class Order extends CI_Controller {
                     'remark' => "Order Confirmed By Customer,  Waiting For Payment",
                 );
                 $this->db->insert('user_order_status', $order_status_data);
+                
+                $orderlog = array(
+                    'log_type' => "Order Confirmed",
+                    'log_datetime' => date('Y-m-d H:i:s'),
+                    'user_id' => "",
+                    'order_id' => $order_id,
+                    'log_detail' => "Order Confirmed By Customer,  Waiting For Payment",
+                );
+                $this->db->insert('system_log', $orderlog);
+                
+                
                 redirect("Order/orderdetailsguest/$order_key");
             }
             
@@ -67,7 +78,21 @@ class Order extends CI_Controller {
                     'user_id' => "Guest",
                     'remark' => $this->input->post('reason'),
                 );
+                
+                
+                
                 $this->db->insert('user_order_status', $order_status_data);
+                
+                $orderlog = array(
+                    'log_type' => "Order Cancelled",
+                    'log_datetime' => date('Y-m-d H:i:s'),
+                    'user_id' => "",
+                    'order_id' => $order_id,
+                    'log_detail' => $this->input->post('reason'),
+                );
+                $this->db->insert('system_log', $orderlog);
+                
+                
                 redirect("Order/orderdetailsguest/$order_key");
             }
             

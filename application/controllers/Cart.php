@@ -313,16 +313,17 @@ class Cart extends CI_Controller {
                 );
                 $this->db->insert('user_order_status', $order_status_data);
 //                    $this->Product_model->order_to_vendor($last_id);
-                
+
                 $orderlog = array(
-                'log_type' =>  "Order Enquiry",
-                'log_datetime' => date('Y-m-d H:i:s'),
-                'user_id' => $user_id,
-                'log_detail' => "Order Enquiry By Customer, Waiting For Confirmation",
-            );
-            $this->db->insert('system_log', $orderlog);
-                
-                
+                    'log_type' => "Order Enquiry",
+                    'log_datetime' => date('Y-m-d H:i:s'),
+                    'user_id' => $user_id,
+                    'order_id' => $last_id,
+                    'log_detail' => "Order Enquiry By Customer, Waiting For Confirmation",
+                );
+                $this->db->insert('system_log', $orderlog);
+
+
                 redirect('Order/orderdetails/' . $orderkey);
             }
             $this->load->view('Cart/checkoutPayment', $data);
