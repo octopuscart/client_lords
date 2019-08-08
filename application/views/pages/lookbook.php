@@ -38,7 +38,7 @@ $this->load->view('layout/header');
                         <?php
                         foreach ($lookbook_category as $lkey => $lvalue) {
                             ?>
-                            <li role="presentation" class="<?php echo $lkey == 0 ? 'active' : '' ?>"><a href="#lookbook<?php echo $lvalue['id']; ?>" aria-controls="lookbook<?php echo $lvalue['id']; ?>" role="tab" data-toggle="tab"><?php echo $lvalue['category_name']; ?></a></li>
+                            <li role="presentation" class="<?php echo $lkey == 0 ? 'active' : '' ?>"><a href="#lookbook<?php echo $lvalue['id']; ?>" aria-controls="lookbook<?php echo $lvalue['id']; ?>" role="tab" data-toggle="tab" ng-click="lookBookChange()"><?php echo $lvalue['category_name']; ?></a></li>
                             <?php
                         }
                         ?>
@@ -156,7 +156,9 @@ $this->load->view('layout/header');
 
     App.controller('lookBookController', function ($scope, $http, $timeout, $interval) {
         $scope.styleArray = {"title": "", "loading": 1, "style_list": [], "enquery_list": {}};
-        $timeout(function () {
+        
+        $scope.lookBookChange = function(){
+            $timeout(function () {
 <?php
 foreach ($lookbook_category as $lkey => $lvalue) {
     ?>
@@ -165,6 +167,9 @@ foreach ($lookbook_category as $lkey => $lvalue) {
 }
 ?>
         }, 500)
+        }
+        
+        
 
 
 
