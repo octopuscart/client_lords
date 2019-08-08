@@ -245,7 +245,9 @@ class Shop extends CI_Controller {
         "country" => "Hong Kong",
         "city_state" => "Kowloon,  T. S. T.",
         "hotel" => "SHOWROOM",
-        "address" => "Unit D, 2/F, Far East Mansion,<br/> 5-6 Middle Road, Tsim Sha Tsui, <br/>Kowloon, Hong Kong",
+        "address" => "2/F, Unit D, Far East Mansion,<br/>
+5-6 Middle Road, Tsim Sha Tsui, <br/>
+Kowloon, Hong Kong",
         "days" => "",
         "start_date" => "",
         "end_date" => "",

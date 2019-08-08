@@ -34,7 +34,7 @@ $this->load->view('layout/header');
                 <div style="    margin-top: 30px;">
 
                     <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
+                    <ul class="nav nav-tabs" role="tablist" style="    font-size: 30px;">
                         <?php
                         foreach ($lookbook_category as $lkey => $lvalue) {
                             ?>
