@@ -7,6 +7,14 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
     $scope.productResults = {'products': []};
     $scope.productAttr = {};
     $scope.init = 0;
+    
+    $scope.selecteProduct = {"selected":{}};
+    $scope.fabricsZoomModel = function(productobj){
+        console.log(productobj)
+        $("#productcustome").modal("show");
+        $scope.selecteProduct.selected = productobj;
+    }
+    
 
     $scope.pricerange = {'min': 0, 'max': 0};
     $scope.productProcess = {'state': 1, 'showstate': 1, 'pagination': {'paginate': [1, 12], 'perpage': 12}, 'products': [], 'finalProducts': []};
@@ -42,7 +50,7 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
             $scope.productProcess.showstate = 1;
             $timeout(function () {
                 $('#paging_container1').pajinate({
-                    items_per_page: 12,
+                    items_per_page: 20,
                     num_page_links_to_display: 5,
                 });
 
@@ -109,7 +117,7 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
             var countdata1 = countdata.split("-");
             countdata = [Number(countdata1[0]), Number(countdata1[1])];
         } else {
-            countdata = [1, 12];
+            countdata = [1,20];
         }
         $scope.productProcess.showstate = 1;
         $timeout(function () {

@@ -24,7 +24,13 @@ $image2 = "";
 <style type="text/css">
 
 
-
+    .textoverflow {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        float: left;
+        width: 97%;
+    }
 
     .tt-dropdown-menu,
     .gist {
@@ -318,9 +324,51 @@ $image2 = "";
     }
     article.shop-artical1 {
         margin-bottom: 30px;
-        border: 1px solid #000;
+
         padding-bottom: 10px;
-        border-style: dashed;
+
+    }
+
+    .shop-content .btn {
+        background: #f2b632;
+        display: inline-block;
+        font-size: 12px;
+        text-transform: uppercase;
+        padding: 15px 20px;
+        font-weight: bold;
+        border-radius: 0px;
+        letter-spacing: 0px;
+        line-height: 14px;
+        color: #010101;
+        position: relative;
+        overflow: hidden;
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        -ms-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        font-family: 'Raleway', sans-serif;
+    }
+
+
+    .producthoverImage{
+        background-size: cover!important;
+        background-position: center!important;
+        background-repeat: no-repeat!important;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        background-color: #fff!important;
+    }
+
+
+
+    .producthoverImage:hover{
+        opacity: 1;
+
+    }
+    .mainProductImage:hover{
+        opacity: 0!important;
     }
 
 </style>
@@ -518,14 +566,82 @@ $image2 = "";
 
                         <div class="row products-container content" ng-if="productProcess.showstate == 2">
                             <!-- Item -->
-                            <div class="col-sm-4"  ng-repeat="(k, product) in productProcess.finalProducts">
+                            <div class="col-sm-3"  ng-repeat="(k, product) in productProcess.finalProducts">
                                 <article class="shop-artical1"> 
 <!--                                    <div class="item-hover1" style="background: url(<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg);    background-size: 139%;
                                          background-color: white;height: 400px;width: auto;
                                          background-repeat: no-repeat;"> 
                                     </div>-->
-                                    <img class="img-responsive" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="product" style="height: 400px;">
+                                    <?php
+                                    switch ($custom_id) {
+                                        case "1":
+                                            ?>
+                                            <img class="img-responsive mainProductImage" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="product" style="height: 250px; ">
 
+                                            <img class="img-responsive producthoverImage" src="<?php echo base_url(); ?>assets/images/blank.png"   alt="product" style="background: url(<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/shirtFoldm20001.png);height: 250px; ">
+
+
+
+                                            <?php
+                                            break;
+                                        case "2":
+                                            ?>
+
+                                            <img class="img-responsive mainImage" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="product" style="height: 250px; ">
+
+
+                                            <?php
+                                            break;
+                                        case "5":
+                                            ?>
+
+
+                                            <img class="img-responsive mainImage" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="product" style="height: 250px; ">
+
+                                            <?php
+                                            break;
+                                        case "6":
+                                            ?>
+
+                                            <img class="img-responsive mainImage" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="product" style="height: 250px; ">
+
+
+                                            <?php
+                                            break;
+
+                                        case "7":
+                                            ?>
+
+                                            <img class="img-responsive mainImage" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="product" style="height: 250px; ">
+
+                                            <?php
+                                            break;
+
+                                        case "3":
+                                            ?>
+
+                                            <img class="img-responsive mainImage" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="product" style="height: 250px; ">
+
+
+                                            <?php
+                                            break;
+                                        case "4":
+                                            ?>
+                                            <img class="img-responsive mainImage" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="product" style="height: 250px; ">
+
+
+
+                                            <?php
+                                            break;
+                                        default:
+                                            echo "";
+                                            ?>
+
+
+
+                                        <?php
+                                    }
+                                    ?>                  
 
 
                                     <div class="info"> 
@@ -533,7 +649,8 @@ $image2 = "";
                                            float: left;">
                                             {{product.title}}
                                             <br>
-                                            <span style="font-size: 12px">{{product.short_description}} </span>
+                                            <span style="    padding: 0px 10px;
+                                                  font-size: 11px;" class="textoverflow" title="{{product.short_description}}">{{product.short_description}}</span>
                                         </a> 
                                         <p style="    margin-bottom: 0px;
                                            height: 15px;
@@ -551,77 +668,11 @@ $image2 = "";
                                         </p>
                                         <br/>
 
-                                        <?php
-                                        switch ($custom_id) {
-                                            case "1":
-                                                ?>
-
-
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn  btn-default" style="font-size: 9px;" title="Customize this fabric">Design Now
-                                                </a> 
-
-                                                <?php
-                                                break;
-                                            case "2":
-                                                ?>
-
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn  btn-default" style="font-size: 9px;" title="Customize this fabric">Design Now
-                                                </a> 
-
-                                                <?php
-                                                break;
-                                            case "5":
-                                                ?>
-
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn  btn-default" style="font-size: 9px;" title="Customize this fabric">Design Now
-                                                </a> 
-
-                                                <?php
-                                                break;
-                                            case "6":
-                                                ?>
-
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn  btn-default" style="font-size: 9px;" title="Customize this fabric">Design Now
-                                                </a> 
-
-                                                <?php
-                                                break;
-
-                                            case "7":
-                                                ?>
-
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn  btn-default" style="font-size: 9px;" title="Customize this fabric">Design Now
-                                                </a> 
-
-                                                <?php
-                                                break;
-
-                                            case "3":
-                                                ?>
-
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn  btn-default" style="font-size: 9px;" title="Customize this fabric">Design Now
-                                                </a> 
-
-                                                <?php
-                                                break;
-                                            case "4":
-                                                ?>
-
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn  btn-default" style="font-size: 9px;" title="Customize this fabric">Design Now
-                                                </a> 
-
-                                                <?php
-                                                break;
-                                            default:
-                                                echo $custom_item;
-                                                ?>
-
-                                                <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn btn-default" style="font-size: 9px;" title="Customize this fabric">Design Now
-                                                </a> 
-
-                                            <?php
-                                        }
-                                        ?>                                    </div>
+                                        <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn  btn-default" style="font-size: 9px;" title="Customize this fabric">Design Now
+                                        </a> 
+                                        <a href="#" class="btn  btn-default" style="font-size: 9px;" title="Customize this fabric" ng-click="fabricsZoomModel(product)"><i class="fa fa-eye"></i>
+                                        </a> 
+                                    </div>
                                 </article>
                             </div>
 
@@ -671,94 +722,71 @@ $image2 = "";
             </div>
         </div>
     </div>
-</div>
-<!-- End Content --> 
+    <!-- Modal -->
+    <div class="modal  fade" id="productcustome" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="    z-index: 20000000;">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel" style="font-size: 15px">
+                        <?php
+                        echo $custom_item;
+                        ?>
+                    </h4>
+                </div>
 
 
-<!-- Modal -->
-<div class="modal  fade" id="productcustome" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="    z-index: 20000000;">
-    <div class="modal-dialog " role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel" style="font-size: 15px">
-                    <?php
-                    echo $custom_item;
-                    ?>
-                </h4>
-            </div>
-
-            <?php
-
-            function createItemBlock($citem_id) {
-
-                switch ($citem_id) {
-                    case '1':
-                        $item_array = array("title" => "Shirt(s)", "link" => site_url("Customization/customizationShirt"));
-                        break;
-                    case '2':
-                        $item_array = array("title" => "Suit(s)", "link" => site_url("Customization/customizationSuitV2/2"));
-                        break;
-                    case '5':
-                        $item_array = array("title" => "Tuxedo Suit(s)", "link" => site_url("Customization/customizationSuitV2/5"));
-                        break;
-                    case '6':
-                        $item_array = array("title" => "Tuxedo Jackets(s)", "link" => site_url("Customization/customizationSuitV2/6"));
-                        break;
-                    case '7':
-                        $item_array = array("title" => "Tuxedo Pants(s)", "link" => site_url("Customization/customizationSuitV2/7"));
-                        break;
-                    case '3':
-                        $item_array = array("title" => "Pant(s)", "link" => site_url("Customization/customizationSuitV2/3"));
-                        break;
-                    case '4':
-                        $item_array = array("title" => "Jacket(s)", "link" => site_url("Customization/customizationSuitV2/4"));
-                        break;
-                    default:
-                        $item_array = array("title" => "Shirt(s)", "link" => site_url("Customization/customizationSuitV2"));
-                }
-                ?>
 
                 <!-- Cart Details -->
-                <div class="modal-body checkout-form">
+                <div class="modal-body " style="    padding: 0px 15px;">
                     <div class="custom_block_item">
 
 
                         <div class="row cart-details" >
-                            <div class="col-sm-12 col-md-3" ng-repeat="product in globleCartDatanc.products" ng-if="product.item_id == '<?php echo $citem_id; ?>'">
-                                <div class="thumbnail">
-                                    <img src="{{product.file_name}}" alt="" style="width: auto;" alt="...">
-                                    <div class="caption">
-                                        <h5 style="font-size:15px;">{{product.title}}</h5>
-                                        <p><span class="price">{{product.price|currency:" "}}</span> <a href="#." ng-click="removeCart(product.product_id)" class="pull-right"><i class="icon-close"></i></a> </p>
-                                    </div>
+                            <div class="">
 
-                                </div>
+                                <?php
+                                switch ($custom_id) {
+
+                                    case '1':
+                                        ?>
+
+                                        <img class="img-responsive " src="<?php echo custome_image_server; ?>/shirt/output/{{selecteProduct.selected.folder}}/fabric20001.png"  alt="product" >
+
+                                        <?php
+                                       
+                                    default:
+                                        ?>
+
+                                        <img class="img-responsive " src="<?php echo custome_image_server; ?>/jacket/output/{{selecteProduct.selected.folder}}/fabric20001.png"  alt="product" >
+
+                                    <?php
+                                }
+                                ?>
                             </div>
-
-
 
                         </div>
 
                     </div>
                 </div>
-                <div class="modal-footer" ng-repeat="product in globleCartDatanc.products" ng-if="(product.item_id == '<?php echo $citem_id; ?>') && $index == 0">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Add More</button>
-                    <a href="<?php echo $item_array['link']; ?>" class="btn btn-default pull-right">Customize Now <i class="fa fa-arrow-right"></i></a> 
+                <div class="modal-footer" >
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
 
                 <?php
-            }
-
-            createItemBlock($custom_id);
-            ?>
+                ?>
 
 
 
 
+            </div>
         </div>
     </div>
 </div>
+<!-- End Content --> 
+
+
+
 
 
 
