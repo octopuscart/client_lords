@@ -315,7 +315,7 @@ class Api extends REST_Controller {
 
 
         $product_query = "select pt.id as product_id, pt.*
-            from products as pt where pt.status==1 and pt.category_id in ($categoriesString) $pricequery $proquery order by display_index desc,FIELD(product_id, $proquerylist)";
+            from products as pt where pt.status=1 and pt.category_id in ($categoriesString) $pricequery $proquery order by display_index desc,FIELD(product_id, $proquerylist)";
         $product_result = $this->Product_model->query_exe($product_query);
 
         $productListSt = [];
