@@ -25,6 +25,21 @@ class Account extends CI_Controller {
         }
     }
 
+    
+    
+    
+    
+    public function mywallet() {
+
+
+        if ($this->user_id == 0) {
+            redirect('Account/login');
+        }
+        $data = array();
+        $this->load->view('Account/mywallet', $data);
+    }
+    
+    
     public function newsletter() {
 
 

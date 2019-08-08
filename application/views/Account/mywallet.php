@@ -59,14 +59,14 @@ $this->load->view('layout/header');
 
 
                     <div class="col-md-9">
-                        <h2>Newsletters Preferences</h2>
+                        
+                        <h2>My Wallet</h2>
                         <p>
-                            Would you like to subscribe to our newsletter?  
+                           You have  {{0|currency:<?php echo globle_currency;?>}}  available in stored credit
                         </p>
-                        <div class="btn-group" role="group" aria-label="...">
-                            <button type="button" class="btn btn-default">Yes</button>
-                            <button type="button" class="btn btn-default" disabled="">No</button>
-                        </div>
+                        
+                       
+                      
                     </div>
 
 
