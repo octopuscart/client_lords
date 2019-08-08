@@ -153,7 +153,7 @@ class Shop extends CI_Controller {
     }
 
     public function contactus() {
-         $checkcode = REPORT_MODE;
+        $checkcode = REPORT_MODE;
         if (isset($_POST['sendmessage'])) {
             $web_enquiry = array(
                 'last_name' => $this->input->post('last_name'),
@@ -227,6 +227,10 @@ class Shop extends CI_Controller {
     }
 
     public function catalogue() {
+
+
+
+
         $this->load->view('pages/catalogue');
     }
 
@@ -326,28 +330,24 @@ class Shop extends CI_Controller {
                     echo $htmlsmessage;
                 }
             }
-
-            
         }
         $this->load->view('pages/appointment', $data);
     }
 
     public function lookbook() {
-        $suitsimagelist = [31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
-            1, 2, 3, 4, 5, 6, 7, 15, 16, 17, 18, 19, 20, 21, 22, 23,
-            24, 25, 26, 27, 28, 29
-        ];
-        $stylearray = array();
-        foreach ($suitsimagelist as $key => $value) {
-            $temp = array(
-                "style_no" => "10$value",
-                "title" => "",
-                "short_description" => "",
-                "image" => "suits/$value.jpg",
-            );
-            array_push($stylearray, $temp);
+     
+
+        $query = $this->db->get('lookbook_category');
+        $lookbook_category = $query->result_array();
+        $data['lookbook_category'] = $lookbook_category;
+        $styleArray = array();
+        foreach ($lookbook_category as $key => $value) {
+            $lookbookid = $value['id'];
+            $this->db->where("category_id", $lookbookid);
+            $query = $this->db->get('lookbook');
+            $styleArray[$value['id']] = array("category"=>$value, "data"=> $query->result_array());
         }
-        $data['stylearray'] = $stylearray;
+        $data['stylearray'] = $styleArray;
         $this->load->view('pages/lookbook', $data);
     }
 
