@@ -336,7 +336,7 @@ class Shop extends CI_Controller {
 
     public function lookbook() {
      
-
+        $this->db->order_by("display_index");
         $query = $this->db->get('lookbook_category');
         $lookbook_category = $query->result_array();
         $data['lookbook_category'] = $lookbook_category;
