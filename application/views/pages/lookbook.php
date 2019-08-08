@@ -81,6 +81,7 @@ $this->load->view('layout/header');
                                         </ul>
                                         <div style="clear:both"></div>
                                     </section><!-- // grid-wrap -->
+                                    <div style="clear: both"></div>
                                     <section class="slideshow" style="z-index: 200000" >
                                         <ul>
 
@@ -108,6 +109,7 @@ $this->load->view('layout/header');
                                         </nav>
 
                                     </section><!-- // slideshow -->
+                                    <div style="clear: both"></div>
                                 </div><!-- // grid-gallery -->
                                 <div style="clear: both"></div>
 
