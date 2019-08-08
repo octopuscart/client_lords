@@ -332,8 +332,8 @@ $this->load->view('layout/header');
                                                     <b>Send to:</b>
                                                     <br/>
 
-                                                    Unit D, 2/F, Far East Mansion,<br/>
-5-6 Middle Road, Tsim Sha Tsui, 
+2/F, Unit D, Far East Mansion,<br/>
+5-6 Middle Road, Tsim Sha Tsui,<br/> 
 Kowloon, Hong Kong
                                                     <br/>
                                                     <i class="fa fa-envelope"></i> jason@lordscustomtailors.com<br/>

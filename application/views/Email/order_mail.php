@@ -235,15 +235,7 @@
 
                         <?php echo EMAIL_FOOTER; ?>
 
-                        <br/>
-                        <span style="    text-align: center;
-                              width: 100%;
-                              float: left;
-                              margin-top: 24px;
-                            
-                              color: white;
-                              font-size: 10px;"> (This is computer generated receipt and does not require physical signature.)</span>
-                    </td>
+                 </td>
                 </tr>
 
             </table>
