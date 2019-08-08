@@ -241,7 +241,28 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             })
         });
     }
+    
+    
+    //wishlist
+    
+    $scope.addToWishList = function(product){
+         swal({
+                title: 'Added To Wishlist',
+                type: 'success',
+                html: "<i class='fa fa-heart' style='font-size:20px;'></i><br/><p class='swalproductdetail'><span>" + product.title + "</span></p>",
+//                imageUrl: rdata.data.file_name,
+                imageWidth: 100,
+                timer: 1500,
+//                 background: '#fff url(//bit.ly/1Nqn9HU)',
+                imageAlt: 'Custom image',
+                showConfirmButton: false,
+                animation: true
 
+            })
+    }
+   
+   //wishlist
+   
     $scope.avaiblecredits = avaiblecredits;
     $scope.checkOrderTotal = function () {
         if ($scope.globleCartData.used_credit) {

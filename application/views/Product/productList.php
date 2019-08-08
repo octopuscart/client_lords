@@ -676,7 +676,7 @@ $image2 = "";
                                         </a> 
                                         <a href="#" class="btn  btn-default" style="font-size: 12px;" title="Look More" ng-click="fabricsZoomModel(product)"><i class="fa fa-eye"></i>
                                         </a> 
-                                        <a href="#" class="btn  btn-default" style="font-size: 12px;" title="Add To Wishlist" ng-click="fabricsZoomModel(product)"><i class="fa fa-heart"></i>
+                                        <a href="#" class="btn  btn-default" style="font-size: 12px;" title="Add To Wishlist" ng-click="addToWishList(product, <?php echo $custom_id;?>)"><i class="fa fa-heart"></i>
                                         </a> 
                                     </div>
                                 </article>
