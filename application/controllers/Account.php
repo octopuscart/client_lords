@@ -25,6 +25,16 @@ class Account extends CI_Controller {
         }
     }
 
+    public function newsletter() {
+
+
+        if ($this->user_id == 0) {
+            redirect('Account/login');
+        }
+        $data = array();
+        $this->load->view('Account/newsletter', $data);
+    }
+
     //Profile page
     public function profile2() {
 
@@ -124,7 +134,7 @@ class Account extends CI_Controller {
                     $this->Product_model->cartOperationCustomCopy($user_id);
                     $first_name = $userdata['first_name'];
                     $last_name = $userdata['last_name'];
-                     $orderlog = array(
+                    $orderlog = array(
                         'log_type' => "Login",
                         'log_datetime' => date('Y-m-d H:i:s'),
                         'user_id' => $user_id,
@@ -231,7 +241,7 @@ class Account extends CI_Controller {
             'password' => '',
             'logged_in' => FALSE,
         );
-   
+
         $first_name = $this->session_user_data['first_name'];
         $last_name = $this->session_user_data['last_name'];
         $orderlog = array(
@@ -241,7 +251,7 @@ class Account extends CI_Controller {
             'order_id' => "",
             'log_detail' => "$first_name $last_name Logout Succesful",
         );
-     
+
         $this->db->insert('system_log', $orderlog);
         $this->session->unset_userdata($newdata);
         $this->session->sess_destroy();
