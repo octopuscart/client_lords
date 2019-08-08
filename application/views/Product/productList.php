@@ -241,7 +241,7 @@ $image2 = "";
     }
 
     .colorblock{
-        padding:5px 10px;
+
     }
 
 
@@ -334,7 +334,7 @@ $image2 = "";
         display: inline-block;
         font-size: 12px;
         text-transform: uppercase;
-        padding: 15px 20px;
+            padding: 10px 10px;
         font-weight: bold;
         border-radius: 0px;
         letter-spacing: 0px;
@@ -652,25 +652,31 @@ $image2 = "";
                                             <span style="    padding: 0px 10px;
                                                   font-size: 11px;" class="textoverflow" title="{{product.short_description}}">{{product.short_description}}</span>
                                         </a> 
-                                        <p style="    margin-bottom: 0px;
-                                           height: 15px;
+                                        <p style="  margin-bottom: 0px;
+                                           height: 20px;
                                            float: left;
-                                           width: 100%;" ng-if="product.attr.length">
+                                           width: 100%;
+                                           line-height: 0px;
+                                           font-size: 20px;" ng-if="product.attr.length">
 
-                                            <span class="colorblock" style="background: {{pattr['code']}};" ng-repeat="pattr in product.attr"></span>
+                                            <span class="colorblock" style="color: {{pattr['code']}};" ng-repeat="pattr in product.attr"><i class="fa fa-square"></i></span>
                                         </p>
-                                        <p style="    margin-bottom: 0px;
-                                           height: 15px;
+                                        <p style="       margin-bottom: 0px;
+                                           height: 20px;
                                            float: left;
-                                           width: 100%;" ng-if="product.attr.length == 0">
+                                           width: 100%;
+                                           line-height: 0px;
+                                           font-size: 20px;" ng-if="product.attr.length == 0">
 
                                             <span class="colorblock" style="background: #fff;" ></span>
                                         </p>
                                         <br/>
 
-                                        <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn  btn-default" style="font-size: 9px;" title="Customize this fabric">Design Now
+                                        <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn  btn-default" style="font-size:12px;" title="Customize this fabric">Design Now
                                         </a> 
-                                        <a href="#" class="btn  btn-default" style="font-size: 9px;" title="Customize this fabric" ng-click="fabricsZoomModel(product)"><i class="fa fa-eye"></i>
+                                        <a href="#" class="btn  btn-default" style="font-size: 12px;" title="Look More" ng-click="fabricsZoomModel(product)"><i class="fa fa-eye"></i>
+                                        </a> 
+                                        <a href="#" class="btn  btn-default" style="font-size: 12px;" title="Add To Wishlist" ng-click="fabricsZoomModel(product)"><i class="fa fa-heart"></i>
                                         </a> 
                                     </div>
                                 </article>
@@ -753,8 +759,7 @@ $image2 = "";
 
                                         <img class="img-responsive " src="<?php echo custome_image_server; ?>/shirt/output/{{selecteProduct.selected.folder}}/fabric20001.png"  alt="product" >
 
-                                        <?php
-                                       
+                                    <?php
                                     default:
                                         ?>
 
