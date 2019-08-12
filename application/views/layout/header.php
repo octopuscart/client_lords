@@ -112,7 +112,6 @@
                                 <a href="https://www.facebook.com/lordscustomtailors"" target="_blank"><i class="fa fa-facebook"></i></a> 
                                 <a href="https://twitter.com/lordscustomtai1" target="_blank"><i class="fa fa-twitter"></i></a> 
                                 <a href="https://www.instagram.com/lordscustomtailors/" target="_blank"><i class="fa fa-instagram"></i></a> 
-                                <a href="" target="_blank"><i class="fa fa-tripadvisor"></i></a> 
                                 <a href="https://www.pinterest.com/lordscustomtailors/" target="_blank"><i class="fa fa-pinterest"></i></a> 
                             </div>
                         </div>
@@ -155,7 +154,7 @@
                                                 <li><a href="<?php echo site_url('Product/ProductList/4/0'); ?>">Sport Coats</a></li>
                                                 <li><a href="#">Waist Coats</a></li>
                                                 <li><a href="<?php echo site_url('Product/ProductList/3/0'); ?>">Slacks</a></li>
-                                                <li><a href="<?php echo site_url('Product/ProductList/5/0'); ?>">Tuxedos</a></li>
+                                                <li><a href="<?php echo site_url('Product/ProductList/8/0'); ?>">Tuxedos</a></li>
 
                                             </ul>
                                         </li>

@@ -600,6 +600,14 @@ $image2 = "";
 
                                             <?php
                                             break;
+                                        case "8":
+                                            ?>
+
+
+                                            <img class="img-responsive mainImage" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="product" style="height: 250px; ">
+
+                                            <?php
+                                            break;
                                         case "6":
                                             ?>
 

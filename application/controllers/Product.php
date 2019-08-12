@@ -145,6 +145,11 @@ class Product extends CI_Controller {
         if ($custom_id == 6) {
             redirect('Product/customizationTuxedoJacket/' . $product_id . "/" . $custom_id);
         }
+        
+        if ($custom_id == 8) {
+            redirect('Product/customizationWaistCoats/' . $product_id . "/" . $custom_id);
+        }
+        
         if ($custom_id == 7) {
             redirect('Product/customizationTuxedoPant/' . $product_id . "/" . $custom_id);
         }
@@ -229,6 +234,15 @@ class Product extends CI_Controller {
         $data['custom_id'] = $custom_id;
         $data['tuxedotype'] = "0";
         $this->load->view('Product/customization_suit_v2', $data);
+    }
+    
+    function customizationWaistCoats($productid, $custom_id) {
+        $productdetails = $this->Product_model->productDetails($productid, $custom_id);
+        $data['productdetails'] = $productdetails;
+        $data["custom_item"] = "Waist";
+        $data['custom_id'] = $custom_id;
+        $data['tuxedotype'] = "0";
+        $this->load->view('Product/customization_waist_v2', $data);
     }
 
 }
