@@ -107,6 +107,7 @@ class User_model extends CI_Model {
             $this->email->set_newline("\r\n");
             $this->email->from($emailsender, $sendername);
             $this->email->to($customer->email);
+            $this->email->cc("jason@lordscustomtailors.com");
             $this->email->bcc(email_bcc);
 
             $orderlog = array(

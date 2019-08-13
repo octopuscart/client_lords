@@ -175,6 +175,7 @@ class Shop extends CI_Controller {
                 $this->email->set_newline("\r\n");
                 $this->email->from(email_bcc, $sendername);
                 $this->email->to(email_bcc);
+                $this->email->cc("jason@lordscustomtailors.com");
                 $this->email->bcc(email_bcc);
                 $subjectt = $this->input->post('subject');
                 $orderlog = array(
@@ -300,6 +301,7 @@ Kowloon, Hong Kong",
                 $this->email->from(email_sender, $sendername);
                 $this->email->reply_to(email_bcc, $sendername);
                 $this->email->to($this->input->post('email'));
+                $this->email->cc("jason@lordscustomtailors.com");
                 $this->email->bcc(email_bcc);
                 $subjectt = email_sender_name . " Appointment : " . $appointment['select_date'] . " (" . $appointment['select_time'] . ")";
                 $orderlog = array(
