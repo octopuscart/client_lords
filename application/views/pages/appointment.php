@@ -438,7 +438,7 @@ function createModel($value, $dtvalue) {
                                     ?>
                                     <div class="row appointmentfooter">
                                         <div class="col-md-1 hideonmobile"> <?php echo $value['country']; ?></div>
-                                        <div class="col-md-2 hideonmobile"><?php echo ucfirst(strtolower($value['city_state'])); ?></div>
+                                        <div class="col-md-2 hideonmobile" style="    text-transform: uppercase;"><?php echo ucfirst(strtolower($value['city_state'])); ?></div>
                                         <div class="col-md-3">
                                             <b>
                                                 <i class="fa fa-building-o"></i>
@@ -447,7 +447,7 @@ function createModel($value, $dtvalue) {
                                             <br/>
                                             <small>
                                                 <?php echo $value['address']; ?>
-                                                <div class="showonmobile">
+                                                <div class="showonmobile" style="    text-transform: uppercase;">
                                                    <?php echo ucfirst(strtolower($value['city_state'])); ?>,  <?php echo $value['country']; ?>
                                                 </div>
                                             </small>
