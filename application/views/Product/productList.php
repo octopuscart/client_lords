@@ -352,7 +352,7 @@ $image2 = "";
 
 
     .producthoverImage{
-        background-size: cover!important;
+        background-size: 80%!important;
         background-position: center!important;
         background-repeat: no-repeat!important;
         opacity: 0;
@@ -578,7 +578,7 @@ $image2 = "";
                                             ?>
                                             <img class="img-responsive mainProductImage" src="<?php echo custome_image_server; ?>/suits/fabrics/{{product.folder}}.jpg" alt="product" style="height: 250px; ">
 
-                                            <img class="img-responsive producthoverImage" src="<?php echo base_url(); ?>assets/images/blank.png"   alt="product" style="background: url(<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/shirtFoldm20001.png);height: 250px; ">
+                                            <img class="img-responsive producthoverImage" src="<?php echo base_url(); ?>assets/images/blank.png"   alt="product" style="background: url(<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/shirtFoldm20001.png);height: 250px;width:100%; ">
 
 
 
