@@ -10,17 +10,17 @@ $stylearray1 = [
     array(
         "images" => "colonelmichal.jpg",
         "details" => "Colonel Michael Daily from San Diego celebrating his 65th birthday in style dressed up in his classic charcoal grey pinstripe suit by Lord's Custom Tailors. Happy Birthday Colonel, you look sharp!",
-        "tag" => "Colonel Michael Daily (San Diego, California)"
+        "tag" => "Colonel Michael Daily (San Diego, USA)"
     ),
     array(
         "images" => "avish.jpg",
         "details" => "About to keynote a conference. Wearing my new suit from Lord's Custom Tailors. Thanks Jason Mirpuri!",
-        "tag" => "Avish Parashar (Philadelphia, U.S.A)"
+        "tag" => "Avish Parashar (Philadelphia, USA)"
     ),
     array(
         "images" => "joeurcillo‎.jpg",
         "details" => "Jason Mirpuri is a Custom Tailor God! Opened the package, put it on and PERFECT. I don’t even care about the shipping wrinkles... I am not taking this off!!",
-        "tag" => "‎Joe Curcillo (Harrisburg, U.S.A)"
+        "tag" => "‎Joe Curcillo (Harrisburg, USA)"
     ),
     array(
         "images" => "frank.jpg",
@@ -31,7 +31,7 @@ $stylearray1 = [
         "images" => "brian_walter.jpg",
         "details" => "Getting ready to head off to the National Speakers Association annual convention Influence 18 which will be held in Dallas at The Hilton Anatole Hotel from Saturday 14 July. 
 Lord’s Custom Tailors will be showcasing our suits in the trade display at Influence 18. Come along & see what we have on offer.",
-        "tag" => "‎Brian Walter (Dallas, U.S.A)"
+        "tag" => "‎Brian Walter (Dallas, USA)"
     ),
     array(
         "images" => "andy_lopata.jpg",
@@ -50,7 +50,7 @@ Thanks again to Lords Custom Tailors for a great suit - look forward to the spor
     array(
         "images" => "michaelperez.jpg",
         "details" => "Another delighted customer, Michael Perez from Chicago is now stepping out in style with a Lord's Custom Tailored suit or two. Looking good Michael!",
-        "tag" => "‎Michael Perez (Chicago, U.S.A)"
+        "tag" => "‎Michael Perez (Chicago, USA)"
     ),
 ];
 
@@ -62,7 +62,7 @@ $stylearray2 = [
         "images" => "joshpaulen.jpg",
         "details" => "Josh Paulen from San Francisco has good taste. Not only did he make a wise choice with his new bride, he chose to wear a tailored suit from Lord's Custom Tailors on his wedding day. <br/>
 Jason Mirpuri literally travels the world fitting stylish men & women in beautiful suits just like this. ",
-        "tag" => "Josh Paulen (San Francisco, California)"
+        "tag" => "Josh Paulen (San Francisco, USA)"
     ),
     array(
         "images" => "shairly.jpg",
@@ -89,7 +89,7 @@ Great jacket has just arrived from Lord’s Custom Taylors. Perfect fit and exac
     array(
         "images" => "seattle_washington.jpg",
         "details" => "This couple know how to stand out in a crowd.",
-        "tag" => "Mr. & Mrs. Andrew Farrell (Seattle, Washington)"
+        "tag" => "Mr. & Mrs. Andrew Farrell (Seattle, USA)"
     ),
     array(
         "images" => "lindsay_adam.jpg",
@@ -104,7 +104,7 @@ Great jacket has just arrived from Lord’s Custom Taylors. Perfect fit and exac
     array(
         "images" => "professional_speaker.jpg",
         "details" => "Lord's Custom Tailors sponsored the Professional Speakers Australia Convention in Brisbane, Australia recently. We met many amazing professional conference speakers and heard some amazing speeches. We also got to catch up with Lindsay Adams, the lucky winner of one of our tailored suits. That's him on the far left wearing a Lord's creation.",
-        "tag" => "‎--------"
+        "tag" => "‎---- (Brisbane, Australia)"
     ),
 ];
 ?>
