@@ -52,6 +52,17 @@ Thanks again to Lords Custom Tailors for a great suit - look forward to the spor
         "details" => "Another delighted customer, Michael Perez from Chicago is now stepping out in style with a Lord's Custom Tailored suit or two. Looking good Michael!",
         "tag" => "‎Michael Perez (Chicago, USA)"
     ),
+    
+    array(
+        "images" => "countryclark.jpg",
+        "details" => "Friends, Jason at Lord's Custom Tailors and his team are geniuses who made me this gorgeous custom blazer. 
+It's the most stunning, soft tweed fabric. It has a gorgeous silk lining that I picked out to match it, from his collection of hundreds of silk linings. It fits like a DREAM.
+But the BEST news is that Jason Mirpuri is coming to Austin this weekend! 
+Austin peeps, Jason travels to the states from Hong Kong a few times a year, and he'll be here in Austin THIS WEEKEND. He makes suits, shirts, dresses, jackets, and his fabrics will blow your mind. Let me know if you want some time with Jason while he's here, and I'll connect you.
+This time he's going to make me a new dress.",
+        "tag" => "‎Courtney Clark (Austin, USA)"
+    ),
+    
 ];
 
 
@@ -106,6 +117,8 @@ Great jacket has just arrived from Lord’s Custom Taylors. Perfect fit and exac
         "details" => "Lord's Custom Tailors sponsored the Professional Speakers Australia Convention in Brisbane, Australia recently. We met many amazing professional conference speakers and heard some amazing speeches. We also got to catch up with Lindsay Adams, the lucky winner of one of our tailored suits. That's him on the far left wearing a Lord's creation.",
         "tag" => "‎---- (Brisbane, Australia)"
     ),
+    
+    
 ];
 ?>
 
