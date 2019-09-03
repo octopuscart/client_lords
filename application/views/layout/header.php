@@ -154,7 +154,7 @@
                                                 <li><a href="<?php echo site_url('Product/ProductList/4/0'); ?>">Sport Coats</a></li>
                                                 <li><a href="#">Waist Coats</a></li>
                                                 <li><a href="<?php echo site_url('Product/ProductList/3/0'); ?>">Slacks</a></li>
-                                                <li><a href="<?php echo site_url('Product/ProductList/8/0'); ?>">Tuxedos</a></li>
+                                                <li><a href="<?php echo site_url('Product/ProductList/5/0'); ?>">Tuxedos</a></li>
 
                                             </ul>
                                         </li>
