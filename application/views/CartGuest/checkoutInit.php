@@ -104,8 +104,9 @@ $this->load->view('layout/header');
                                     <i class="fa fa-shopping-cart fa-stack-1x"></i>
                                     <i class="ion-bag fa-stack-1x "></i>
                                 </span>   My Shopping Bag
-                                <span style="float: right; line-height: 29px;" class="ng-binding">Total: {{globleCartData.total_quantity}}</span> 
-                            </a>
+     <span style="float: right; line-height: 29px;color: black;
+                              font-weight: bold;" class="ng-binding">Total: <?php if(DEFAULT_PAYMENT != 'No'){?> {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}} <?php }?>({{globleCartData.total_quantity}})</span> 
+                                               </a>
                         </h4>
                     </div>
                     <div class="panel-body">
@@ -121,23 +122,29 @@ $this->load->view('layout/header');
 
                                 <div class="cart-head">
                                     <ul class="row">
-                                        <!-- PRODUCTS -->
-                                        <li class="col-sm-8 text-left">
+                                        <li class="col-sm-6 text-left">
                                             <h6>PRODUCTS</h6>
                                         </li>
 
-                                    
+<!-- QTY -->
+                                        <li class="col-sm-2">
+                                            <h6>PRICE</h6>
+                                        </li>
+
                                         <!-- QTY -->
-                                        <li class="col-sm-4">
+                                        <li class="col-sm-2">
                                             <h6>QTY</h6>
                                         </li>
 
-                                     
+                                        <li class="col-sm-2">
+                                            <h6>TOTAL</h6>
+                                        </li>
+
 
                                     </ul>
                                 </div>
                                 <ul class="row cart-details" ng-repeat="product in globleCartData.products" >
-                                    <li class="col-sm-8">
+                                    <li class="col-sm-6">
                                         <div class="media"> 
                                             <!-- Media Image -->
                                             <div class="media-left media-middle"> 
@@ -157,16 +164,25 @@ $this->load->view('layout/header');
                                             </div>
                                         </div>
                                     </li>
+                                    
+                                     <li class="col-sm-2">
+                                        <div class="position-center-center"> <span class="price">{{product.price|currency:" "}}</span></div>
+                                    </li>
 
-                                   
+                                    <li class="col-sm-2">
+                                        <div class="position-center-center"> <span class="price">{{product.quantity}}</span></div>
+                                    </li>
+
+
 
                                     <!-- QTY -->
-                                    <li class="col-sm-4 quantity_li" style="padding-top: 30px;">
-                                        <div class="position-center-center"> <span class="price">{{product.quantity}}</span> </div>
+                                    <li class="col-sm-2 quantity_li" style="padding-top: 30px;">
+                                        <div class="position-center-center"> <span class="price">{{product.total_price|currency:" "}}</span> </div>
+
 
                                     </li>
 
-                                  
+
 
 
 

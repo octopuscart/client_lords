@@ -71,14 +71,14 @@
                 <?php
                 if ($vtype == 'payment') {
                     ?>
-                    <!--shipping block-->
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         <span class="fa-stack">
                             <i class="fa fa-money fa-stack-1x"></i>
                             <i class="ion-bag fa-stack-1x "></i>
-                        </span>  Confirm Order Now
-                        <span style="float: right; line-height: 29px;font-size: 12px;font-weight: 300" class="ng-binding">
-                        
+                        </span>  Payment Method
+                        <span style="float: right; line-height: 29px;font-size: 12px;color: black;
+    font-weight: bold;" class="ng-binding">
+                            PayPal
                         </span> 
                     </a>
                     <?php

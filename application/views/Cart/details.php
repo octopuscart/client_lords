@@ -57,17 +57,20 @@ $this->load->view('layout/header');
 
 
                             <!-- QTY -->
-                            <li class="col-sm-5">
+                            <li class="col-sm-2">
                                 <h6>QTY</h6>
                             </li>
 
+                            <li class="col-sm-2">
+                                <h6>TOTAL</h6>
+                            </li>
                             <!-- TOTAL PRICE -->
 
                             <li class="col-sm-1"> </li>
                         </ul>
                     </div>
                     <ul class="row cart-details" ng-repeat="product in globleCartData.products" >
-                        <li class="col-sm-9">
+                        <li class="col-sm-7">
                             <div class="media"> 
                                 <!-- Media Image -->
                                 <div class="media-left media-middle"> 
@@ -101,6 +104,11 @@ $this->load->view('layout/header');
                                     <button class="btn btn-default quantity-minus cart_button" type="button" ng-click="updateCart(product, 'sub')"><i class="fa fa-minus" aria-hidden="true" ></i></button>
                                 </span>
                             </div><!-- /input-group -->
+                        </li>
+
+                        <!-- TOTAL PRICE -->
+                        <li class="col-sm-2">
+                            <div class="position-center-center"> <span class="price">{{product.total_price|currency:" "}}</span> </div>
                         </li>
 
 

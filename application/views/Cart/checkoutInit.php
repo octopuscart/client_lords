@@ -118,22 +118,28 @@ $this->load->view('layout/header');
 
 
 
-    <div class="custom_block_item">
+                            <div class="custom_block_item">
 
                                 <div class="cart-head">
                                     <ul class="row">
-                                        <!-- PRODUCTS -->
+
+
                                         <li class="col-sm-8 text-left">
                                             <h6>PRODUCTS</h6>
                                         </li>
 
-                                    
+
+
                                         <!-- QTY -->
-                                        <li class="col-sm-4">
+                                        <li class="col-sm-2">
                                             <h6>QTY</h6>
                                         </li>
 
-                                     
+                                        <li class="col-sm-2">
+                                            <h6>TOTAL</h6>
+                                        </li>
+
+
 
                                     </ul>
                                 </div>
@@ -159,15 +165,20 @@ $this->load->view('layout/header');
                                         </div>
                                     </li>
 
-                                   
+
 
                                     <!-- QTY -->
-                                    <li class="col-sm-4 quantity_li" style="padding-top: 30px;">
+                                    <li class="col-sm-2 quantity_li" style="padding-top: 30px;">
                                         <div class="position-center-center"> <span class="price">{{product.quantity}}</span> </div>
+                                    </li>
+
+                                    <li class="col-sm-2 quantity_li" style="padding-top: 30px;">
+                                        <div class="position-center-center"> <span class="price">{{product.total_price|currency:" "}}</span> </div>
 
                                     </li>
 
-                                  
+
+
 
 
 
@@ -192,38 +203,38 @@ $this->load->view('layout/header');
 
                 </div>
 
-            <?php
-            $this->load->view('Cart/itemblock', array('vtype' => 'size'));
-            ?>
-            <?php
-            $this->load->view('Cart/itemblock', array('vtype' => 'shipping'));
-            ?>
-            <?php
-            $this->load->view('Cart/itemblock', array('vtype' => 'payment'));
-            ?>
+                <?php
+                $this->load->view('Cart/itemblock', array('vtype' => 'size'));
+                ?>
+                <?php
+                $this->load->view('Cart/itemblock', array('vtype' => 'shipping'));
+                ?>
+                <?php
+                $this->load->view('Cart/itemblock', array('vtype' => 'payment'));
+                ?>
+
+            </div>
 
         </div>
+
+
+        <?php
+        $this->load->view('Cart/noproduct');
+        ?>
 
     </div>
 
 
+
+
+
+
+    <!--angular controllers-->
+    <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
+    <script>
+                                            var avaiblecredits = 0;
+    </script>
+
     <?php
-    $this->load->view('Cart/noproduct');
+    $this->load->view('layout/footer', array('custom_item' => 0, 'custom_id' => 0));
     ?>
-
-</div>
-
-
-
-
-
-
-<!--angular controllers-->
-<script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
-<script>
-                                                var avaiblecredits = 0;
-</script>
-
-<?php
-$this->load->view('layout/footer', array('custom_item' => 0, 'custom_id' => 0));
-?>

@@ -272,6 +272,7 @@ class Api extends REST_Controller {
         $pricequery = "";
         $colors = $this->get("colors");
         $search = $this->get("search");
+        $brand = $this->get("brand");
 
         $colorslist = str_replace("-", ",", $colors);
 
@@ -302,6 +303,7 @@ class Api extends REST_Controller {
 
         $proquery = "";
         $proquerylist = "0";
+        $brandquery = "";
         if (count($productdict)) {
             $proquerylist = implode(",", $productdict);
             $proquery = " and pt.id in ($proquerylist) ";
@@ -309,13 +311,17 @@ class Api extends REST_Controller {
         if($search){
             $proquery = " and pt.id in ($search) ";
         }
+        
+        if($brand){
+            $brandquery = " and pt.description in ('$brand') ";
+        }
 
         $categoriesString = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
         $categoriesString = ltrim($categoriesString, ", ");
 
 
         $product_query = "select pt.id as product_id, pt.*
-            from products as pt where pt.status=1 and pt.category_id in ($categoriesString) $pricequery $proquery order by display_index desc,FIELD(product_id, $proquerylist)";
+            from products as pt where pt.status=1 and pt.category_id in ($categoriesString) $pricequery $proquery $brandquery order by display_index desc,FIELD(product_id, $proquerylist)";
         $product_result = $this->Product_model->query_exe($product_query);
 
         $productListSt = [];

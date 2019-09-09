@@ -334,7 +334,7 @@ $image2 = "";
         display: inline-block;
         font-size: 12px;
         text-transform: uppercase;
-            padding: 10px 10px;
+        padding: 10px 10px;
         font-weight: bold;
         border-radius: 0px;
         letter-spacing: 0px;
@@ -475,16 +475,7 @@ $image2 = "";
 
 
                         <!-- HEADING -->
-                        <div  ng-if='atv.product_count'>
-                            <div class="heading">
-                                <h6>Filter by price</h6>
-                                <hr class="dotted">
-                            </div>
-                            <!-- PRICE -->
-                            <div class="cost-price-content">
-                                <div id="price-range" class="price-range"></div>
-                                <span id="price-min" class="price-min">20</span> <span id="price-max" class="price-max">80</span> <a href="#." class="btn btn-small btn-inverse pull-right" >FILTER</a> </div>
-                        </div>
+
 
                         <!-- HEADING -->
 
@@ -515,7 +506,9 @@ $image2 = "";
                                             <input type="checkbox" ng-model="attribute<?php echo $ccvalue['attribute_id']; ?>.checked"  ng-click="attributeProductGet('<?php echo $ccvalue['attribute_id']; ?>', '<?php echo $ccvalue['code']; ?>', attribute<?php echo $ccvalue['attribute_id']; ?>.checked)" style="opacity: 0;"> 
 
                                             <i class="fa fa-check" ng-if="attribute<?php echo $ccvalue['attribute_id']; ?>.checked" style="    position: absolute;
-                                               margin-top: -22px;
+                                               position: absolute;
+                                               margin-top: 6px;
+                                               margin-left: -14px;
                                                color: #fff;"></i>
                                         </label>
                                     </li>
@@ -524,8 +517,34 @@ $image2 = "";
                                 ?>
                             </ul>
                         </div>
+                        <br/>
 
+
+                        <div style="clear: both"></div>
+                        <div class="heading" style="width: 100%">
+                            <h6>Brands</h6>
+                            <hr class="dotted">
+                        </div>
+
+                        <!-- COLORE -->
+                        <ul class="cate" style="width:200px">
+                            <?php
+                            foreach ($brands as $cckey => $ccvalue) {
+                                ?>
+                                <li>
+                                    <a href="<?php echo site_url('Product/ProductList/'.$custom_id."/".$category."?brand=".$ccvalue->description)?>"><?php echo $ccvalue->description; ?></a>
+
+                                </li>
+                                <?php
+                            }
+                            ?>
+                        </ul>
+
+                        <div style="clear: both"></div>
                     </div>
+
+
+
                 </div>
 
                 <!-- Main Shop Itesm -->          
@@ -543,8 +562,8 @@ $image2 = "";
                         </span>
                     </div>
 
-
-                    <div id="content1"  ng-if="productProcess.finalProducts.length == 0" style="padding: 100px 0px;"> 
+                    
+                     <div id="content1"  ng-if="productProcess.showstate == 0" style="padding: 100px 0px;"> 
 
                         <!-- Tesm Text -->
                         <section class="error-page text-center pad-t-b-130">
@@ -552,6 +571,19 @@ $image2 = "";
 
                                 <!-- Heading -->
                                 <h1 style="font-size: 40px;">Loading...</h1>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <div id="content1"  ng-if="productProcess.finalProducts.length == 0" style="padding: 100px 0px;"> 
+
+                        <!-- Tesm Text -->
+                        <section class="error-page text-center pad-t-b-130" ng-if="productProcess.showstate == 4">
+                            <div class=""> 
+
+                                <!-- Heading -->
+                                <h1 style="font-size: 40px;">Coming Soon...</h1>
                             </div>
                         </section>
 
@@ -661,6 +693,7 @@ $image2 = "";
                                             <span style="    padding: 0px 10px;
                                                   font-size: 11px;" class="textoverflow" title="{{product.short_description}}">{{product.short_description}}</span>
                                         </a> 
+
                                         <p style="  margin-bottom: 0px;
                                            height: 20px;
                                            float: left;
@@ -679,13 +712,16 @@ $image2 = "";
 
                                             <span class="colorblock" style="background: #fff;" ></span>
                                         </p>
+
+                                        <span class="price">{{product.price|currency:"<?php echo globle_currency; ?> "}}</span> 
+
                                         <br/>
 
                                         <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn  btn-default" style="font-size:12px;" title="Customize this fabric">Design Now
                                         </a> 
                                         <a href="#" class="btn  btn-default" style="font-size: 12px;" title="Look More" ng-click="fabricsZoomModel(product)"><i class="fa fa-eye"></i>
                                         </a> 
-                                        <a href="#" class="btn  btn-default" style="font-size: 12px;" title="Add To Wishlist" ng-click="addToWishList(product, <?php echo $custom_id;?>)"><i class="fa fa-heart"></i>
+                                        <a href="#" class="btn  btn-default" style="font-size: 12px;" title="Add To Wishlist" ng-click="addToWishList(product, <?php echo $custom_id; ?>)"><i class="fa fa-heart"></i>
                                         </a> 
                                     </div>
                                 </article>
@@ -737,6 +773,8 @@ $image2 = "";
             </div>
         </div>
     </div>
+    
+    
     <!-- Modal -->
     <div class="modal  fade" id="productcustome" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="    z-index: 20000000;">
         <div class="modal-dialog " role="document">
@@ -807,6 +845,7 @@ $image2 = "";
 <script>
     var category_id = <?php echo $category; ?>;
     var custom_id = <?php echo $custom_id; ?>;
+    var brandname = "<?php echo $brand_name;?>";
     var searchUrlProduct = "<?php echo site_url('Api/searchProductApi'); ?>/" + custom_id + "/" + category_id + "?searchText=%QUERY%";</script>
 <?php
 $this->load->view('layout/footer');

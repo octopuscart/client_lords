@@ -35,6 +35,11 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
             var colorc = "search=" + $scope.attribute_search.search;
             argsk.push(colorc);
         }
+        
+        if(brandname){
+            var brand = "brand=" + brandname;
+            argsk.push(brand);
+        }
 
         var stargs = "";
         if (argsk.length) {
@@ -47,6 +52,12 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
         }
         $http.get(url).then(function (result) {
             $scope.productProcess.products = result.data.products;
+            
+            console.log($scope.productProcess.products.length);
+            if($scope.productProcess.products.length == 0){
+                $scope.productProcess.showstate  = 4;
+            }
+            
             $scope.productProcess.showstate = 1;
             $timeout(function () {
                 $('#paging_container1').pajinate({

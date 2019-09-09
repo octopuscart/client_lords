@@ -19,10 +19,23 @@ class Product extends CI_Controller {
     function ProductList($custom_id, $cat_id) {
 
 
+        $this->db->where('description !=', "");
+        $this->db->group_by('description');
+        $query = $this->db->get('products');
+        $branditems = $query->result();
+        $data["brands"] = $branditems;
+
+        $getbrand = "";
+        if (isset($_GET['brand'])) {
+            $getbrand = $_GET['brand'];
+        }
+        $data["brand_name"] = $getbrand;
+
+
         $this->db->where('id', $custom_id);
         $query = $this->db->get('custome_items');
         $customeitem = $query->row();
-       $staticcat = $customeitem->category_id;
+        $staticcat = $customeitem->category_id;
         if ($cat_id == 0) {
             $cat_id = $customeitem->category_id;
         }
@@ -145,11 +158,11 @@ class Product extends CI_Controller {
         if ($custom_id == 6) {
             redirect('Product/customizationTuxedoJacket/' . $product_id . "/" . $custom_id);
         }
-        
+
         if ($custom_id == 8) {
             redirect('Product/customizationWaistCoats/' . $product_id . "/" . $custom_id);
         }
-        
+
         if ($custom_id == 7) {
             redirect('Product/customizationTuxedoPant/' . $product_id . "/" . $custom_id);
         }
@@ -235,7 +248,7 @@ class Product extends CI_Controller {
         $data['tuxedotype'] = "0";
         $this->load->view('Product/customization_suit_v2', $data);
     }
-    
+
     function customizationWaistCoats($productid, $custom_id) {
         $productdetails = $this->Product_model->productDetails($productid, $custom_id);
         $data['productdetails'] = $productdetails;
