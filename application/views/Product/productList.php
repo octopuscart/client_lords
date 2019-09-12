@@ -483,6 +483,25 @@ $image2 = "";
 
 
 
+                        <div style="clear: both"></div>
+                        <div class="heading" style="width: 100%">
+                            <h6>Brands</h6>
+                            <hr class="dotted">
+                        </div>
+
+                        <!-- COLORE -->
+                        <ul class="cate" style="width:200px">
+                            <?php
+                            foreach ($brands as $cckey => $ccvalue) {
+                                ?>
+                                <li>
+                                    <a href="<?php echo site_url('Product/ProductList/'.$custom_id."/".$tempcatid."?brand=".$ccvalue->description)?>"><?php echo $ccvalue->description; ?></a>
+
+                                </li>
+                                <?php
+                            }
+                            ?>
+                        </ul>
 
 
 
@@ -520,25 +539,6 @@ $image2 = "";
                         <br/>
 
 
-                        <div style="clear: both"></div>
-                        <div class="heading" style="width: 100%">
-                            <h6>Brands</h6>
-                            <hr class="dotted">
-                        </div>
-
-                        <!-- COLORE -->
-                        <ul class="cate" style="width:200px">
-                            <?php
-                            foreach ($brands as $cckey => $ccvalue) {
-                                ?>
-                                <li>
-                                    <a href="<?php echo site_url('Product/ProductList/'.$custom_id."/".$category."?brand=".$ccvalue->description)?>"><?php echo $ccvalue->description; ?></a>
-
-                                </li>
-                                <?php
-                            }
-                            ?>
-                        </ul>
 
                         <div style="clear: both"></div>
                     </div>

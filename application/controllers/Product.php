@@ -17,19 +17,10 @@ class Product extends CI_Controller {
 
     //function for product list
     function ProductList($custom_id, $cat_id) {
+        
+        $tempcatid = $cat_id;
 
 
-        $this->db->where('description !=', "");
-        $this->db->group_by('description');
-        $query = $this->db->get('products');
-        $branditems = $query->result();
-        $data["brands"] = $branditems;
-
-        $getbrand = "";
-        if (isset($_GET['brand'])) {
-            $getbrand = $_GET['brand'];
-        }
-        $data["brand_name"] = $getbrand;
 
 
         $this->db->where('id', $custom_id);
@@ -53,6 +44,22 @@ class Product extends CI_Controller {
         $categoriesString = $this->Product_model->stringCategories($cat_id) . ", " . $cat_id;
         $categoriesString = ltrim($categoriesString, ", ");
 
+        
+        
+        
+        $this->db->where('description !=', "");
+        $this->db->where("category_id in ($categoriesString)");
+        $this->db->group_by('description');
+        $query = $this->db->get('products');
+        $branditems = $query->result();
+        $data["brands"] = $branditems;
+        $data["tempcatid"] = $tempcatid;
+
+        $getbrand = "";
+        if (isset($_GET['brand'])) {
+            $getbrand = $_GET['brand'];
+        }
+        $data["brand_name"] = $getbrand;
 
         $product_query = "select group_concat(pt.id) as product_id
             from products as pt where pt.category_id in ($categoriesString) order by display_index desc";
