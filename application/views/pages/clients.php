@@ -83,7 +83,7 @@ Jason Mirpuri literally travels the world fitting stylish men & women in beautif
     array(
         "images" => "acouple.jpg",
         "details" => "A couple of snappy dressers at the CAPS (Canadian Association of Professional Speakers) Convention. Brian Walter, Jason Mirpuri & Steve Lowell",
-        "tag" => "‎--------"
+        "tag" => "‎"
     ),
     array(
         "images" => "caroal.jpg",
@@ -110,12 +110,12 @@ Great jacket has just arrived from Lord’s Custom Taylors. Perfect fit and exac
     array(
         "images" => "lle.jpg",
         "details" => "Lloyd Luna, Lindsay Adams and Elias Kanaris at The Heritage Hotel Manila.",
-        "tag" => "‎-------"
+        "tag" => "‎"
     ),
     array(
         "images" => "professional_speaker.jpg",
         "details" => "Lord's Custom Tailors sponsored the Professional Speakers Australia Convention in Brisbane, Australia recently. We met many amazing professional conference speakers and heard some amazing speeches. We also got to catch up with Lindsay Adams, the lucky winner of one of our tailored suits. That's him on the far left wearing a Lord's creation.",
-        "tag" => "‎---- (Brisbane, Australia)"
+        "tag" => "‎(Brisbane, Australia)"
     ),
     
     
