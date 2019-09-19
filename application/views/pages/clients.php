@@ -122,7 +122,7 @@ Great jacket has just arrived from Lord’s Custom Taylors. Perfect fit and exac
     
        array(
         "images" => "paulterwal.jpg",
-        "details"=>"Paul ter Wal, President of the Global Speakers Federation and I do not only share the taste for cold beverages and travelling the world, but also trust the same tailor, Lord's Custom Tailors from Hong Kong.
+        "details"=>"Paul Ter Wal, President of the Global Speakers Federation and I do not only share the taste for cold beverages and travelling the world, but also trust the same tailor, Lord's Custom Tailors from Hong Kong.
 
 Big shout out to Jason Mirpuri! Thanks for always making us look great, pal ",
           
