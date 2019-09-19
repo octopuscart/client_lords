@@ -63,14 +63,7 @@ This time he's going to make me a new dress.",
         "tag" => "‎Courtney Clark (Austin, USA)"
     ),
     
-    array(
-        "images" => "paulterwal",
-        "details"=>"Paul ter Wal, President of the Global Speakers Federation and I do not only share the taste for cold beverages and travelling the world, but also trust the same tailor, Lord's Custom Tailors from Hong Kong.
-
-Big shout out to Jason Mirpuri! Thanks for always making us look great, pal ",
-          
-          "tag" => "‎Ilja Gee With Paul Ter Wal (President of the Global Speakers Federation)"
-    ),
+   
     
 ];
 
@@ -127,7 +120,14 @@ Great jacket has just arrived from Lord’s Custom Taylors. Perfect fit and exac
         "tag" => "‎(Brisbane, Australia)"
     ),
     
-      
+       array(
+        "images" => "paulterwal.jpg",
+        "details"=>"Paul ter Wal, President of the Global Speakers Federation and I do not only share the taste for cold beverages and travelling the world, but also trust the same tailor, Lord's Custom Tailors from Hong Kong.
+
+Big shout out to Jason Mirpuri! Thanks for always making us look great, pal ",
+          
+          "tag" => "‎Ilja Gee With Paul Ter Wal (President of the Global Speakers Federation)"
+    ),
     
     
     
