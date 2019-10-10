@@ -35,6 +35,7 @@
                     <a href="https://twitter.com/lordscustomtai1" target="_blank"><i class="fa fa-twitter"></i></a> 
                     <a href="https://www.instagram.com/lordscustomtailors/" target="_blank"><i class="fa fa-instagram"></i></a> 
                     <a href="https://www.pinterest.com/lordscustomtailors/" target="_blank"><i class="fa fa-pinterest"></i></a> 
+                    <a href="https://www.youtube.com/channel/UChW3Mx4wZsoZ-k92Lz4Hbpw" target="_blank"><i class="fa fa-youtube"></i></a> 
                 </div>
             </div>
 

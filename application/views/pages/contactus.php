@@ -66,7 +66,7 @@ $this->load->view('layout/header');
 
                         <li>
                             <i class="flaticon-mail" style="line-height: 50px;"></i> <a href="mailto:jason@lordscustomtailors.com">jason@lordscustomtailors.com</a> <br>
-                             <a href="mailto:nicole@lordscustomtailors.com">nicole@lordscustomtailors.com</a> <br>
+                            <a href="mailto:nicole@lordscustomtailors.com">nicole@lordscustomtailors.com</a> <br>
                     </ul>
 
                     <!-- Main Heading -->
@@ -79,7 +79,7 @@ $this->load->view('layout/header');
                             <a href="https://twitter.com/lordscustomtai1" target="_blank"><i class="fa fa-twitter"></i></a> 
                             <a href="https://www.instagram.com/lordscustomtailors/" target="_blank"><i class="fa fa-instagram"></i></a> 
                             <a href="https://www.pinterest.com/lordscustomtailors/" target="_blank"><i class="fa fa-pinterest"></i></a> 
-
+                            <a href="https://www.youtube.com/channel/UChW3Mx4wZsoZ-k92Lz4Hbpw" target="_blank"><i class="fa fa-youtube"></i></a>
                         </ul>
                     </div>
                 </div>
