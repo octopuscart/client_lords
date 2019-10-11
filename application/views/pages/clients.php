@@ -92,7 +92,7 @@ $stylearray2 = [
     array(
         "images" => "steve_judge.mp4",
         "details" => "",
-        "tag" => "‎Steve Judge (Uk)",
+        "tag" => "‎Steve Judge (UK)",
         "type" => "video"
     ),
     array(
@@ -117,7 +117,7 @@ Jason Mirpuri literally travels the world fitting stylish men & women in beautif
     array(
         "images" => "acouple.jpg",
         "details" => "Steve Judge gets measured up for another amazing suit by Jason Mirpuri from Lord’s Custom Tailors. A great speaker always wears a great suit.",
-        "tag" => "‎Steve Judge (Uk)",
+        "tag" => "‎Steve Judge (UK)",
         "type" => "image"
     ),
     array(
