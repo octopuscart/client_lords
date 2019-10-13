@@ -96,7 +96,7 @@ $stylearray2 = [
         "type" => "video"
     ),
     array(
-        "images" => "PaulTerWal.mp4",
+        "images" => "PaulTerWal2.mp4",
         "details" => "",
         "tag" => "‎Paul Ter Wal (President of the Global Speakers Federation)",
         "type" => "video"
