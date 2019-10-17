@@ -54,17 +54,15 @@ Lord’s Custom Tailors will be showcasing our suits in the trade display at Inf
     array(
         "images" => "andy_lopata.jpg",
         "details" => "Measuring up another stylish speaker, Andy Lopata at the Asia Professional Speakers Convention in Singapore.",
-        "tag" => "‎Andy Lopata (Broxbourne, England)",
+        "tag" => "‎Andy Lopata (London, UK)",
         "type" => "image"
     ),
     array(
         "images" => "warwickmarry.jpg",
         "details" => "A quick note to say thanks for my new dinner suit. That fact that you could make it express and get it to me a couple of days prior to me hosting the Queensland Mining Awards was a plus!!
-
 My previous suit was a little restrictive (its those gremlins in the closet who tighten your clothes) but having this one tailored meant that my sleeves and coat tail can be that little bit longer as they need to be and my jacket has an array of pockets for pens, business cards, phones and what not that all sneak into place.
-
 Thanks again to Lords Custom Tailors for a great suit - look forward to the sports coat arriving soon.",
-        "tag" => "Warwick Merry (Glen Waverley, Australia)",
+        "tag" => "Warwick Merry (Melbourne, Australia)",
         "type" => "image"
     ),
     array(
@@ -81,6 +79,18 @@ But the BEST news is that Jason Mirpuri is coming to Austin this weekend!
 Austin peeps, Jason travels to the states from Hong Kong a few times a year, and he'll be here in Austin THIS WEEKEND. He makes suits, shirts, dresses, jackets, and his fabrics will blow your mind. Let me know if you want some time with Jason while he's here, and I'll connect you.
 This time he's going to make me a new dress.",
         "tag" => "‎Courtney Clark (Austin, USA)",
+        "type" => "image"
+    ),
+    array(
+        "images" => "JasonZamora.jpg",
+        "details" => "Couldn't be more pleased with my suit from Jason and Lord's Custom Tailors. You guys rock!",
+        "tag" => "Jason Zamora (San Antonio, USA)",
+        "type" => "image"
+    ),
+    array(
+        "images" => "bettyUribe.jpg",
+        "details" => "Extremely thrilled with my new dress from Lord's Custom Tailors. Amazing fit, fantastic quality at a great price. Thank you Jason!",
+        "tag" => "Dr. Betty Uribe (Orange County, USA)",
         "type" => "image"
     ),
 ];
@@ -115,13 +125,13 @@ Jason Mirpuri literally travels the world fitting stylish men & women in beautif
         "type" => "image"
     ),
     array(
-        "images" => "acouple.jpg",
+        "images" => "steve_judge.jpg",
         "details" => "Steve Judge gets measured up for another amazing suit by Jason Mirpuri from Lord’s Custom Tailors. A great speaker always wears a great suit.",
         "tag" => "‎Steve Judge (UK)",
         "type" => "image"
     ),
     array(
-        "images" => "steve_judge.jpg",
+        "images" => "acouple.jpg",
         "details" => "A couple of snappy dressers at the CAPS (Canadian Association of Professional Speakers) Convention. Brian Walter, Jason Mirpuri & Steve Lowell",
         "tag" => "‎",
         "type" => "image"
@@ -131,7 +141,7 @@ Jason Mirpuri literally travels the world fitting stylish men & women in beautif
         "details" => "Carole Spiers from the UK loves her new jacket. Jason Mirpuri you’ve done another great job.
 <br/>
 Great jacket has just arrived from Lord’s Custom Taylors. Perfect fit and exactly what I wanted. Great service and would highly recommend them to others.",
-        "tag" => "Carole Spiers (UK)",
+        "tag" => "Carole Spiers (London, UK)",
         "type" => "image"
     ),
     array(
