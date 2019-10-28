@@ -182,6 +182,15 @@ Big shout out to Jason Mirpuri! Thanks for always making us look great, pal ",
         "tag" => "‎Ilja Gee With Paul Ter Wal (President of the Global Speakers Federation)",
         "type" => "image"
     ),
+    
+    array(
+        "images" => "schadvanleeuwen.jpg",
+        "details" => "This handsome groom from Orange, California looking very sharp in his Lord's Custom Tailors tuxedo on his wedding day.",
+        "tag" => "‎Schad VanLeeuwen (Orange, USA)",
+        "type" => "image"
+    ),
+    
+    
 ];
 ?>
 
