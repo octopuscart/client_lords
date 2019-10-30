@@ -452,13 +452,13 @@ Kowloon, Hong Kong",
                 "title" => $prd,
                 "image" => $img,
                 "description" => "",
-                "price" => 30,
+                "price" => 90,
             );
             $accessoriesdata['all'][$prd] = array(
                 "title" => $prd,
                 "image" => $img,
                 "description" => "",
-                "price" => 30,
+                "price" => 90,
             );
 
             $prd2 = "LTIE$i";
@@ -467,13 +467,13 @@ Kowloon, Hong Kong",
                 "title" => $prd2,
                 "image" => $img2,
                 "description" => "",
-                "price" => 30,
+                "price" => 100,
             );
             $accessoriesdata['all'][$prd2] = array(
                 "title" => $prd2,
                 "image" => $img2,
                 "description" => "",
-                "price" => 30,
+                "price" => 100,
             );
         }
         $hasdata = "1";
