@@ -7527,3 +7527,14 @@ header.white-header #cd-menu-trigger.is-clicked .cd-menu-icon {
 	z-index: 99999;
 	opacity: 1;
 }
+
+
+header .navbar li {
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+}
+
+.accessoriesprodut{
+    border: 1px solid #E0E0E0;
+}

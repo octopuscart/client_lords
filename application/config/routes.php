@@ -69,6 +69,8 @@ $route['appointment'] = 'Shop/aboutus';
 $route['priceGuide'] = 'Shop/aboutus';
 $route['privacyPolicy'] = 'Shop/aboutus';
 
+$route['accessories/(:any)'] = 'Shop/accessories/$1';
+
 $route['appointment'] = 'Shop/appointment';
 $route['stylingTips'] = 'Shop/stylingTips';
 $route['stylingTipsTag'] = 'Shop/stylingTipsTag';

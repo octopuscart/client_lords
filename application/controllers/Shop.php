@@ -339,7 +339,7 @@ Kowloon, Hong Kong",
     }
 
     public function lookbook() {
-     
+
         $this->db->order_by("display_index");
         $query = $this->db->get('lookbook_category');
         $lookbook_category = $query->result_array();
@@ -349,7 +349,7 @@ Kowloon, Hong Kong",
             $lookbookid = $value['id'];
             $this->db->where("category_id", $lookbookid);
             $query = $this->db->get('lookbook');
-            $styleArray[$value['id']] = array("category"=>$value, "data"=> $query->result_array());
+            $styleArray[$value['id']] = array("category" => $value, "data" => $query->result_array());
         }
         $data['stylearray'] = $styleArray;
         $this->load->view('pages/lookbook', $data);
@@ -436,6 +436,56 @@ Kowloon, Hong Kong",
 
 
         $this->load->view('pages/stylebookdeails', $data);
+    }
+
+    function accessories($actype) {
+        $data = [];
+        $accessoriesdata = array(
+            "all" => array(),
+            "cufflinks" => array(),
+            "ties" => array(),
+        );
+        for ($i = 1; $i <= 4; $i++) {
+            $prd = "LCFL$i";
+            $img = "c$i.jpg";
+            $accessoriesdata['cufflinks'][$prd] = array(
+                "title" => $prd,
+                "image" => $img,
+                "description" => "",
+                "price" => 30,
+            );
+            $accessoriesdata['all'][$prd] = array(
+                "title" => $prd,
+                "image" => $img,
+                "description" => "",
+                "price" => 30,
+            );
+
+            $prd2 = "LTIE$i";
+            $img2 = "t$i.jpg";
+            $accessoriesdata['ties'][$prd2] = array(
+                "title" => $prd2,
+                "image" => $img2,
+                "description" => "",
+                "price" => 30,
+            );
+            $accessoriesdata['all'][$prd2] = array(
+                "title" => $prd2,
+                "image" => $img2,
+                "description" => "",
+                "price" => 30,
+            );
+        }
+        $hasdata = "1";
+        if (isset($accessoriesdata[$actype])) {
+            $data['products'] = $accessoriesdata[$actype];
+        } else {
+            $hasdata = "0";
+            $data['products'] = array();
+        }
+
+
+        $this->load->view('Product/productAccessories', $data);
     }
 
 }

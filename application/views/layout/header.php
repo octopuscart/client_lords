@@ -115,7 +115,7 @@
                                 <a href="https://www.pinterest.com/lordscustomtailors/" target="_blank"><i class="fa fa-pinterest"></i></a> 
                                 <a href="https://www.youtube.com/channel/UChW3Mx4wZsoZ-k92Lz4Hbpw" target="_blank"><i class="fa fa-youtube"></i></a> 
 
-                                
+
                             </div>
                         </div>
                     </div>
@@ -159,6 +159,14 @@
                                                 <li><a href="<?php echo site_url('Product/ProductList/3/0'); ?>">Slacks</a></li>
                                                 <li><a href="<?php echo site_url('Product/ProductList/5/0'); ?>">Tuxedos</a></li>
 
+                                            </ul>
+                                        </li>
+                                        
+                                        <li > 
+                                            <a href="<?php echo site_url("accessories/all"); ?>" class="dropdown-toggle " >Accessories</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="<?php echo site_url('accessories/cufflinks'); ?>">Cufflinks</a></li>
+                                                <li><a href="<?php echo site_url('accessories/ties'); ?>">Ties</a></li>
                                             </ul>
                                         </li>
 
