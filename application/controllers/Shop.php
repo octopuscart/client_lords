@@ -235,6 +235,12 @@ class Shop extends CI_Controller {
         $this->load->view('pages/catalogue');
     }
 
+    public function templateAppointment() {
+        $usasappointment = $this->Product_model->AppointmentDataAll();
+        $data['appointment'] = $usasappointment;
+        $this->load->view('template', $data);
+    }
+
     public function appointment() {
 
 
