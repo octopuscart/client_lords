@@ -265,6 +265,93 @@ class Api extends REST_Controller {
         $this->response($product_result);
     }
 
+      public function productListApiAccessories_get($category_id, $custom_id) {
+        $attrdatak = $this->get();
+        $products = [];
+        $countpr = 0;
+        $pricequery = "";
+        $colors = $this->get("colors");
+        $search = $this->get("search");
+        $brand = $this->get("brand");
+
+        $colorslist = str_replace("-", ",", $colors);
+
+        if ($colorslist) {
+
+            $query_attr = "SELECT product_id FROM product_attribute
+                           where  attribute_id in ($colorslist) 
+                           group by product_id order by FIELD(attribute_id, $colorslist)";
+            $queryat = $this->db->query($query_attr);
+            $productslist = $queryat->result();
+            foreach ($productslist as $key => $value) {
+                array_push($products, $value->product_id);
+            }
+        }
+
+        //print_r($products);
+
+        $productdict = [];
+
+        $productcheck = array_count_values($products);
+
+
+
+        foreach ($productcheck as $key => $value) {
+
+            array_push($productdict, $key);
+        }
+
+        $proquery = "";
+        $proquerylist = "0";
+        $brandquery = "";
+        if (count($productdict)) {
+            $proquerylist = implode(",", $productdict);
+            $proquery = " and pt.id in ($proquerylist) ";
+        }
+        if($search){
+            $proquery = " and pt.id in ($search) ";
+        }
+        
+        if($brand){
+            $brandquery = " and pt.description in ('$brand') ";
+        }
+
+        $categoriesString = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
+        $categoriesString = ltrim($categoriesString, ", ");
+
+
+        $product_query = "select pt.id as product_id, pt.*
+            from products as pt where pt.status=1 and pt.category_id in ($categoriesString) $pricequery $proquery $brandquery order by display_index desc,FIELD(product_id, $proquerylist)";
+        $product_result = $this->Product_model->query_exe($product_query);
+
+        $productListSt = [];
+
+        $productListFinal = [];
+
+        $pricecount = [];
+
+        foreach ($product_result as $key => $value) {
+            $value['attr'] = $this->Product_model->singleProductAttrs($value['product_id']);
+            $item_price = $value['regular_price'];
+
+            $value['price'] = $value['regular_price'];
+            array_push($productListSt, $value['product_id']);
+            array_push($pricecount, $value['price']);
+            array_push($productListFinal, $value);
+        }
+
+        $attr_filter = array();
+        $pricelist = array();
+
+
+        $this->output->set_header('Content-type: application/json');
+        $productArray = array('attributes' => $attr_filter,
+            'products' => $productListFinal,
+            'product_count' => count($product_result),
+            'price' => $pricelist);
+        $this->response($productArray);
+    }
+    
     public function productListApi_get($category_id, $custom_id) {
         $attrdatak = $this->get();
         $products = [];

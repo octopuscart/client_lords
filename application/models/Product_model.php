@@ -108,8 +108,7 @@ where pa.product_id = $product_id group by attribute_value_id";
             }
         return $arrayattr;
     }
-    
-    
+
     function singleProductAttrs($product_id) {
         $query = "SELECT pa.attribute_id, pa.product_id, pa.attribute_value as code FROM product_attribute as pa 
            where pa.product_id = $product_id group by pa.attribute_id";
@@ -135,26 +134,41 @@ where pa.product_id = $product_id group by attribute_value_id";
         $query = $this->db->get('products');
         $product = $query->result_array();
 
+
         if (count($product)) {
             $productobj = $product[0];
-
-            $item_price = $this->category_items_prices_id($productobj['category_items_id'], $custom_id);
+            if ($custom_id == 'accessories') {
+                $productobj['regular_price'] = $productobj['regular_price'];
+                $productobj['price'] = $productobj['regular_price'];
+            } else {
+                $item_price = $this->category_items_prices_id($productobj['category_items_id'], $custom_id);
+            }
             if (DEFAULT_PAYMENT == 'No') {
                 $productobj['price'] = '0';
                 $productobj['regular_price'] = '0';
             } else {
-                $productobj['price'] = $item_price->price;
-                $productobj['regular_price'] = $item_price->price;
+                if ($custom_id == 'accessories') {
+                    
+                } else {
+                    $productobj['price'] = $item_price->price;
+                    $productobj['regular_price'] = $item_price->price;
+                }
             }
 
             $productobj['item_id'] = $custom_id;
 
             if ($custom_id != 0) {
+
                 $this->db->where('id', $custom_id);
                 $query = $this->db->get('custome_items');
                 $customeitem = $query->row();
             }
-            $productobj['item_name'] = $customeitem->item_name;
+            if ($custom_id == 'accessories') {
+                $productobj['item_name'] = "Accessories";
+            } else {
+                $productobj['item_name'] = $customeitem->item_name;
+            }
+
             $productattr = $this->singleProductAttrs($productobj['id']);
             $productobj['attrs'] = $productattr;
 
@@ -375,15 +389,26 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $custome_items = [];
             $returndata = $session_cart;
             $returndata['products'] = array();
+      
             foreach ($session_cart['products'] as $key => $value) {
+
+
                 if (isset($value['item_id'])) {
                     array_push($session_cart['custome_items'], $value['item_id']);
                     array_push($session_cart['custome_items_name'], $value['item_name']);
                 }
-                if (isset($value['custom_dict'])) {
+
+
+                if ($value['item_id'] == 'accessories') {
                     $returndata['products'][$key] = $value;
                     $returndata['total_quantity'] += $value['quantity'];
                     $returndata['total_price'] += $value['total_price'];
+                } else {
+                    if (isset($value['custom_dict'])) {
+                        $returndata['products'][$key] = $value;
+                        $returndata['total_quantity'] += $value['quantity'];
+                        $returndata['total_price'] += $value['total_price'];
+                    }
                 }
             }
             return $returndata;

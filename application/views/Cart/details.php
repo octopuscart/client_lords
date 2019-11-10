@@ -31,6 +31,8 @@ $this->load->view('layout/header');
     </div>
 </section>
 
+
+
 <!-- Content -->
 <div id="content" ng-if="globleCartData.total_quantity"> 
 
@@ -84,7 +86,7 @@ $this->load->view('layout/header');
                                     <div class="position-center-center" style="    text-align: left;">
                                         <h5>{{product.title}} - {{product.item_name}}</h5>
                                         <p>{{product.sku}}</p>
-                                        <button type="button" ng-click="viewStyle(product)" class="btn btn-default btn-small desing_view_button"  style="margin-top: 10px;">View Design</a>
+                                        <button type="button" ng-if="product.item_id != 'accessories'" ng-click="viewStyle(product)" class="btn btn-default btn-small desing_view_button"  style="margin-top: 10px;">View Design</button>
 
                                     </div>
                                 </div>

@@ -17,7 +17,7 @@ class Product extends CI_Controller {
 
     //function for product list
     function ProductList($custom_id, $cat_id) {
-        
+
         $tempcatid = $cat_id;
 
 
@@ -44,9 +44,9 @@ class Product extends CI_Controller {
         $categoriesString = $this->Product_model->stringCategories($cat_id) . ", " . $cat_id;
         $categoriesString = ltrim($categoriesString, ", ");
 
-        
-        
-        
+
+
+
         $this->db->where('description !=', "");
         $this->db->where("category_id in ($categoriesString)");
         $this->db->group_by('description');
@@ -82,6 +82,66 @@ class Product extends CI_Controller {
         $data["color_attr"] = $attr_result;
 
         $this->load->view('Product/productList', $data);
+    }
+
+    function ProductListAccessories($custom_id, $cat_id) {
+        $tempcatid = $cat_id;
+
+
+        $customeitem =array();
+    
+
+        $categories = array();
+
+        $data["categorie_parent"] = $this->Product_model->getparent($cat_id);
+
+        $data["categories"] = $categories;
+        $data["category"] = $cat_id;
+        $data["custom_item"] = "";
+        $data["custom_id"] = $custom_id;
+        $data["item_price"] = "";
+
+        $categoriesString = $this->Product_model->stringCategories($cat_id) . ", " . $cat_id;
+        $categoriesString = ltrim($categoriesString, ", ");
+
+
+
+
+        $this->db->where('description !=', "");
+        $this->db->where("category_id in ($categoriesString)");
+        $this->db->group_by('description');
+        $query = $this->db->get('products');
+        $branditems = $query->result();
+        $data["brands"] = $branditems;
+        $data["tempcatid"] = $tempcatid;
+
+        $getbrand = "";
+        if (isset($_GET['brand'])) {
+            $getbrand = $_GET['brand'];
+        }
+        $data["brand_name"] = $getbrand;
+
+        $product_query = "select group_concat(pt.id) as product_id
+            from products as pt where pt.category_id in ($categoriesString) order by display_index desc";
+        $product_result = $this->Product_model->query_exe($product_query);
+
+        $productstring = "";
+
+        if (count($product_result)) {
+            $productstring = $product_result[0]['product_id'];
+        }
+
+        $productstring = trim($productstring, ",");
+
+        $attr_query = "SELECT cc.code as code,  cc.title as title, '' as checked, cc.id as attribute_id, pa.product_id FROM `configuration_colors` as cc
+   join product_attribute as pa on pa.attribute_id = cc.id 
+        where pa.product_id in ($productstring)
+        group by cc.id";
+        $attr_result = $this->Product_model->query_exe($attr_query);
+
+        $data["color_attr"] = $attr_result;
+
+        $this->load->view('Product/productListAccessories', $data);
     }
 
     function ProductSearch() {

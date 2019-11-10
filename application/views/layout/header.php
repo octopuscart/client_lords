@@ -162,11 +162,11 @@
                                             </ul>
                                         </li>
                                         
-                                        <li > 
-                                            <a href="<?php echo site_url("accessories/all"); ?>" class="dropdown-toggle " >Accessories</a>
+                                        <li> 
+                                            <a href="<?php echo site_url("Product/ProductListAccessories/55/0"); ?>" class="dropdown-toggle ">Accessories</a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="<?php echo site_url('accessories/cufflinks'); ?>">Cufflinks</a></li>
-                                                <li><a href="<?php echo site_url('accessories/ties'); ?>">Ties</a></li>
+                                                <li><a href="<?php echo site_url('Product/ProductListAccessories/56/0'); ?>">Cufflinks</a></li>
+                                                <li><a href="<?php echo site_url('Product/ProductListAccessories/57/0'); ?>">Ties</a></li>
                                             </ul>
                                         </li>
 

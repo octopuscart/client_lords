@@ -115,7 +115,7 @@ class Shop extends CI_Controller {
         $countryimage = array(
             "Belgium" => "belgium.jpg",
             "Australia" => "australia.jpg",
-            "U.S.A" => "usa.jpg",
+            "USA" => "usa.jpg",
             "Canada" => "canada.jpg",
             "Hong Kong" => "canada.jpg",
             "New Zealand" => "newzealand.jpg",
