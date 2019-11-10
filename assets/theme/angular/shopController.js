@@ -230,7 +230,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
                     },
                     function (dismiss) {
                         if (dismiss === 'timer') {
-                            $("#productcustome").modal("show");
+                         //   $("#productcustome").modal("show");
                         }
                     }
             )
