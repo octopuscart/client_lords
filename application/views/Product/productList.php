@@ -713,16 +713,16 @@ $image2 = "";
                                             <span class="colorblock" style="background: #fff;" ></span>
                                         </p>
 
-                                        <span class="price">{{product.price|currency:"<?php echo globle_currency; ?> "}}</span> 
+                                        <!--<span class="price">{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>--> 
 
                                         <br/>
 
-                                        <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn  btn-default" style="font-size:12px;" title="Customize this fabric">Design Now
+<!--                                        <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="btn  btn-default" style="font-size:12px;" title="Customize this fabric">Design Now
+                                        </a> -->
+                                        <a href="#" class="btn  btn-default" style="font-size: 12px;" title="Look More" ng-click="fabricsZoomModel(product)"><i class="fa fa-eye"></i> View
                                         </a> 
-                                        <a href="#" class="btn  btn-default" style="font-size: 12px;" title="Look More" ng-click="fabricsZoomModel(product)"><i class="fa fa-eye"></i>
-                                        </a> 
-                                        <a href="#" class="btn  btn-default" style="font-size: 12px;" title="Add To Wishlist" ng-click="addToWishList(product, <?php echo $custom_id; ?>)"><i class="fa fa-heart"></i>
-                                        </a> 
+<!--                                        <a href="#" class="btn  btn-default" style="font-size: 12px;" title="Add To Wishlist" ng-click="addToWishList(product, <?php echo $custom_id; ?>)"><i class="fa fa-heart"></i>
+                                        </a> -->
                                     </div>
                                 </article>
                             </div>
